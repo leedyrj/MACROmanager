@@ -3,3 +3,9 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+html {
+  background-image: url(https://healthyforgood.heart.org/-/media/aha/h4gm/article-images/how-to-eat-more-fruits-and-veg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover
+}
