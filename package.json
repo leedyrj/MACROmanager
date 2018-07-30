@@ -8,6 +8,8 @@
     "@fortawesome/react-fontawesome": "0.1.0-11",
     "bloomer": "^0.6.3",
     "bulma": "^0.7.1",
+    "bulma-accordion": "^2.0.0",
+    "bulma-extensions": "^2.2.1",
     "i": "^0.3.6",
     "npm": "^6.2.0",
     "react": "^16.4.1",
