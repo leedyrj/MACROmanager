@@ -23,7 +23,6 @@ export default class ApplicationViews extends Component {
                 />
                 <Route path="/Register" component={Register} />
                 <Route path="/Login" component={Login} />
-                <Route path="/Home" component={Home} />
             </React.Fragment>
         )
     }
