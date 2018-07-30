@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, NavbarBrand, NavbarItem, Icon, NavbarBurger, NavbarMenu, NavbarStart, NavbarLink, NavbarDropdown, NavbarDivider, NavbarEnd, Field, Control, Button, brand } from 'bloomer';
 import 'bulma/css/bulma.css'
-import "./Navbar.css";
+import "../CSS/Navbar.css";
 //import APIManager from "./../APIHandler";
 
 export default class Navigation extends Component {
