@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import APIController from "./APIController"
 import { Redirect, Link } from "react-router-dom"
+import { Container, Box, Label, Input, Button } from 'bloomer'
+
 
 export default class Login extends Component {
     state = {
@@ -54,37 +56,39 @@ export default class Login extends Component {
     render() {
         return (
             <React.Fragment>
-                <form onSubmit={this.handleLogin}>
-                    <h1 className="">Please Sign In</h1>
-                    <label htmlFor="inputEmail">Email Address</label>
-                    <input type="email"
-                        onChange={this.handleFieldChange}
-                        id="email"
-                        placeholder="Email Address"
-                        required=""
-                        autoFocus=""
-                    />
-                    <label htmlFor="inputPassword">password</label>
-                    <input
-                        onChange={this.handleFieldChange}
-                        type="password"
-                        id="password"
-                        placeholder="Password"
-                        required=""
-                    />
-                    <label>Remember Me</label>
-                    <input type="checkbox" id="checkbox" />
-                    <button type="submit">Submit
-                    </button>
-                </form>
+                <Container isFluid style={{ marginTop: 50 }} className="logregcont">
+                    <form onSubmit={this.handleLogin}>
+                        <h1 className="">Please Sign In</h1>
+                        <Label htmlFor="inputEmail">Email Address</Label>
+                        <Input type="email"
+                            onChange={this.handleFieldChange}
+                            id="email"
+                            placeholder="Email Address"
+                            required=""
+                            autoFocus=""
+                        />
+                        <Label htmlFor="inputPassword">password</Label>
+                        <Input
+                            onChange={this.handleFieldChange}
+                            type="password"
+                            id="password"
+                            placeholder="Password"
+                            required=""
+                        />
+                        <Label>Remember Me</Label>
+                        <Input type="checkbox" id="checkbox" />
+                        <Button type="submit">Submit
+                    </Button>
+                    </form>
 
-                <div>
-                    <button id="linkToRegisterForm">
-                        <Link to={{ pathname: "/register" }}>
-                            Register
+                    <div>
+                        <Button id="linkToRegisterForm">
+                            <Link to={{ pathname: "/register" }}>
+                                Register
                         </Link>
-                    </button>
-                </div>
+                        </Button>
+                    </div>
+                </Container>
             </React.Fragment>
         )
     }
