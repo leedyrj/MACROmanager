@@ -5,7 +5,6 @@ import Navigation from "./Nav/Navbar";
 import HomeForm from "./HomeForm"
 import "./CSS/index.css"
 import "./CSS/Collapsible.css"
-import "./main.sass"
 
 export default class Main extends Component {
     render() {
@@ -14,10 +13,7 @@ export default class Main extends Component {
                 <Navigation />
                 <Container>
                     <Box id="main-box">
-                        <Collapsible
-                            trigger="Start here">
-                            <HomeForm />
-                        </Collapsible>
+                        <HomeForm />
                     </Box>
                 </Container>
             </React.Fragment>
