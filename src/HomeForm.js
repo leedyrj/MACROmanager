@@ -249,8 +249,7 @@ export default class HomeForm extends Component {
                     <Button
                         id="homeformsubmit"
                         type="submit"
-                        onClick={this.stateWork}
-                    >Submit</Button>
+                        onClick={this.props.showResults}>Submit</Button>
                 </form>
             </React.Fragment>
         )
