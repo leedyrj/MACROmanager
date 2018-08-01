@@ -5,7 +5,10 @@ export default class SearchResults extends Component {
 
     test = (e) => {
         e.preventDefault()
-        console.log(this.props.recipes)
+        console.log("recipes", this.props.recipes.matches)
+        this.props.recipes.matches.forEach(recipe => {
+            console.log(recipe.recipeName)
+        });
     }
 
     render() {
@@ -15,9 +18,15 @@ export default class SearchResults extends Component {
                     New Search
                 </Button>
                 <Container>
-                    <Box id="results-box">
-                        <Button onClick={this.test}>test</Button>
-                    </Box>
+                    {/* {this.props.recipes.matches} */}
+                    {this.props.recipes.matches.map(recipe => {
+                        return (
+                            <Box id="results-box">
+                                {recipe.recipeName}
+                            </Box>
+                        )
+                    }
+                    )}
                 </Container>
             </React.Fragment>
         )
