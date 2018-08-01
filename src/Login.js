@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import APIController from "./APIController"
 import { Redirect, Link } from "react-router-dom"
-import { Container, Box, Label, Input, Button } from 'bloomer'
+import { Container, Checkbox, Label, Input, Button } from 'bloomer'
 
 
 export default class Login extends Component {
@@ -76,7 +76,7 @@ export default class Login extends Component {
                             required=""
                         />
                         <Label>Remember Me</Label>
-                        <Input type="checkbox" id="checkbox" />
+                        <Checkbox type="checkbox" id="checkbox" />
                         <Button type="submit">Submit
                     </Button>
                     </form>

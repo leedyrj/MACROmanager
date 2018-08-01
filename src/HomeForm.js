@@ -1,9 +1,11 @@
 import React, { Component } from "react"
+
 import { Label, Input, Select, Checkbox, Button } from 'bloomer'
 import Collapsible from 'react-collapsible';
 
 
 export default class HomeForm extends Component {
+
     constructor(props) {
         super(props)
         this.state = {
@@ -59,6 +61,12 @@ export default class HomeForm extends Component {
         }
     }
 
+    stateWork = (e) => {
+        e.preventDefault()
+        console.log(this.state)
+        console.log(this.state.ProMin)
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -66,13 +74,13 @@ export default class HomeForm extends Component {
                     <Collapsible trigger="Macronutrients">
                         <Label>Protien</Label>
                         <Input
-                            type="text"
+                            type="number"
                             id="ProMin"
                             placeholder='Min'
                             onChange={this.handleFieldChange}
                         />
                         <Input
-                            type="text"
+                            type="number"
                             id="ProMax"
                             placeholder='Max'
                             onChange={this.handleFieldChange}
@@ -80,13 +88,13 @@ export default class HomeForm extends Component {
 
                         <Label>Carbohydrates</Label>
                         <Input
-                            type="text"
+                            type="number"
                             id="CarbMin"
                             placeholder='Min'
                             onChange={this.handleFieldChange}
                         />
                         <Input
-                            type="text"
+                            type="number"
                             id="CarbMax"
                             placeholder='Max'
                             onChange={this.handleFieldChange}
@@ -94,13 +102,13 @@ export default class HomeForm extends Component {
 
                         <Label>Fats</Label>
                         <Input
-                            type="text"
+                            type="number"
                             id="FatMin"
                             placeholder='Min'
                             onChange={this.handleFieldChange}
                         />
                         <Input
-                            type="text"
+                            type="number"
                             id="FatMax"
                             placeholder='Max'
                             onChange={this.handleFieldChange}
@@ -240,7 +248,9 @@ export default class HomeForm extends Component {
                     </Collapsible>
                     <Button
                         id="homeformsubmit"
-                        type="submit">Submit</Button>
+                        type="submit"
+                        onClick={this.stateWork}
+                    >Submit</Button>
                 </form>
             </React.Fragment>
         )
