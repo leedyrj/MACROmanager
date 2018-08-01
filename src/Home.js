@@ -10,7 +10,7 @@ import "./CSS/Collapsible.css"
 export default class Home extends Component {
 
     state = {
-        ShowForm: false
+        ShowForm: true
     }
 
     showForm = (e) => {
@@ -50,6 +50,5 @@ export default class Home extends Component {
                 </React.Fragment>
             )
         }
-
     }
 }

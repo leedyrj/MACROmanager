@@ -1,7 +1,7 @@
 import React, { Component } from "react"
-
 import { Label, Input, Select, Checkbox, Button } from 'bloomer'
 import Collapsible from 'react-collapsible';
+import APIController from "./APIController"
 
 
 export default class HomeForm extends Component {
@@ -61,10 +61,13 @@ export default class HomeForm extends Component {
         }
     }
 
-    stateWork = (e) => {
+    submitForm = (e) => {
         e.preventDefault()
-        console.log(this.state)
-        console.log(this.state.ProMin)
+        APIController.getRecipes().then((recipes) => {
+            console.log(recipes)
+        }).then(() => {
+            // this.props.showResults()
+        })
     }
 
     render() {
@@ -204,31 +207,31 @@ export default class HomeForm extends Component {
                             onChange={this.handleSelect}
                             value={this.state.value}>
                             <option disabled selected value> -- Select an option -- </option>
-                            <option id="american"> American </option>
-                            <option id="asian"> Asian </option>
-                            <option id="italian"> Italian </option>
-                            <option id="mexican"> Mexican </option>
-                            <option id="southern"> Southern & Soul </option>
-                            <option id="french"> French </option>
-                            <option id="southwestern"> Southwestern </option>
-                            <option id="bbq"> BBQ </option>
-                            <option id="indian"> Indian </option>
-                            <option id="chinese"> Chinese </option>
-                            <option id="cajun"> Cajun & Creole </option>
-                            <option id="english"> English </option>
-                            <option id="mediterranian"> Mediterranian </option>
-                            <option id="greek"> Greek </option>
-                            <option id="spanish"> Spanish </option>
-                            <option id="german"> German </option>
-                            <option id="thai"> Thai </option>
-                            <option id="moroccan"> Moroccan </option>
-                            <option id="irish"> Irish </option>
-                            <option id="japanese"> Japanese </option>
-                            <option id="hawaiian"> Hawaiian </option>
-                            <option id="swedish"> Swedish </option>
-                            <option id="hungarian"> Hungarian </option>
-                            <option id="portuguese"> Portuguese </option>
-                            <option id="cuban"> Cuban </option>
+                            <option value="american"> American </option>
+                            <option value="asian"> Asian </option>
+                            <option value="italian"> Italian </option>
+                            <option value="mexican"> Mexican </option>
+                            <option value="southern"> Southern & Soul </option>
+                            <option value="french"> French </option>
+                            <option value="southwestern"> Southwestern </option>
+                            <option value="bbq"> BBQ </option>
+                            <option value="indian"> Indian </option>
+                            <option value="chinese"> Chinese </option>
+                            <option value="cajun"> Cajun & Creole </option>
+                            <option value="english"> English </option>
+                            <option value="mediterranian"> Mediterranian </option>
+                            <option value="greek"> Greek </option>
+                            <option value="spanish"> Spanish </option>
+                            <option value="german"> German </option>
+                            <option value="thai"> Thai </option>
+                            <option value="moroccan"> Moroccan </option>
+                            <option value="irish"> Irish </option>
+                            <option value="japanese"> Japanese </option>
+                            <option value="hawaiian"> Hawaiian </option>
+                            <option value="swedish"> Swedish </option>
+                            <option value="hungarian"> Hungarian </option>
+                            <option value="portuguese"> Portuguese </option>
+                            <option value="cuban"> Cuban </option>
                         </Select>
                     </Collapsible>
 
@@ -240,16 +243,17 @@ export default class HomeForm extends Component {
                             onChange={this.handleSelect}
                             value={this.state.value}>
                             <option disabled selected value> -- Select an option -- </option>
-                            <option id="breakfast"> Breakfast </option>
-                            <option id="lunch"> Lunch </option>
-                            <option id="dinner"> Dinner </option>
-                            <option id="dessert"> Dessert </option>
+                            <option value="Breakfast and Brunch"> Breakfast </option>
+                            <option value="Lunch and Snacks"> Lunch </option>
+                            <option value="Main Dish"> Dinner </option>
+                            <option value="Desserts"> Dessert </option>
                         </Select>
                     </Collapsible>
+
                     <Button
                         id="homeformsubmit"
                         type="submit"
-                        onClick={this.props.showResults}>Submit</Button>
+                        onClick={this.submitForm}>Submit</Button>
                 </form>
             </React.Fragment>
         )
