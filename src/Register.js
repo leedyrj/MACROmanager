@@ -24,7 +24,7 @@ export default class Register extends Component {
         }
         APIController.addData("users", registerData)
             .then(() => {
-                this.props.history.push("/login")
+                this.props.history.push("/")
             })
     }
     render() {
