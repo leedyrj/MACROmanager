@@ -1,74 +1,9 @@
 import React, { Component } from "react"
 import { Label, Input, Select, Checkbox, Button } from 'bloomer'
 import Collapsible from 'react-collapsible';
-import APIController from "./APIController"
-
 
 export default class HomeForm extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            ProMin: "",
-            ProMax: "",
-            CarbMin: "",
-            CarbMax: "",
-            FatMin: "",
-            FatMax: "",
-            FoodType: "",
-            IngredType: "",
-            Dairy: false,
-            Egg: false,
-            Gluten: false,
-            Peanut: false,
-            Treenut: false,
-            Seafood: false,
-            Sesame: false,
-            Soy: false,
-            Sulfate: false,
-            Wheat: false,
-            Cuisine: "",
-            Meal: ""
-        }
-        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
-        this.handleSelect = this.handleSelect.bind(this)
-    }
-
-    handleFieldChange = (e) => {
-        const stateToChange = {}
-        stateToChange[e.target.id] = e.target.value
-        this.setState(stateToChange)
-    }
-
-    handleCheckboxChange = (event) => {
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
-        this.setState({
-            [name]: value
-        });
-    }
-
-    handleSelect = (event) => {
-        if (event.target.id === "Cuisine") {
-            this.setState({
-                Cuisine: event.target.value,
-            })
-        } else if (event.target.id === "Meal") {
-            this.setState({
-                Meal: event.target.value
-            })
-        }
-    }
-
-    submitForm = (e) => {
-        e.preventDefault()
-        APIController.getRecipes().then((recipes) => {
-            console.log(recipes)
-        }).then(() => {
-            // this.props.showResults()
-        })
-    }
 
     render() {
         return (
@@ -80,13 +15,13 @@ export default class HomeForm extends Component {
                             type="number"
                             id="ProMin"
                             placeholder='Min'
-                            onChange={this.handleFieldChange}
+                            onChange={this.props.handleFieldChange}
                         />
                         <Input
                             type="number"
                             id="ProMax"
                             placeholder='Max'
-                            onChange={this.handleFieldChange}
+                            onChange={this.props.handleFieldChange}
                         />
 
                         <Label>Carbohydrates</Label>
@@ -94,13 +29,13 @@ export default class HomeForm extends Component {
                             type="number"
                             id="CarbMin"
                             placeholder='Min'
-                            onChange={this.handleFieldChange}
+                            onChange={this.props.handleFieldChange}
                         />
                         <Input
                             type="number"
                             id="CarbMax"
                             placeholder='Max'
-                            onChange={this.handleFieldChange}
+                            onChange={this.props.handleFieldChange}
                         />
 
                         <Label>Fats</Label>
@@ -108,13 +43,13 @@ export default class HomeForm extends Component {
                             type="number"
                             id="FatMin"
                             placeholder='Min'
-                            onChange={this.handleFieldChange}
+                            onChange={this.props.handleFieldChange}
                         />
                         <Input
                             type="number"
                             id="FatMax"
                             placeholder='Max'
-                            onChange={this.handleFieldChange}
+                            onChange={this.props.handleFieldChange}
                         />
                     </Collapsible>
 
@@ -123,7 +58,7 @@ export default class HomeForm extends Component {
                             type="text"
                             id="FoodType"
                             placeholder='What do you want to eat?'
-                            onChange={this.handleFieldChange}
+                            onChange={this.props.handleFieldChange}
                         />
                     </Collapsible>
 
@@ -132,7 +67,7 @@ export default class HomeForm extends Component {
                             type="text"
                             id="IngredType"
                             placeholder='What do you want in it?'
-                            onChange={this.handleFieldChange}
+                            onChange={this.props.handleFieldChange}
                         />
                     </Collapsible>
 
@@ -141,61 +76,61 @@ export default class HomeForm extends Component {
                             addClass="Alergy"
                             name="Dairy"
                             id="Dairy"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Dairy </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Egg"
                             id="Egg"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Egg </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Gluten"
                             id="Gluten"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Gluten </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Peanut"
                             id="Peanut"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Peanut </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Treenut"
                             id="Treenut"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Tree Nut </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Seafood"
                             id="Seafood"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Seafood </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Sesame"
                             id="Sesame"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Sesame </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Soy"
                             id="Soy"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Soy </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Sulfate"
                             id="Sulfate"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Sulfate </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Wheat"
                             id="Wheat"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Wheat </Checkbox>
                     </Collapsible>
 
@@ -204,8 +139,8 @@ export default class HomeForm extends Component {
                         <Select
                             id="Cuisine"
                             name="Cuisine"
-                            onChange={this.handleSelect}
-                            value={this.state.value}>
+                            onChange={this.props.handleSelect}
+                            value={this.id}>
                             <option disabled selected value> -- Select an option -- </option>
                             <option value="american"> American </option>
                             <option value="asian"> Asian </option>
@@ -240,8 +175,8 @@ export default class HomeForm extends Component {
                         <Select
                             id="Meal"
                             name="Meal"
-                            onChange={this.handleSelect}
-                            value={this.state.value}>
+                            onChange={this.props.handleSelect}
+                            value={this.id}>
                             <option disabled selected value> -- Select an option -- </option>
                             <option value="Breakfast and Brunch"> Breakfast </option>
                             <option value="Lunch and Snacks"> Lunch </option>
@@ -253,7 +188,8 @@ export default class HomeForm extends Component {
                     <Button
                         id="homeformsubmit"
                         type="submit"
-                        onClick={this.submitForm}>Submit</Button>
+                        onClick={this.props.submitForm}
+                    >Submit</Button>
                 </form>
             </React.Fragment>
         )
