@@ -240,7 +240,8 @@ export default class HomeForm extends Component {
                     </Collapsible>
                     <Button
                         id="homeformsubmit"
-                        type="submit">Submit</Button>
+                        type="submit"
+                        onClick={this.props.showResults}>Submit</Button>
                 </form>
             </React.Fragment>
         )
