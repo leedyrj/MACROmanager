@@ -1,14 +1,13 @@
 import React, { Component } from "react"
-import { Container, Box, Button } from 'bloomer'
+import { Container, Box, Button, Image } from 'bloomer'
+import APIController from "./APIController"
 
 export default class SearchResults extends Component {
 
-    test = (e) => {
-        e.preventDefault()
-        console.log("recipes", this.props.recipes.matches)
-        this.props.recipes.matches.forEach(recipe => {
-            console.log(recipe.recipeName)
-        });
+    recipeView = (recipe) => {
+        APIController.getOneRecipe(recipe.id).then((recipeId) => {
+            console.log(recipeId)
+        })
     }
 
     render() {
@@ -18,11 +17,16 @@ export default class SearchResults extends Component {
                     New Search
                 </Button>
                 <Container>
-                    {/* {this.props.recipes.matches} */}
                     {this.props.recipes.matches.map(recipe => {
                         return (
-                            <Box id="results-box">
+                            <Box
+                                id="results-box"
+                                onClick={() => this.recipeView(recipe)}>
+                                <Image isSize="128x128" src={recipe.smallImageUrls} />
                                 {recipe.recipeName}
+                                <ul>
+                                    <li>{recipe.ingredients}</li>
+                                </ul>
                             </Box>
                         )
                     }
