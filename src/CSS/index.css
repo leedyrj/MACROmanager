@@ -20,3 +20,7 @@ html {
 .logregcont {
   width: 40%;
 }
+
+#results-container :hover {
+  transform: scale(1.1)
+}

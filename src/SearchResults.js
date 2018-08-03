@@ -1,13 +1,27 @@
 import React, { Component } from "react"
 import { Container, Box, Button, Image } from 'bloomer'
+import RecipeModal from "./RecipeModal"
 import APIController from "./APIController"
 
 export default class SearchResults extends Component {
 
+    state = {
+        Modal: ""
+    }
+
     recipeView = (recipe) => {
-        APIController.getOneRecipe(recipe.id).then((recipeId) => {
-            console.log(recipeId)
-        })
+        // APIController.getOneRecipe(recipe.id).then((recipeId) => {
+        //     console.log(recipeId)
+        // })
+        if (this.state.Modal === "") {
+            this.setState({
+                Modal: (
+                    <RecipeModal
+                        {...this.props}
+                    />
+                )
+            })
+        }
     }
 
     render() {
@@ -16,11 +30,11 @@ export default class SearchResults extends Component {
                 <Button onClick={this.props.showForm}>
                     New Search
                 </Button>
-                <Container>
+                <Container id="results-container">
                     {this.props.recipes.matches.map(recipe => {
                         return (
                             <Box
-                                id="results-box"
+                                className="results-box"
                                 onClick={() => this.recipeView(recipe)}>
                                 <Image isSize="128x128" src={recipe.smallImageUrls} />
                                 {recipe.recipeName}
@@ -32,6 +46,7 @@ export default class SearchResults extends Component {
                     }
                     )}
                 </Container>
+                <RecipeModal />
             </React.Fragment>
         )
     }
