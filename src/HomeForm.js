@@ -8,19 +8,21 @@ export default class HomeForm extends Component {
     render() {
         return (
             <React.Fragment>
-                <form action="">
+                <form onSubmit={this.props.testForm}>
                     <Collapsible trigger="Macronutrients">
                         <Label>Protien</Label>
                         <Input
                             type="number"
                             id="ProMin"
                             placeholder='Min'
+                            // required
                             onChange={this.props.handleFieldChange}
                         />
                         <Input
                             type="number"
                             id="ProMax"
                             placeholder='Max'
+                            // required
                             onChange={this.props.handleFieldChange}
                         />
 
@@ -29,12 +31,14 @@ export default class HomeForm extends Component {
                             type="number"
                             id="CarbMin"
                             placeholder='Min'
+                            // required
                             onChange={this.props.handleFieldChange}
                         />
                         <Input
                             type="number"
                             id="CarbMax"
                             placeholder='Max'
+                            // required
                             onChange={this.props.handleFieldChange}
                         />
 
@@ -43,12 +47,14 @@ export default class HomeForm extends Component {
                             type="number"
                             id="FatMin"
                             placeholder='Min'
+                            // required
                             onChange={this.props.handleFieldChange}
                         />
                         <Input
                             type="number"
                             id="FatMax"
                             placeholder='Max'
+                            // required
                             onChange={this.props.handleFieldChange}
                         />
                     </Collapsible>
@@ -58,6 +64,7 @@ export default class HomeForm extends Component {
                             type="text"
                             id="FoodType"
                             placeholder='What do you want to eat?'
+                            // required
                             onChange={this.props.handleFieldChange}
                         />
                     </Collapsible>
@@ -67,11 +74,12 @@ export default class HomeForm extends Component {
                             type="text"
                             id="IngredType"
                             placeholder='What do you want in it?'
+                            // required
                             onChange={this.props.handleFieldChange}
                         />
                     </Collapsible>
 
-                    <Collapsible trigger="I'm alergic to...">
+                    {/* <Collapsible trigger="I'm alergic to...">
                         <Checkbox
                             addClass="Alergy"
                             name="Dairy"
@@ -132,7 +140,7 @@ export default class HomeForm extends Component {
                             id="Wheat"
                             onClick={this.props.handleCheckboxChange}
                         > Wheat </Checkbox>
-                    </Collapsible>
+                    </Collapsible> */}
 
                     <Collapsible trigger="I'm in the mood for...">
                         <Label>Select:</Label>
@@ -141,7 +149,7 @@ export default class HomeForm extends Component {
                             name="Cuisine"
                             onChange={this.props.handleSelect}
                             value={this.id}>
-                            <option disabled selected value> -- Select an option -- </option>
+                            <option selected value> -- Select an option -- </option>
                             <option value="american"> American </option>
                             <option value="asian"> Asian </option>
                             <option value="italian"> Italian </option>
@@ -177,7 +185,7 @@ export default class HomeForm extends Component {
                             name="Meal"
                             onChange={this.props.handleSelect}
                             value={this.id}>
-                            <option disabled selected value> -- Select an option -- </option>
+                            <option selected value> -- Select an option -- </option>
                             <option value="Breakfast and Brunch"> Breakfast </option>
                             <option value="Lunch and Snacks"> Lunch </option>
                             <option value="Main Dish"> Dinner </option>
@@ -188,7 +196,7 @@ export default class HomeForm extends Component {
                     <Button
                         id="homeformsubmit"
                         type="submit"
-                        onClick={this.props.submitForm}
+                    // onClick={this.props.testForm}
                     >Submit</Button>
                 </form>
             </React.Fragment>
