@@ -8,7 +8,7 @@ export default class HomeForm extends Component {
     render() {
         return (
             <React.Fragment>
-                <form onSubmit={this.props.testForm}>
+                <form>
                     <Collapsible trigger="Macronutrients">
                         <Label>Protien</Label>
                         <Input
@@ -196,7 +196,7 @@ export default class HomeForm extends Component {
                     <Button
                         id="homeformsubmit"
                         type="submit"
-                    // onClick={this.props.testForm}
+                        onClick={this.props.testForm}
                     >Submit</Button>
                 </form>
             </React.Fragment>

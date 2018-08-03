@@ -15,8 +15,8 @@ export default class APIController {
         return fetch(`http://localhost:5002/${section}`).then(e => e.json());
     };
 
-    static getRecipes = () => {
-        return fetch("http://api.yummly.com/v1/api/recipes?_app_id=5b6699eb&_app_key=d4778728e4efa474d08a7676801d6fa2&d").then(e => e.json())
+    static getRecipes = (apiString) => {
+        return fetch(`http://api.yummly.com/v1/api/recipes?_app_id=5b6699eb&_app_key=d4778728e4efa474d08a7676801d6fa2&d${apiString}`).then(e => e.json())
     }
 
     static getOneRecipe = (recipeId) => {
