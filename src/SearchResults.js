@@ -1,9 +1,14 @@
 import React, { Component } from "react"
-import { Container, Box, Button } from 'bloomer'
+import { Container, Box, Button, Image } from 'bloomer'
+import APIController from "./APIController"
 
 export default class SearchResults extends Component {
 
-
+    recipeView = (recipe) => {
+        APIController.getOneRecipe(recipe.id).then((recipeId) => {
+            console.log(recipeId)
+        })
+    }
 
     render() {
         return (
@@ -12,8 +17,20 @@ export default class SearchResults extends Component {
                     New Search
                 </Button>
                 <Container>
-                    <Box id="results-box">
-                    </Box>
+                    {this.props.recipes.matches.map(recipe => {
+                        return (
+                            <Box
+                                id="results-box"
+                                onClick={() => this.recipeView(recipe)}>
+                                <Image isSize="128x128" src={recipe.smallImageUrls} />
+                                {recipe.recipeName}
+                                <ul>
+                                    <li>{recipe.ingredients}</li>
+                                </ul>
+                            </Box>
+                        )
+                    }
+                    )}
                 </Container>
             </React.Fragment>
         )

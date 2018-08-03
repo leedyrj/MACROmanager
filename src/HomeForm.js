@@ -2,108 +2,60 @@ import React, { Component } from "react"
 import { Label, Input, Select, Checkbox, Button } from 'bloomer'
 import Collapsible from 'react-collapsible';
 
-
 export default class HomeForm extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            ProMin: "",
-            ProMax: "",
-            CarbMin: "",
-            CarbMax: "",
-            FatMin: "",
-            FatMax: "",
-            FoodType: "",
-            IngredType: "",
-            Dairy: false,
-            Egg: false,
-            Gluten: false,
-            Peanut: false,
-            Treenut: false,
-            Seafood: false,
-            Sesame: false,
-            Soy: false,
-            Sulfate: false,
-            Wheat: false,
-            Cuisine: "",
-            Meal: ""
-        }
-        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
-        this.handleSelect = this.handleSelect.bind(this)
-    }
 
-    handleFieldChange = (e) => {
-        const stateToChange = {}
-        stateToChange[e.target.id] = e.target.value
-        this.setState(stateToChange)
-    }
-
-    handleCheckboxChange = (event) => {
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
-        this.setState({
-            [name]: value
-        });
-    }
-
-    handleSelect = (event) => {
-        if (event.target.id === "Cuisine") {
-            this.setState({
-                Cuisine: event.target.value,
-            })
-        } else if (event.target.id === "Meal") {
-            this.setState({
-                Meal: event.target.value
-            })
-        }
-    }
 
     render() {
         return (
             <React.Fragment>
-                <form action="">
+                <form onSubmit={this.props.testForm}>
                     <Collapsible trigger="Macronutrients">
                         <Label>Protien</Label>
                         <Input
-                            type="text"
+                            type="number"
                             id="ProMin"
                             placeholder='Min'
-                            onChange={this.handleFieldChange}
+                            // required
+                            onChange={this.props.handleFieldChange}
                         />
                         <Input
-                            type="text"
+                            type="number"
                             id="ProMax"
                             placeholder='Max'
-                            onChange={this.handleFieldChange}
+                            // required
+                            onChange={this.props.handleFieldChange}
                         />
 
                         <Label>Carbohydrates</Label>
                         <Input
-                            type="text"
+                            type="number"
                             id="CarbMin"
                             placeholder='Min'
-                            onChange={this.handleFieldChange}
+                            // required
+                            onChange={this.props.handleFieldChange}
                         />
                         <Input
-                            type="text"
+                            type="number"
                             id="CarbMax"
                             placeholder='Max'
-                            onChange={this.handleFieldChange}
+                            // required
+                            onChange={this.props.handleFieldChange}
                         />
 
                         <Label>Fats</Label>
                         <Input
-                            type="text"
+                            type="number"
                             id="FatMin"
                             placeholder='Min'
-                            onChange={this.handleFieldChange}
+                            // required
+                            onChange={this.props.handleFieldChange}
                         />
                         <Input
-                            type="text"
+                            type="number"
                             id="FatMax"
                             placeholder='Max'
-                            onChange={this.handleFieldChange}
+                            // required
+                            onChange={this.props.handleFieldChange}
                         />
                     </Collapsible>
 
@@ -112,7 +64,8 @@ export default class HomeForm extends Component {
                             type="text"
                             id="FoodType"
                             placeholder='What do you want to eat?'
-                            onChange={this.handleFieldChange}
+                            // required
+                            onChange={this.props.handleFieldChange}
                         />
                     </Collapsible>
 
@@ -121,106 +74,107 @@ export default class HomeForm extends Component {
                             type="text"
                             id="IngredType"
                             placeholder='What do you want in it?'
-                            onChange={this.handleFieldChange}
+                            // required
+                            onChange={this.props.handleFieldChange}
                         />
                     </Collapsible>
 
-                    <Collapsible trigger="I'm alergic to...">
+                    {/* <Collapsible trigger="I'm alergic to...">
                         <Checkbox
                             addClass="Alergy"
                             name="Dairy"
                             id="Dairy"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Dairy </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Egg"
                             id="Egg"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Egg </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Gluten"
                             id="Gluten"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Gluten </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Peanut"
                             id="Peanut"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Peanut </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Treenut"
                             id="Treenut"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Tree Nut </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Seafood"
                             id="Seafood"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Seafood </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Sesame"
                             id="Sesame"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Sesame </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Soy"
                             id="Soy"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Soy </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Sulfate"
                             id="Sulfate"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Sulfate </Checkbox>
                         <Checkbox
                             addClass="Alergy"
                             name="Wheat"
                             id="Wheat"
-                            onClick={this.handleCheckboxChange}
+                            onClick={this.props.handleCheckboxChange}
                         > Wheat </Checkbox>
-                    </Collapsible>
+                    </Collapsible> */}
 
                     <Collapsible trigger="I'm in the mood for...">
                         <Label>Select:</Label>
                         <Select
                             id="Cuisine"
                             name="Cuisine"
-                            onChange={this.handleSelect}
-                            value={this.state.value}>
-                            <option disabled selected value> -- Select an option -- </option>
-                            <option id="american"> American </option>
-                            <option id="asian"> Asian </option>
-                            <option id="italian"> Italian </option>
-                            <option id="mexican"> Mexican </option>
-                            <option id="southern"> Southern & Soul </option>
-                            <option id="french"> French </option>
-                            <option id="southwestern"> Southwestern </option>
-                            <option id="bbq"> BBQ </option>
-                            <option id="indian"> Indian </option>
-                            <option id="chinese"> Chinese </option>
-                            <option id="cajun"> Cajun & Creole </option>
-                            <option id="english"> English </option>
-                            <option id="mediterranian"> Mediterranian </option>
-                            <option id="greek"> Greek </option>
-                            <option id="spanish"> Spanish </option>
-                            <option id="german"> German </option>
-                            <option id="thai"> Thai </option>
-                            <option id="moroccan"> Moroccan </option>
-                            <option id="irish"> Irish </option>
-                            <option id="japanese"> Japanese </option>
-                            <option id="hawaiian"> Hawaiian </option>
-                            <option id="swedish"> Swedish </option>
-                            <option id="hungarian"> Hungarian </option>
-                            <option id="portuguese"> Portuguese </option>
-                            <option id="cuban"> Cuban </option>
+                            onChange={this.props.handleSelect}
+                            value={this.id}>
+                            <option selected value> -- Select an option -- </option>
+                            <option value="american"> American </option>
+                            <option value="asian"> Asian </option>
+                            <option value="italian"> Italian </option>
+                            <option value="mexican"> Mexican </option>
+                            <option value="southern"> Southern & Soul </option>
+                            <option value="french"> French </option>
+                            <option value="southwestern"> Southwestern </option>
+                            <option value="bbq"> BBQ </option>
+                            <option value="indian"> Indian </option>
+                            <option value="chinese"> Chinese </option>
+                            <option value="cajun"> Cajun & Creole </option>
+                            <option value="english"> English </option>
+                            <option value="mediterranian"> Mediterranian </option>
+                            <option value="greek"> Greek </option>
+                            <option value="spanish"> Spanish </option>
+                            <option value="german"> German </option>
+                            <option value="thai"> Thai </option>
+                            <option value="moroccan"> Moroccan </option>
+                            <option value="irish"> Irish </option>
+                            <option value="japanese"> Japanese </option>
+                            <option value="hawaiian"> Hawaiian </option>
+                            <option value="swedish"> Swedish </option>
+                            <option value="hungarian"> Hungarian </option>
+                            <option value="portuguese"> Portuguese </option>
+                            <option value="cuban"> Cuban </option>
                         </Select>
                     </Collapsible>
 
@@ -229,19 +183,21 @@ export default class HomeForm extends Component {
                         <Select
                             id="Meal"
                             name="Meal"
-                            onChange={this.handleSelect}
-                            value={this.state.value}>
-                            <option disabled selected value> -- Select an option -- </option>
-                            <option id="breakfast"> Breakfast </option>
-                            <option id="lunch"> Lunch </option>
-                            <option id="dinner"> Dinner </option>
-                            <option id="dessert"> Dessert </option>
+                            onChange={this.props.handleSelect}
+                            value={this.id}>
+                            <option selected value> -- Select an option -- </option>
+                            <option value="Breakfast and Brunch"> Breakfast </option>
+                            <option value="Lunch and Snacks"> Lunch </option>
+                            <option value="Main Dish"> Dinner </option>
+                            <option value="Desserts"> Dessert </option>
                         </Select>
                     </Collapsible>
+
                     <Button
                         id="homeformsubmit"
                         type="submit"
-                        onClick={this.props.showResults}>Submit</Button>
+                    // onClick={this.props.testForm}
+                    >Submit</Button>
                 </form>
             </React.Fragment>
         )
