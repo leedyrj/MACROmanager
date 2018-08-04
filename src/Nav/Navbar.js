@@ -30,8 +30,10 @@ export default class Navigation extends Component {
                 <NavbarMenu isActive={this.state.isActive} onClick={this.onClickNav}>
                     <NavbarStart>
                         <NavbarItem href='#/'>Home</NavbarItem>
-                        <NavbarItem href='#/documentation'>My Recipes</NavbarItem>
-                        <NavbarItem href='#/documentation'>Dictionary</NavbarItem>
+                        <NavbarItem
+                            href='#/'
+                            onClick={this.props.showMyRecipes}>My Recipes</NavbarItem>
+                        <NavbarItem href='#/'>Dictionary</NavbarItem>
                     </NavbarStart>
                 </NavbarMenu>
             </Navbar>

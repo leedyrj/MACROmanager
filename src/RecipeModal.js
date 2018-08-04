@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Modal, ModalBackground, ModalCard, ModalCardHeader, ModalCardTitle, Delete, ModalCardBody, ModalCardFooter, Button, Image, Box } from 'bloomer'
+import APIController from "./APIController"
 
 export default class RecipeModal extends Component {
     state = {
@@ -10,6 +11,20 @@ export default class RecipeModal extends Component {
         this.setState({
             ingredientLines: this.props.recipeId.ingredientLines
         })
+    }
+
+    saveRecipe = () => {
+        let body = {
+            "recipeName": this.props.recipeId.name,
+            "recipeUrl": "",
+            "recipeIngred": "",
+            "recipePro": "",
+            "recipeCarb": "",
+            "recipeFat": ""
+        }
+        APIController.saveRecipe("recipes", body)
+            .then(() => { })
+        this.props.removeModal
     }
     render() {
         return (
@@ -25,8 +40,12 @@ export default class RecipeModal extends Component {
                             />
                         </ModalCardHeader>
                         <ModalCardBody>
-                            <Image isSize="128x128" src={this.props.recipeId.images.hostedSmallUrl} />
-                            {console.log(this.props.recipeId.nutritionEstimates)}
+                            {this.props.recipeId.nutritionEstimates.map(things => {
+                                console.log(things)
+                                for (let stuff in things) {
+                                    {/* console.log(things[stuff]) */ }
+                                }
+                            })}
                             {console.log(this.props.recipeId.ingredientLines)}
                             <ul>
                                 {this.props.recipeId.ingredientLines.map(ingredient => {
@@ -37,10 +56,9 @@ export default class RecipeModal extends Component {
                             </ul>
                         </ModalCardBody>
                         <ModalCardFooter>
-                            <Button isColor='success'>Save</Button>
                             <Button
-                                isColor='warning'
-                                onClick={this.props.removeModal}>Cancel</Button>
+                                isColor='success'
+                                onClick={this.saveRecipe}>Save for Later</Button>
                         </ModalCardFooter>
                     </ModalCard>
                 </Modal>

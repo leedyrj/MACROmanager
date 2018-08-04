@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Container, Box } from 'bloomer'
 import Navigation from "./Nav/Navbar";
 import HomeForm from "./HomeForm"
+import MyReicpes from "./MyRecipes"
 import SearchResults from "./SearchResults"
 import APIController from ".//APIController"
 import "./CSS/index.css"
@@ -39,7 +40,7 @@ export default class Home extends Component {
                 Meal: ""
             }
             ,
-            ShowForm: true,
+            HomeState: "Form",
             recipes: []
         }
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
@@ -140,7 +141,7 @@ export default class Home extends Component {
         apiCall = apiString
         APIController.getRecipes(apiCall).then((recipes) => {
             this.setState({
-                ShowForm: false,
+                HomeState: "RecipeList",
                 recipes: recipes
             })
         })
@@ -149,7 +150,14 @@ export default class Home extends Component {
     showForm = (e) => {
         e.preventDefault()
         this.setState({
-            ShowForm: true
+            HomeState: "Form"
+        })
+    }
+
+    showMyRecipes = (e) => {
+        e.preventDefault()
+        this.setState({
+            HomeState: "MyReicpes"
         })
     }
 
@@ -174,10 +182,12 @@ export default class Home extends Component {
     // }
 
     render() {
-        if (this.state.ShowForm) {
+        if (this.state.HomeState === "Form") {
             return (
                 <React.Fragment>
-                    <Navigation />
+                    <Navigation
+                        showMyRecipes={this.showMyRecipes}
+                    />
                     <Container>
                         <Box id="main-box">
                             <HomeForm
@@ -191,10 +201,12 @@ export default class Home extends Component {
                     </Container>
                 </React.Fragment>
             )
-        } else {
+        } else if (this.state.HomeState === "RecipeList") {
             return (
                 <React.Fragment>
-                    <Navigation />
+                    <Navigation
+                        showMyRecipes={this.showMyRecipes}
+                    />
                     <Container>
                         <Box id="main-box">
                             <SearchResults
@@ -202,6 +214,20 @@ export default class Home extends Component {
                                 recipes={this.state.recipes} />
                         </Box>
                     </Container>
+                </React.Fragment>
+            )
+        } else if (this.state.HomeState === "MyReicpes") {
+            return (
+                <React.Fragment>
+                    <Navigation
+                        showMyRecipes={this.showMyRecipes}
+                    />
+                    <Container>
+                        <Box>
+                            <MyReicpes />
+                        </Box>
+                    </Container>
+
                 </React.Fragment>
             )
         }
