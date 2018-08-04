@@ -6,22 +6,23 @@ import APIController from "./APIController"
 export default class SearchResults extends Component {
 
     state = {
-        Modal: ""
+        modal: false,
+        recipeId: {},
+        ingredientLines: [""]
     }
 
     recipeView = (recipe) => {
-        // APIController.getOneRecipe(recipe.id).then((recipeId) => {
-        //     console.log(recipeId)
-        // })
-        if (this.state.Modal === "") {
+        APIController.getOneRecipe(recipe.id).then((recipeId) => {
             this.setState({
-                Modal: (
-                    <RecipeModal
-                        {...this.props}
-                    />
-                )
+                recipeId: recipeId,
+                ingredientLines: [""],
+                modal: true
             })
-        }
+        })
+    }
+
+    removeModal = () => {
+        document.querySelector(".modal").classList.remove("is-active")
     }
 
     render() {
@@ -46,7 +47,14 @@ export default class SearchResults extends Component {
                     }
                     )}
                 </Container>
-                <RecipeModal />
+                {this.state.modal ? (
+                    <RecipeModal
+                        removeModal={this.removeModal}
+                        recipeId={this.state.recipeId}
+                        isActive={this.isActive}
+                    // ingredientLines={this.state.ingredientLines}
+                    />
+                ) : (<p></p>)}
             </React.Fragment>
         )
     }
