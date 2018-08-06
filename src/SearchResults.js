@@ -8,7 +8,8 @@ export default class SearchResults extends Component {
     state = {
         modal: false,
         recipeId: {},
-        ingredientLines: [""]
+        ingredientLines: [""],
+        modalType: "search"
     }
 
     recipeView = (recipe) => {
@@ -22,7 +23,9 @@ export default class SearchResults extends Component {
     }
 
     removeModal = () => {
-        document.querySelector(".modal").classList.remove("is-active")
+        this.setState({
+            modal: false
+        })
     }
 
     render() {
@@ -52,6 +55,8 @@ export default class SearchResults extends Component {
                         removeModal={this.removeModal}
                         recipeId={this.state.recipeId}
                         isActive={this.isActive}
+                        modalType={this.state.modalType}
+                        handleFieldChange={this.props.handleFieldChange}
                     // ingredientLines={this.state.ingredientLines}
                     />
                 ) : (<p></p>)}

@@ -1,10 +1,12 @@
 import React, { Component } from "react"
-import { Modal, ModalBackground, ModalCard, ModalCardHeader, ModalCardTitle, Delete, ModalCardBody, ModalCardFooter, Button, Image, Box } from 'bloomer'
+import { Modal, ModalBackground, ModalCard, ModalCardHeader, ModalCardTitle, Delete, ModalCardBody, ModalCardFooter, Button, Input, Box } from 'bloomer'
 import APIController from "./APIController"
+import Comment from "./Comment"
 
 export default class RecipeModal extends Component {
     state = {
-        ingredientLines: []
+        ingredientLines: [],
+        commentForm: false
     }
 
     componentDidMount() {
@@ -16,6 +18,8 @@ export default class RecipeModal extends Component {
     saveRecipe = () => {
         let body = {
             "recipeName": this.props.recipeId.name,
+            "recipeId": this.props.recipeId.id,
+            "recipeComment": "",
             "recipeUrl": "",
             "recipeIngred": "",
             "recipePro": "",
@@ -23,9 +27,17 @@ export default class RecipeModal extends Component {
             "recipeFat": ""
         }
         APIController.saveRecipe("recipes", body)
-            .then(() => { })
-        this.props.removeModal
+            .then(() => {
+                alert("Successfully added to My Recipes")
+            })
     }
+
+    showCommentForm = () => {
+        this.setState({
+            commentForm: true
+        })
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -41,7 +53,7 @@ export default class RecipeModal extends Component {
                         </ModalCardHeader>
                         <ModalCardBody>
                             {this.props.recipeId.nutritionEstimates.map(things => {
-                                console.log(things)
+                                {/* console.log(things) */ }
                                 for (let stuff in things) {
                                     {/* console.log(things[stuff]) */ }
                                 }
@@ -56,9 +68,16 @@ export default class RecipeModal extends Component {
                             </ul>
                         </ModalCardBody>
                         <ModalCardFooter>
-                            <Button
-                                isColor='success'
-                                onClick={this.saveRecipe}>Save for Later</Button>
+                            {this.props.modalType === "search" ? (
+                                <Button
+                                    isColor='success'
+                                    onClick={this.saveRecipe}>Save for Later</Button>
+                            ) : (<Comment
+                                handleFieldChange={this.props.handleFieldChange}
+                                showCommentForm={this.showCommentForm}
+                                commentForm={this.state.commentForm}
+                            />)}
+
                         </ModalCardFooter>
                     </ModalCard>
                 </Modal>

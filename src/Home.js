@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Container, Box } from 'bloomer'
 import Navigation from "./Nav/Navbar";
 import HomeForm from "./HomeForm"
-import MyReicpes from "./MyRecipes"
+import MyRecipes from "./MyRecipes"
 import SearchResults from "./SearchResults"
 import APIController from ".//APIController"
 import "./CSS/index.css"
@@ -41,7 +41,9 @@ export default class Home extends Component {
             }
             ,
             HomeState: "Form",
-            recipes: []
+            recipes: [],
+            MyRecipes: [],
+            // Modal: false
         }
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
         this.handleSelect = this.handleSelect.bind(this)
@@ -156,10 +158,23 @@ export default class Home extends Component {
 
     showMyRecipes = (e) => {
         e.preventDefault()
+        APIController.getData("recipes")
+            .then((myRecipes) => {
+                this.setState({
+                    MyRecipes: myRecipes
+                })
+                console.log(this.state.MyRecipes)
+            })
         this.setState({
             HomeState: "MyReicpes"
         })
     }
+
+    // removeModal = () => {
+    //     this.setState({
+    //         modal: false
+    //     })
+    // }
 
     // testForm = (e) => {
     //     e.preventDefault()
@@ -187,6 +202,7 @@ export default class Home extends Component {
                 <React.Fragment>
                     <Navigation
                         showMyRecipes={this.showMyRecipes}
+                        showForm={this.showForm}
                     />
                     <Container>
                         <Box id="main-box">
@@ -206,12 +222,15 @@ export default class Home extends Component {
                 <React.Fragment>
                     <Navigation
                         showMyRecipes={this.showMyRecipes}
+                        showForm={this.showForm}
                     />
                     <Container>
                         <Box id="main-box">
                             <SearchResults
                                 showForm={this.showForm}
-                                recipes={this.state.recipes} />
+                                recipes={this.state.recipes}
+                                removeModal={this.removeModal}
+                                Modal={this.state.Modal} />
                         </Box>
                     </Container>
                 </React.Fragment>
@@ -221,10 +240,13 @@ export default class Home extends Component {
                 <React.Fragment>
                     <Navigation
                         showMyRecipes={this.showMyRecipes}
+                        showForm={this.showForm}
                     />
                     <Container>
                         <Box>
-                            <MyReicpes />
+                            <MyRecipes
+                                MyRecipes={this.state.MyRecipes}
+                                removeModal={this.removeModal} />
                         </Box>
                     </Container>
 

@@ -11,7 +11,7 @@ export default class APIController {
         });
     };
 
-    static getMyRecipes = (section) => {
+    static getData = (section) => {
         return fetch(`http://localhost:5002/${section}`).then(e => e.json());
     };
 
@@ -27,4 +27,13 @@ export default class APIController {
         return fetch(`http://localhost:5002/${section}`).then(e => e.json());
     };
 
+    static addComment = (id, body) => {
+        return fetch(`http://localhost:5002/recipes/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        });
+    }
 }
