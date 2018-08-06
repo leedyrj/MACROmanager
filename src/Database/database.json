@@ -1,378 +1,54 @@
 {
-    "users": [
-        {
-            "name": "r",
-            "email": "r@r.com",
-            "password": "r",
-            "id": 1
-        },
-        {
-            "name": "f",
-            "email": "f@f.com",
-            "password": "f",
-            "id": 2
-        },
-        {
-            "name": "register works",
-            "email": "regwork@yay.com",
-            "password": "reg",
-            "id": 3
-        }
-    ],
-    "testData": [
-        {
-            "criteria": {
-                "q": null,
-                "allowedIngredient": null,
-                "excludedIngredient": null
-            },
-            "matches": [
-                {
-                    "imageUrlsBySize": {
-                        "90": "https://lh3.googleusercontent.com/gDaBUQATboqX9VxTaYWwK9YQiOgksV81wh5fgN9uLPiVzv_IpmIsU_-nMlOz8v9F2zsxOrkwrmVRGDdtKky06lM=s90-c"
-                    },
-                    "sourceDisplayName": "Love and Olive Oil",
-                    "ingredients": [
-                        "filtered water",
-                        "granulated sugar",
-                        "lemon juice",
-                        "peaches",
-                        "bourbon",
-                        "fresh mint"
-                    ],
-                    "id": "Bourbon-Peach-Lemonade-Punch-2403426",
-                    "smallImageUrls": [
-                        "https://lh3.googleusercontent.com/1Kt77rkpHP4rFu_AkE8TkpuKiM5Z1Uwjgq7gU8iFX93TiNwq994I4-RszCpnzEwDrGhd8_R0Qza8m1C8J9xW-_Y=s90"
-                    ],
-                    "recipeName": "Bourbon Peach Lemonade Punch",
-                    "totalTimeInSeconds": 86400,
-                    "attributes": {
-                        "course": [
-                            "Cocktails",
-                            "Beverages"
-                        ],
-                        "holiday": [
-                            "Summer"
-                        ]
-                    },
-                    "flavors": {
-                        "piquant": 0,
-                        "meaty": 0,
-                        "bitter": 0.16666666666666666,
-                        "sweet": 0.5,
-                        "sour": 0.5,
-                        "salty": 0
-                    },
-                    "rating": 4
-                },
-                {
-                    "imageUrlsBySize": {
-                        "90": "http://lh3.googleusercontent.com/X3nHkvryXlsYj5sOan0iP8tqVYUw13x1L-NIxykepTxTP9GYP3pHZeKlHNksZNaOds_GuN36TmAHbJC9mqnbg4M=s90-c"
-                    },
-                    "sourceDisplayName": "Vinepair",
-                    "ingredients": [
-                        "tequila",
-                        "lime juice",
-                        "blackberries",
-                        "jalapeño",
-                        "agave nectar",
-                        "ice"
-                    ],
-                    "id": "Spicy-Blackberry-Margarita-_Recipe_-1306043",
-                    "smallImageUrls": [
-                        "http://lh3.googleusercontent.com/eR3uN1R0PTh1s9fZKyl-NreHmNmBtVnLX37-AU1vEtr1OspbfuBwnlUulVvAi3lr2krRfPfwJd7omyiAJ8fs=s90"
-                    ],
-                    "recipeName": "Spicy Blackberry Margarita [Recipe]",
-                    "totalTimeInSeconds": 600,
-                    "attributes": {
-                        "course": [
-                            "Cocktails",
-                            "Beverages"
-                        ],
-                        "holiday": [
-                            "Summer"
-                        ]
-                    },
-                    "flavors": {
-                        "piquant": 0.6666666666666666,
-                        "meaty": 0.16666666666666666,
-                        "bitter": 0.16666666666666666,
-                        "sweet": 0.3333333333333333,
-                        "sour": 0.8333333333333334,
-                        "salty": 0
-                    },
-                    "rating": 4
-                },
-                {
-                    "imageUrlsBySize": {
-                        "90": "https://lh3.googleusercontent.com/Udz3197HvbRLu1rNUAuJrHDPbPgTO7JJjwVuD1y3tT2muNiP2SqDKfORdaC_IoWOI7H3Iws7INrysUHgANrgSQ=s90-c"
-                    },
-                    "sourceDisplayName": "The Pioneer Woman",
-                    "ingredients": [
-                        "russet potatoes",
-                        "salt",
-                        "pepper",
-                        "large eggs",
-                        "non-stick cooking spray"
-                    ],
-                    "id": "Eggs-in-hash-brown-nests-352693",
-                    "smallImageUrls": [
-                        "https://lh3.googleusercontent.com/WilYoHldNYB9LyXALuhggpNkH77SfIBxlxGqgV-ojDLFSplIJx219iLjngdUVT1Dz24iCxr2TmJ8pN9FKmP--g=s90"
-                    ],
-                    "recipeName": "Eggs in Hash Brown Nests",
-                    "totalTimeInSeconds": 4800,
-                    "attributes": {
-                        "course": [
-                            "Breakfast and Brunch"
-                        ]
-                    },
-                    "flavors": null,
-                    "rating": 5
-                },
-                {
-                    "imageUrlsBySize": {
-                        "90": "https://lh3.googleusercontent.com/gYlipWjmvNN4xqhwcsHxTXT3xZhdSpxTavIlp5zZEMkEf-OuNXT8CUrVjNiL7iK5HcBicFBjoe8ogzG9Cn3k8Q=s90-c"
-                    },
-                    "sourceDisplayName": "Diverse Dinners",
-                    "ingredients": [
-                        "mangoes",
-                        "limes",
-                        "cold water",
-                        "sparkling apple juice"
-                    ],
-                    "id": "Virgin-Mango-Bellini-2185488",
-                    "smallImageUrls": [
-                        "https://lh3.googleusercontent.com/kZoydofCmE5cMiYiX6KzdDdlY3_y0nkvM3m-U3p9QkZh-WlseBmpH8AamAguq4is782F9h6TlXy-JM88d0gv1OU=s90"
-                    ],
-                    "recipeName": "Virgin Mango Bellini",
-                    "totalTimeInSeconds": 900,
-                    "attributes": {
-                        "course": [
-                            "Beverages"
-                        ]
-                    },
-                    "flavors": null,
-                    "rating": 4
-                },
-                {
-                    "imageUrlsBySize": {
-                        "90": "https://lh3.googleusercontent.com/roalORvLKCA7CvFuJi1bqsWwm-fmQj6UrWiGKHCmKvJg9FzrBAPc72REE5eA3oMOp0hZFCQJuCnLYeoDqdd2mQ=s90-c"
-                    },
-                    "sourceDisplayName": "Craving Home Cooked",
-                    "ingredients": [
-                        "all purpose flour",
-                        "baking powder",
-                        "salt",
-                        "sugar",
-                        "milk",
-                        "large egg",
-                        "butter"
-                    ],
-                    "id": "Classic-Pancakes-2464108",
-                    "smallImageUrls": [
-                        "https://lh3.googleusercontent.com/ba4MOPU1JTE6TJiTmYReV9JInzKY3PO3tUjyvjL06Wu0pgiEcjiChgn2nRdVpTs1BYWF-Ugx5JDFXS7r_9lRMA=s90"
-                    ],
-                    "recipeName": "Classic Pancakes",
-                    "totalTimeInSeconds": 2100,
-                    "attributes": {
-                        "course": [
-                            "Breakfast and Brunch"
-                        ]
-                    },
-                    "flavors": {
-                        "piquant": 0,
-                        "meaty": 0.16666666666666666,
-                        "bitter": 0.8333333333333334,
-                        "sweet": 0.3333333333333333,
-                        "sour": 0.16666666666666666,
-                        "salty": 0.8333333333333334
-                    },
-                    "rating": 4
-                },
-                {
-                    "imageUrlsBySize": {
-                        "90": "https://lh3.googleusercontent.com/ncNDTEjvYY_04TnBQNp_5kXK2Hf9V7vbL8z1iaKAywrFsFsYbuSoOr6PgXG1ewUWPlmKMroODJQNFvVV9XI1kqY=s90-c"
-                    },
-                    "sourceDisplayName": "Free Restaurant Recipes.Com",
-                    "ingredients": [
-                        "banana",
-                        "Orange",
-                        "apple",
-                        "fresh lemon juice",
-                        "water"
-                    ],
-                    "id": "Banana-Drink-for-Extreme-Rapid-Weight-Loss-1352743",
-                    "smallImageUrls": [
-                        "https://lh3.googleusercontent.com/PrDkKfAC2whY4C_CJRFAbHkIKTHvsoWNxIz-zYY4cMPrqMYlivDcZGvoIFz15XwW5un88hNFtB4o883U3hI1iQ=s90"
-                    ],
-                    "recipeName": "Banana Drink for Extreme Rapid Weight Loss",
-                    "totalTimeInSeconds": 900,
-                    "attributes": {
-                        "course": [
-                            "Beverages"
-                        ]
-                    },
-                    "flavors": {
-                        "sweet": 0.3333333333333333,
-                        "piquant": 0,
-                        "sour": 0.8333333333333334,
-                        "salty": 0,
-                        "meaty": 0,
-                        "bitter": 0.16666666666666666
-                    },
-                    "rating": 4
-                },
-                {
-                    "imageUrlsBySize": {
-                        "90": "http://lh5.ggpht.com/UwNbjIdEdFmkETuO0pjnBvhuPkgXVskHco3qA5lV1xInenr6jiXt3zljBt9-TptV_oi-xcG_TQuS3dltp-gURQ=s90-c"
-                    },
-                    "sourceDisplayName": "Witty in the City",
-                    "ingredients": [
-                        "chicken thighs",
-                        "dijon mustard",
-                        "maple syrup",
-                        "rice vinegar",
-                        "fresh rosemary",
-                        "salt",
-                        "pepper"
-                    ],
-                    "id": "Man-Pleasing-Chicken-608913",
-                    "smallImageUrls": [
-                        "http://lh4.ggpht.com/gInMhsmcQ708LZAw4ryeheSm6cOuvDtlzpHpbrE1RW01kYudZlWoRBcEiS-gj_2mj_8Xdl-dzgNY2CJxbHbT=s90"
-                    ],
-                    "recipeName": "Man-Pleasing Chicken",
-                    "totalTimeInSeconds": 3300,
-                    "attributes": {
-                        "course": [
-                            "Main Dishes"
-                        ]
-                    },
-                    "flavors": null,
-                    "rating": 3
-                },
-                {
-                    "imageUrlsBySize": {
-                        "90": "https://lh3.googleusercontent.com/warEEZwC4kG7GCGxDX98bmQRcJu4uQA0ARGPSLpsw9kJ_FEvs2y7bBCWiXl2Q7vDHL953sZcA9kXD39H5zPjpg=s90-c"
-                    },
-                    "sourceDisplayName": "Homesick Texan",
-                    "ingredients": [
-                        "unsalted butter",
-                        "brown sugar",
-                        "water",
-                        "vanilla extract",
-                        "cinnamon",
-                        "bananas",
-                        "pecans",
-                        "cooked bacon",
-                        "salt",
-                        "all purpose flour",
-                        "baking powder",
-                        "granulated sugar",
-                        "kosher salt",
-                        "buttermilk",
-                        "large egg",
-                        "vegetable oil",
-                        "banana",
-                        "butter"
-                    ],
-                    "id": "Banana_-Bacon_-And-Pecan-Pancakes-1519082",
-                    "smallImageUrls": [
-                        "https://lh3.googleusercontent.com/KG4_uacXGULTY-p5XxaGNb1Ac4dxIOfOB0vaNOh4oveiqOjrpikIJYPd-zdcQlfBvhG847omUHaRoVbhEMo7Wko=s90"
-                    ],
-                    "recipeName": "Banana, Bacon, And Pecan Pancakes",
-                    "totalTimeInSeconds": 2700,
-                    "attributes": {
-                        "course": [
-                            "Breakfast and Brunch"
-                        ]
-                    },
-                    "flavors": {
-                        "piquant": 0,
-                        "meaty": 0.3333333333333333,
-                        "bitter": 0.5,
-                        "sweet": 0.6666666666666666,
-                        "sour": 0.16666666666666666,
-                        "salty": 0.6666666666666666
-                    },
-                    "rating": 4
-                },
-                {
-                    "imageUrlsBySize": {
-                        "90": "https://lh3.googleusercontent.com/D6DhEzbseKENOiI6aslvMa5I77TVEXdpnQn1HsmZ9rYaRTJ9rGyjk8OU8_5A1x1q80zY6kKWnrri-bZDmVpR=s90-c"
-                    },
-                    "sourceDisplayName": "Inside NanaBread's Head",
-                    "ingredients": [
-                        "boneless, skinless chicken breasts",
-                        "buttermilk",
-                        "season salt",
-                        "ground cayenne pepper",
-                        "all purpose flour",
-                        "ground black pepper"
-                    ],
-                    "id": "Winner_-WinnerChicken-Dinner_-2434827",
-                    "smallImageUrls": [
-                        "https://lh3.googleusercontent.com/DDWReLCawJpJdj2TgzzgefYPqRUuN5rUI1cD28iqW4cNxfXtb88pVKGQIsnTn7iy6WtVILV23Hy2MCFElQlvdw=s90"
-                    ],
-                    "recipeName": "Winner, Winner…Chicken Dinner!",
-                    "totalTimeInSeconds": 4200,
-                    "attributes": {
-                        "course": [
-                            "Main Dishes"
-                        ]
-                    },
-                    "flavors": {
-                        "piquant": 0.8333333333333334,
-                        "meaty": 0.3333333333333333,
-                        "bitter": 0.16666666666666666,
-                        "sweet": 0.16666666666666666,
-                        "sour": 0.16666666666666666,
-                        "salty": 0.16666666666666666
-                    },
-                    "rating": 4
-                },
-                {
-                    "imageUrlsBySize": {
-                        "90": "http://lh3.googleusercontent.com/SSDG5nhUYDlwYpXXpfMZnr8KPR394pG3a0VNAFELaXDjtP2yzdmJufmmbUbTCVl_y5-TjNDWuKjub3-0N9oeU5I=s90-c"
-                    },
-                    "sourceDisplayName": "Buttoni's Low Carb Recipes",
-                    "ingredients": [
-                        "oil",
-                        "bacon",
-                        "breakfast sausage",
-                        "green onions",
-                        "large eggs",
-                        "jack cheese"
-                    ],
-                    "id": "Breakfast-Sticks-1096708",
-                    "smallImageUrls": [
-                        "http://lh3.googleusercontent.com/44wSgB65JiPftLMaMxt9r5A97pO6otyEZa0tyCwwDw5NoQLP2fh4lziF_j1KUH1Y7Bvr_O-gu4wKYZoYGYBd=s90"
-                    ],
-                    "recipeName": "Breakfast Sticks",
-                    "totalTimeInSeconds": 2100,
-                    "attributes": {
-                        "course": [
-                            "Breakfast and Brunch"
-                        ]
-                    },
-                    "flavors": {
-                        "piquant": 0,
-                        "meaty": 0.8333333333333334,
-                        "bitter": 0.5,
-                        "sweet": 0.16666666666666666,
-                        "sour": 0.16666666666666666,
-                        "salty": 0.6666666666666666
-                    },
-                    "rating": 4
-                }
-            ],
-            "facetCounts": {},
-            "totalMatchCount": 1500903,
-            "attribution": {
-                "html": "Recipe search powered by <a href='http://www.yummly.co/recipes'><img alt='Yummly' src='https://static.yummly.co/api-logo.png'/></a>",
-                "url": "http://www.yummly.co/recipes/",
-                "text": "Recipe search powered by Yummly",
-                "logo": "https://static.yummly.co/api-logo.png"
-            }
-        }
-    ]
+  "users": [
+    {
+      "name": "r",
+      "email": "r@r.com",
+      "password": "r",
+      "id": 1
+    },
+    {
+      "name": "f",
+      "email": "f@f.com",
+      "password": "f",
+      "id": 2
+    },
+    {
+      "name": "register works",
+      "email": "regwork@yay.com",
+      "password": "reg",
+      "id": 3
+    }
+  ],
+  "userRecipes": [
+    {
+      "recipeId": 6,
+      "userId": 1,
+      "comment": "",
+      "id": 1
+    }
+  ],
+  "recipes": [
+    {
+      "userId": 1,
+      "recipeName": "Simple Meatloaf With Optional Topping",
+      "recipeId": "Simple-Meatloaf-With-Optional-Topping-2216793",
+      "recipeUrl": "",
+      "recipeIngred": "",
+      "recipePro": "",
+      "recipeCarb": "",
+      "recipeFat": "",
+      "id": 6,
+      "recipeComment": "test"
+    },
+    {
+      "recipeName": "Chicken Stew With Rhodes Dumplings",
+      "recipeId": "Chicken-Stew-With-Rhodes-Dumplings-2283291",
+      "recipeUrl": "",
+      "recipeIngred": "",
+      "recipePro": "",
+      "recipeCarb": "",
+      "recipeFat": "",
+      "id": 7
+    }
+  ]
 }

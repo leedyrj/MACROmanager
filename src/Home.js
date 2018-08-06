@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Container, Box } from 'bloomer'
 import Navigation from "./Nav/Navbar";
 import HomeForm from "./HomeForm"
+import MyRecipes from "./MyRecipes"
 import SearchResults from "./SearchResults"
 import APIController from ".//APIController"
 import "./CSS/index.css"
@@ -39,8 +40,10 @@ export default class Home extends Component {
                 Meal: ""
             }
             ,
-            ShowForm: true,
-            recipes: []
+            HomeState: "Form",
+            recipes: [],
+            MyRecipes: [],
+            // Modal: false
         }
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
         this.handleSelect = this.handleSelect.bind(this)
@@ -140,7 +143,7 @@ export default class Home extends Component {
         apiCall = apiString
         APIController.getRecipes(apiCall).then((recipes) => {
             this.setState({
-                ShowForm: false,
+                HomeState: "RecipeList",
                 recipes: recipes
             })
         })
@@ -149,9 +152,29 @@ export default class Home extends Component {
     showForm = (e) => {
         e.preventDefault()
         this.setState({
-            ShowForm: true
+            HomeState: "Form"
         })
     }
+
+    showMyRecipes = (e) => {
+        e.preventDefault()
+        APIController.getData("recipes")
+            .then((myRecipes) => {
+                this.setState({
+                    MyRecipes: myRecipes
+                })
+                console.log(this.state.MyRecipes)
+            })
+        this.setState({
+            HomeState: "MyReicpes"
+        })
+    }
+
+    // removeModal = () => {
+    //     this.setState({
+    //         modal: false
+    //     })
+    // }
 
     // testForm = (e) => {
     //     e.preventDefault()
@@ -174,10 +197,13 @@ export default class Home extends Component {
     // }
 
     render() {
-        if (this.state.ShowForm) {
+        if (this.state.HomeState === "Form") {
             return (
                 <React.Fragment>
-                    <Navigation />
+                    <Navigation
+                        showMyRecipes={this.showMyRecipes}
+                        showForm={this.showForm}
+                    />
                     <Container>
                         <Box id="main-box">
                             <HomeForm
@@ -191,17 +217,41 @@ export default class Home extends Component {
                     </Container>
                 </React.Fragment>
             )
-        } else {
+        } else if (this.state.HomeState === "RecipeList") {
             return (
                 <React.Fragment>
-                    <Navigation />
+                    <Navigation
+                        showMyRecipes={this.showMyRecipes}
+                        showForm={this.showForm}
+                    />
                     <Container>
                         <Box id="main-box">
                             <SearchResults
+                                // handleFieldChange={this.handleFieldChange}
                                 showForm={this.showForm}
-                                recipes={this.state.recipes} />
+                                recipes={this.state.recipes}
+                                removeModal={this.removeModal}
+                                Modal={this.state.Modal} />
                         </Box>
                     </Container>
+                </React.Fragment>
+            )
+        } else if (this.state.HomeState === "MyReicpes") {
+            return (
+                <React.Fragment>
+                    <Navigation
+                        showMyRecipes={this.showMyRecipes}
+                        showForm={this.showForm}
+                    />
+                    <Container>
+                        <Box>
+                            <MyRecipes
+                                MyRecipes={this.state.MyRecipes}
+                                removeModal={this.removeModal}
+                                handleFieldChange={this.handleFieldChange} />
+                        </Box>
+                    </Container>
+
                 </React.Fragment>
             )
         }

@@ -3,17 +3,15 @@ import { Container, Box, Button, Image } from 'bloomer'
 import RecipeModal from "./RecipeModal"
 import APIController from "./APIController"
 
-export default class SearchResults extends Component {
+export default class MyRecipes extends Component {
 
     state = {
         modal: false,
-        recipeId: {},
-        ingredientLines: [""],
-        modalType: "search"
+        modalType: "myrecipes"
     }
 
     recipeView = (recipe) => {
-        APIController.getOneRecipe(recipe.id).then((recipeId) => {
+        APIController.getOneRecipe(recipe).then((recipeId) => {
             this.setState({
                 recipeId: recipeId,
                 ingredientLines: [""],
@@ -28,35 +26,27 @@ export default class SearchResults extends Component {
         })
     }
 
+
     render() {
         return (
             <React.Fragment>
-                <Button onClick={this.props.showForm}>
-                    New Search
-                </Button>
-                <Container id="results-container">
-                    {this.props.recipes.matches.map(recipe => {
+                <Container>
+                    {this.props.MyRecipes.map(recipe => {
                         return (
-                            <Box
-                                className="results-box"
-                                onClick={() => this.recipeView(recipe)}>
-                                <Image isSize="128x128" src={recipe.smallImageUrls} />
+                            <Box onClick={() => this.recipeView(recipe.recipeId)}>
                                 {recipe.recipeName}
-                                <ul>
-                                    <li>{recipe.ingredients}</li>
-                                </ul>
                             </Box>
                         )
-                    }
-                    )}
+
+                    })}
                 </Container>
                 {this.state.modal ? (
                     <RecipeModal
                         removeModal={this.removeModal}
                         recipeId={this.state.recipeId}
                         isActive={this.isActive}
-                        modalType={this.state.modalType}
-                        handleFieldChange={this.props.handleFieldChange}
+                        MyRecipes={this.props.MyRecipes}
+                    // handleFieldChange={this.props.handleFieldChange}
                     // ingredientLines={this.state.ingredientLines}
                     />
                 ) : (<p></p>)}
