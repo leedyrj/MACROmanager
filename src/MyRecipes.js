@@ -45,6 +45,8 @@ export default class MyRecipes extends Component {
                         removeModal={this.removeModal}
                         recipeId={this.state.recipeId}
                         isActive={this.isActive}
+                        MyRecipes={this.props.MyRecipes}
+                    // handleFieldChange={this.props.handleFieldChange}
                     // ingredientLines={this.state.ingredientLines}
                     />
                 ) : (<p></p>)}

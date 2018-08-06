@@ -227,6 +227,7 @@ export default class Home extends Component {
                     <Container>
                         <Box id="main-box">
                             <SearchResults
+                                // handleFieldChange={this.handleFieldChange}
                                 showForm={this.showForm}
                                 recipes={this.state.recipes}
                                 removeModal={this.removeModal}
@@ -246,7 +247,8 @@ export default class Home extends Component {
                         <Box>
                             <MyRecipes
                                 MyRecipes={this.state.MyRecipes}
-                                removeModal={this.removeModal} />
+                                removeModal={this.removeModal}
+                                handleFieldChange={this.handleFieldChange} />
                         </Box>
                     </Container>
 

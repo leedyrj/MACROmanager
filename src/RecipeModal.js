@@ -6,7 +6,7 @@ import Comment from "./Comment"
 export default class RecipeModal extends Component {
     state = {
         ingredientLines: [],
-        commentForm: false
+        commentForm: false,
     }
 
     componentDidMount() {
@@ -19,7 +19,6 @@ export default class RecipeModal extends Component {
         let body = {
             "recipeName": this.props.recipeId.name,
             "recipeId": this.props.recipeId.id,
-            "recipeComment": "",
             "recipeUrl": "",
             "recipeIngred": "",
             "recipePro": "",
@@ -31,6 +30,8 @@ export default class RecipeModal extends Component {
                 alert("Successfully added to My Recipes")
             })
     }
+
+
 
     showCommentForm = () => {
         this.setState({
@@ -53,12 +54,11 @@ export default class RecipeModal extends Component {
                         </ModalCardHeader>
                         <ModalCardBody>
                             {this.props.recipeId.nutritionEstimates.map(things => {
-                                {/* console.log(things) */ }
-                                for (let stuff in things) {
-                                    {/* console.log(things[stuff]) */ }
+                                { console.log(things) }
+                                if (things.attribute === "FAT") {
+                                    return things.value
                                 }
                             })}
-                            {console.log(this.props.recipeId.ingredientLines)}
                             <ul>
                                 {this.props.recipeId.ingredientLines.map(ingredient => {
                                     return (
@@ -73,9 +73,11 @@ export default class RecipeModal extends Component {
                                     isColor='success'
                                     onClick={this.saveRecipe}>Save for Later</Button>
                             ) : (<Comment
-                                handleFieldChange={this.props.handleFieldChange}
+                                // handleFieldChange={this.props.handleFieldChange}
                                 showCommentForm={this.showCommentForm}
                                 commentForm={this.state.commentForm}
+                                MyRecipes={this.props.MyRecipes}
+                                recipeId={this.props.recipeId}
                             />)}
 
                         </ModalCardFooter>
