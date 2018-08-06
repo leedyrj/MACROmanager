@@ -16,10 +16,15 @@ export default class RecipeModal extends Component {
     }
 
     saveRecipe = () => {
+        let source = this.props.recipeId.source.map(source => {
+            return (source.sourceSiteUrl)
+        })
+        let currentUser = this.props.currentUserId
         let body = {
+            "userId": currentUser,
             "recipeName": this.props.recipeId.name,
             "recipeId": this.props.recipeId.id,
-            "recipeUrl": "",
+            "recipeUrl": source,
             "recipeIngred": "",
             "recipePro": "",
             "recipeCarb": "",
@@ -53,12 +58,6 @@ export default class RecipeModal extends Component {
                             />
                         </ModalCardHeader>
                         <ModalCardBody>
-                            {this.props.recipeId.nutritionEstimates.map(things => {
-                                { console.log(things) }
-                                if (things.attribute === "FAT") {
-                                    return things.value
-                                }
-                            })}
                             <ul>
                                 {this.props.recipeId.ingredientLines.map(ingredient => {
                                     return (
@@ -66,6 +65,33 @@ export default class RecipeModal extends Component {
                                     )
                                 })}
                             </ul>
+                            <div>
+                                <p>Fat:</p>
+                                {this.props.recipeId.nutritionEstimates.map(nutrition => {
+                                    if (nutrition.attribute === "FAT") {
+                                        return nutrition.value
+                                    }
+                                })}
+                                <p>g</p>
+                            </div>
+                            <div>
+                                <p>Carbs:</p>
+                                {this.props.recipeId.nutritionEstimates.map(nutrition => {
+                                    if (nutrition.attribute === "CHOCDF") {
+                                        return nutrition.value
+                                    }
+                                })}
+                                <p>g</p>
+                            </div>
+                            <div>
+                                <p>Protien:</p>
+                                {this.props.recipeId.nutritionEstimates.map(nutrition => {
+                                    if (nutrition.attribute === "PROCNT") {
+                                        return nutrition.value
+                                    }
+                                })}
+                                <p>g</p>
+                            </div>
                         </ModalCardBody>
                         <ModalCardFooter>
                             {this.props.modalType === "search" ? (

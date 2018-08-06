@@ -37,12 +37,13 @@ export default class Home extends Component {
                 Sulfate: false,
                 Wheat: false,
                 Cuisine: "",
-                Meal: ""
+                Meal: "",
             }
             ,
             HomeState: "Form",
             recipes: [],
             MyRecipes: [],
+            currentUserId: ""
             // Modal: false
         }
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
@@ -170,6 +171,20 @@ export default class Home extends Component {
         })
     }
 
+    componentDidMount = () => {
+        let currentUserId
+        let sessionUser = JSON.parse(sessionStorage.getItem("credentials"))
+        let localUser = JSON.parse(localStorage.getItem("credentials"))
+        if (sessionUser !== null) {
+            currentUserId = sessionUser.userId
+        } else {
+            currentUserId = localUser.userId
+        }
+        this.setState({
+            currentUserId: currentUserId
+        })
+    }
+
     // removeModal = () => {
     //     this.setState({
     //         modal: false
@@ -231,7 +246,8 @@ export default class Home extends Component {
                                 showForm={this.showForm}
                                 recipes={this.state.recipes}
                                 removeModal={this.removeModal}
-                                Modal={this.state.Modal} />
+                                Modal={this.state.Modal}
+                                currentUserId={this.state.currentUserId} />
                         </Box>
                     </Container>
                 </React.Fragment>
