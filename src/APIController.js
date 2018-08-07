@@ -16,6 +16,7 @@ export default class APIController {
     };
 
     static getRecipes = (apiString) => {
+        console.log("in controller", `http://api.yummly.com/v1/api/recipes?_app_id=5b6699eb&_app_key=d4778728e4efa474d08a7676801d6fa2&d${apiString}`)
         return fetch(`http://api.yummly.com/v1/api/recipes?_app_id=5b6699eb&_app_key=d4778728e4efa474d08a7676801d6fa2&d${apiString}`).then(e => e.json())
     }
 

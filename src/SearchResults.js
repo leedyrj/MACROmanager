@@ -57,6 +57,7 @@ export default class SearchResults extends Component {
                         isActive={this.isActive}
                         modalType={this.state.modalType}
                         handleFieldChange={this.props.handleFieldChange}
+                        currentUserId={this.props.currentUserId}
                     // ingredientLines={this.state.ingredientLines}
                     />
                 ) : (<p></p>)}
