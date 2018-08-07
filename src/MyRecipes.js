@@ -7,17 +7,35 @@ export default class MyRecipes extends Component {
 
     state = {
         modal: false,
-        modalType: "myrecipes"
+        modalType: "myrecipes",
+        modalRecipe: {},
+        MyRecipes: []
     }
 
-    recipeView = (recipe) => {
-        APIController.getOneRecipe(recipe).then((recipeId) => {
-            this.setState({
-                recipeId: recipeId,
-                ingredientLines: [""],
-                modal: true
+    componentDidMount() {
+        APIController.getData("recipes")
+            .then((myRecipes) => {
+                this.setState({
+                    MyRecipes: myRecipes
+                })
+                console.log(this.state.MyRecipes)
             })
+    }
+
+    recipeView = (recipeId) => {
+        const individualRecipe = this.state.MyRecipes.find(recipe => recipe.id === recipeId);
+        console.log(individualRecipe)
+        this.setState({
+            modalRecipe: individualRecipe,
+            // modal: true
         })
+        // APIController.getOneRecipe(individualRecipe.recipeId).then((recipeCard) => {
+        //     this.setState({
+        //         recipeId: recipeId,
+        //         ingredientLines: [""],
+        //         modal: true
+        //     })
+        // })
     }
 
     removeModal = () => {
@@ -31,9 +49,9 @@ export default class MyRecipes extends Component {
         return (
             <React.Fragment>
                 <Container>
-                    {this.props.MyRecipes.map(recipe => {
+                    {this.state.MyRecipes.map(recipe => {
                         return (
-                            <Box onClick={() => this.recipeView(recipe.recipeId)}>
+                            <Box onClick={() => this.recipeView(recipe.id)}>
                                 {recipe.recipeName}
                             </Box>
                         )
@@ -43,9 +61,8 @@ export default class MyRecipes extends Component {
                 {this.state.modal ? (
                     <RecipeModal
                         removeModal={this.removeModal}
-                        recipeId={this.state.recipeId}
+                        modalRecipe={this.state.modalRecipe}
                         isActive={this.isActive}
-                        MyRecipes={this.props.MyRecipes}
                     // handleFieldChange={this.props.handleFieldChange}
                     // ingredientLines={this.state.ingredientLines}
                     />

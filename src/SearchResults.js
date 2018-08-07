@@ -9,7 +9,8 @@ export default class SearchResults extends Component {
         modal: false,
         recipeId: {},
         ingredientLines: [""],
-        modalType: "search"
+        modalType: "search",
+        rating: 0
     }
 
     recipeView = (recipe) => {
@@ -58,6 +59,7 @@ export default class SearchResults extends Component {
                         modalType={this.state.modalType}
                         handleFieldChange={this.props.handleFieldChange}
                         currentUserId={this.props.currentUserId}
+                        MyRecipes={this.props.MyRecipes}
                     // ingredientLines={this.state.ingredientLines}
                     />
                 ) : (<p></p>)}

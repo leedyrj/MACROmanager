@@ -16,7 +16,6 @@ export default class APIController {
     };
 
     static getRecipes = (apiString) => {
-        console.log("in controller", `http://api.yummly.com/v1/api/recipes?_app_id=5b6699eb&_app_key=d4778728e4efa474d08a7676801d6fa2&d${apiString}`)
         return fetch(`http://api.yummly.com/v1/api/recipes?_app_id=5b6699eb&_app_key=d4778728e4efa474d08a7676801d6fa2&d${apiString}`).then(e => e.json())
     }
 
@@ -29,6 +28,16 @@ export default class APIController {
     };
 
     static addComment = (id, body) => {
+        return fetch(`http://localhost:5002/recipes/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        });
+    }
+
+    static addRating = (id, body) => {
         return fetch(`http://localhost:5002/recipes/${id}`, {
             method: "PATCH",
             headers: {

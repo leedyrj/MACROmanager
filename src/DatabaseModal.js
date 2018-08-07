@@ -25,9 +25,9 @@ export default class RecipeModal extends Component {
     }
 
     saveRecipe = () => {
-        let fat = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "FAT")
-        let carbs = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "CHOCDF")
-        let pro = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "PROCNT")
+        // let source = this.props.recipeId.source.map(source => {
+        //     return (source.sourceSiteUrl)
+        // })
         let currentUser = this.props.currentUserId
         let body = {
             "userId": currentUser,
@@ -35,9 +35,6 @@ export default class RecipeModal extends Component {
             "recipeId": this.props.recipeId.id,
             "recipeUrl": this.props.recipeId.source.sourceRecipeUrl,
             "recipeIngred": this.props.recipeId.ingredientLines,
-            "recipePro": pro.value,
-            "recipeCarbs": carbs.value,
-            "recipeFat": fat.value
         }
         APIController.saveRecipe("recipes", body)
             .then(() => {
