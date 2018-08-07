@@ -26,16 +26,16 @@ export default class Home extends Component {
                 FatMax: "",
                 FoodType: "",
                 IngredType: "",
-                Dairy: false,
-                Egg: false,
-                Gluten: false,
-                Peanut: false,
-                Treenut: false,
-                Seafood: false,
-                Sesame: false,
-                Soy: false,
-                Sulfate: false,
-                Wheat: false,
+                // Dairy: false,
+                // Egg: false,
+                // Gluten: false,
+                // Peanut: false,
+                // Treenut: false,
+                // Seafood: false,
+                // Sesame: false,
+                // Soy: false,
+                // Sulfate: false,
+                // Wheat: false,
                 Cuisine: "",
                 Meal: "",
             }
@@ -87,10 +87,11 @@ export default class Home extends Component {
 
     submitForm = (e, apiCall) => {
         e.preventDefault()
-        let apiString
+        let apiString = ""
+        console.log("on initialize", apiString)
         let ingredArray = this.state.FormInfo.IngredType.split(", ")
         if (this.state.FormInfo.FoodType === "") {
-            apiString += "&q=null"
+            apiString += "&q="
         } else {
             apiString += "&q=" + this.state.FormInfo.FoodType
         }
@@ -141,7 +142,9 @@ export default class Home extends Component {
         } else {
             apiString + "&allowedCourse[]=course^course-" + this.state.FormInfo.Meal
         }
+        console.log("apistring", apiString)
         apiCall = apiString
+        console.log("end of call", apiCall)
         APIController.getRecipes(apiCall).then((recipes) => {
             this.setState({
                 HomeState: "RecipeList",
@@ -153,7 +156,20 @@ export default class Home extends Component {
     showForm = (e) => {
         e.preventDefault()
         this.setState({
-            HomeState: "Form"
+            HomeState: "Form",
+            FormInfo: {
+                ProMin: "",
+                ProMax: "",
+                CarbMin: "",
+                CarbMax: "",
+                FatMin: "",
+                FatMax: "",
+                FoodType: "",
+                IngredType: "",
+                Cuisine: "",
+                Meal: "",
+            }
+
         })
     }
 
@@ -247,7 +263,8 @@ export default class Home extends Component {
                                 recipes={this.state.recipes}
                                 removeModal={this.removeModal}
                                 Modal={this.state.Modal}
-                                currentUserId={this.state.currentUserId} />
+                                currentUserId={this.state.currentUserId}
+                            />
                         </Box>
                     </Container>
                 </React.Fragment>

@@ -1,66 +1,97 @@
 {
-    "users": [
-        {
-            "name": "r",
-            "email": "r@r.com",
-            "password": "r",
-            "id": 1
-        },
-        {
-            "name": "f",
-            "email": "f@f.com",
-            "password": "f",
-            "id": 2
-        },
-        {
-            "name": "register works",
-            "email": "regwork@yay.com",
-            "password": "reg",
-            "id": 3
-        }
-    ],
-    "userRecipes": [
-        {
-            "recipeId": 6,
-            "userId": 1,
-            "comment": "",
-            "id": 1
-        }
-    ],
-    "recipes": [
-        {
-            "userId": 1,
-            "recipeName": "Simple Meatloaf With Optional Topping",
-            "recipeId": "Simple-Meatloaf-With-Optional-Topping-2216793",
-            "recipeUrl": "",
-            "recipeIngred": "",
-            "recipePro": "",
-            "recipeCarb": "",
-            "recipeFat": "",
-            "id": 6,
-            "recipeComment": "test"
-        },
-        {
-            "userId": 1,
-            "recipeName": "Chicken Stew With Rhodes Dumplings",
-            "recipeId": "Chicken-Stew-With-Rhodes-Dumplings-2283291",
-            "recipeUrl": "",
-            "recipeIngred": "",
-            "recipePro": "",
-            "recipeCarb": "",
-            "recipeFat": "",
-            "id": 7
-        },
-        {
-            "userId": 1,
-            "recipeName": "Bubble Pizza",
-            "recipeId": "Bubble-Pizza-2082798",
-            "recipeUrl": "",
-            "recipeIngred": "",
-            "recipePro": "",
-            "recipeCarb": "",
-            "recipeFat": "",
-            "id": 8
-        }
-    ]
+  "users": [
+    {
+      "name": "r",
+      "email": "r@r.com",
+      "password": "r",
+      "id": 1
+    },
+    {
+      "name": "f",
+      "email": "f@f.com",
+      "password": "f",
+      "id": 2
+    },
+    {
+      "name": "register works",
+      "email": "regwork@yay.com",
+      "password": "reg",
+      "id": 3
+    }
+  ],
+  "userRecipes": [
+    {
+      "recipeId": 6,
+      "userId": 1,
+      "comment": "",
+      "id": 1
+    }
+  ],
+  "recipes": [
+    {
+      "userId": 1,
+      "recipeName": "Simple Meatloaf With Optional Topping",
+      "recipeId": "Simple-Meatloaf-With-Optional-Topping-2216793",
+      "recipeUrl": "",
+      "recipeIngred": "",
+      "recipePro": "",
+      "recipeCarb": "",
+      "recipeFat": "",
+      "id": 6,
+      "recipeComment": "add comment"
+    },
+    {
+      "recipeName": "Chicken Stew With Rhodes Dumplings",
+      "recipeId": "Chicken-Stew-With-Rhodes-Dumplings-2283291",
+      "recipeUrl": "",
+      "recipeIngred": "",
+      "recipePro": "",
+      "recipeCarb": "",
+      "recipeFat": "",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "recipeName": "Bubble Pizza",
+      "recipeId": "Bubble-Pizza-2082798",
+      "recipeUrl": "",
+      "recipeIngred": "",
+      "recipePro": "",
+      "recipeCarb": "",
+      "recipeFat": "",
+      "id": 8,
+      "recipeComment": "a cool comment"
+    },
+    {
+      "userId": 1,
+      "recipeName": "Man-Pleasing Chicken",
+      "recipeId": "Man-Pleasing-Chicken-608913",
+      "recipeUrl": "http://www.wittyinthecity.com/2011/08/man-pleasing-chicken/",
+      "recipeIngred": "",
+      "recipePro": "",
+      "recipeCarb": "",
+      "recipeFat": "",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "recipeName": "Thai Marinated Skirt Steak",
+      "recipeId": "Thai-Marinated-Skirt-Steak-2468563",
+      "recipeUrl": "https://blog.bulletproof.com/thai-skirt-steak-recipe-2g/",
+      "recipeIngred": [
+        "1 pound grass-fed skirt steak",
+        "2 tablespoons olive oil",
+        "1 Thai chili, thinly sliced (you can substitute serrano chile, or fresh or dried cayenne)",
+        "2 tablespoons avocado oil or grass-fed ghee",
+        "Zest of 2 lemons",
+        "1/2 cup parsley, chopped",
+        "salt to taste"
+      ],
+      "recipePro": "",
+      "recipeCarb": "",
+      "recipeFat": "",
+      "id": 10,
+      "recipeComment": "Does this add to the database???"
+    }
+  ]
 }
