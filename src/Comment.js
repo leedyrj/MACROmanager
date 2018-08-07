@@ -9,37 +9,31 @@ export default class Comment extends Component {
         comment: ""
     }
 
-    // handleFieldChange = (e) => {
-    //     const stateToChange = {}
-    //     stateToChange[e.target.id] = e.target.value
-    //     this.setState(stateToChange)
-    // }
+    handleFieldChange = (e) => {
+        const stateToChange = {}
+        stateToChange[e.target.id] = e.target.value
+        this.setState(stateToChange)
+    }
 
-    // addComment = (e) => {
-    //     e.preventDefault()
-    //     this.props.MyRecipes.map(recipe => {
-    //         if (recipe.recipeId === this.props.recipeId.id) {
-    //             console.log("match", recipe.id)
-    //             let id = recipe.id
-    //             let body = {
-    //                 recipeComment: this.props.comment
-    //             }
-    //             console.log("body", body)
-    //             APIController.addComment(id, body)
-    //                 .then(() => {
-    //                     alert("Added Comment!")
-    //                 }).then(() => {
+    addComment = (e) => {
+        e.preventDefault()
+        let id = this.props.modalRecipe.id
+        let body = {
+            recipeComment: this.props.comment
+        }
+        console.log("body", body)
+        APIController.addComment(id, body)
+            .then(() => {
+                alert("Added Comment!")
+            }).then(() => {
 
-    //                 })
-    //         }
-
-    //     });
-    // }
+            })
+    }
 
     render() {
         if (this.props.commentForm) {
             return (
-                <form onSubmit={this.props.addComment}>
+                <form onSubmit={this.addComment}>
                     <Input
                         type="text"
                         id="comment"

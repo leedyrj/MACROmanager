@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Container, Box, Button, Image } from 'bloomer'
-import RecipeModal from "./RecipeModal"
+import DatabaseModal from "./DatabaseModal"
 import APIController from "./APIController"
 
 export default class MyRecipes extends Component {
@@ -18,16 +18,16 @@ export default class MyRecipes extends Component {
                 this.setState({
                     MyRecipes: myRecipes
                 })
-                console.log(this.state.MyRecipes)
+                console.log("state: MyRecipes", this.state.MyRecipes)
             })
     }
 
     recipeView = (recipeId) => {
         const individualRecipe = this.state.MyRecipes.find(recipe => recipe.id === recipeId);
-        console.log(individualRecipe)
+        console.log("individual recipe", individualRecipe)
         this.setState({
             modalRecipe: individualRecipe,
-            // modal: true
+            modal: true
         })
         // APIController.getOneRecipe(individualRecipe.recipeId).then((recipeCard) => {
         //     this.setState({
@@ -59,7 +59,7 @@ export default class MyRecipes extends Component {
                     })}
                 </Container>
                 {this.state.modal ? (
-                    <RecipeModal
+                    <DatabaseModal
                         removeModal={this.removeModal}
                         modalRecipe={this.state.modalRecipe}
                         isActive={this.isActive}

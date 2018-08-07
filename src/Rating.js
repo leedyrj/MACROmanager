@@ -12,32 +12,36 @@ export default class Rating extends React.Component {
         };
     }
 
-    componentDidMount() {
-        this.props.MyRecipes.map(recipe => {
-            if (recipe.recipeId === this.props.recipeId.id && recipe.recipeRating) {
-                console.log(recipe.recipeId)
-                console.log(this.props.recipeId.id)
-                this.setState({
-                    rating: recipe.recipeRating
-                })
-            }
-        })
-    }
+    // componentDidMount() {
+    //     this.props.MyRecipes.map(recipe => {
+    //         if (recipe.recipeId === this.props.recipeId.id && recipe.recipeRating) {
+    //             console.log(recipe.recipeId)
+    //             console.log(this.props.recipeId.id)
+    //             this.setState({
+    //                 rating: recipe.recipeRating
+    //             })
+    //         }
+    //     })
+    // }
+
+    // onStarClick(nextValue, prevValue, name) {
+    //     this.setState({ rating: nextValue });
+    //     this.props.MyRecipes.map(recipe => {
+    //         if (recipe.recipeId === this.props.recipeId.id) {
+    //             let id = recipe.id
+    //             let body = {
+    //                 recipeRating: nextValue
+    //             }
+    //             APIController.addRating(id, body)
+    //                 .then(() => {
+    //                     alert("Added Rating!")
+    //                 })
+    //         }
+    //     });
+    // }
 
     onStarClick(nextValue, prevValue, name) {
         this.setState({ rating: nextValue });
-        this.props.MyRecipes.map(recipe => {
-            if (recipe.recipeId === this.props.recipeId.id) {
-                let id = recipe.id
-                let body = {
-                    recipeRating: nextValue
-                }
-                APIController.addRating(id, body)
-                    .then(() => {
-                        alert("Added Rating!")
-                    })
-            }
-        });
     }
 
     render() {

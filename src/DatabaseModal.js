@@ -4,7 +4,7 @@ import APIController from "./APIController"
 import Comment from "./Comment"
 import Rating from "./Rating"
 
-export default class RecipeModal extends Component {
+export default class DatabaseModal extends Component {
     state = {
         ingredientLines: [],
         commentForm: false,
@@ -19,32 +19,32 @@ export default class RecipeModal extends Component {
     }
 
     componentDidMount() {
+        console.log("modalRecipe", this.props.modalRecipe)
         this.setState({
-            ingredientLines: this.props.recipeId.ingredientLines
+            // ingredientLines: this.props.recipeId.ingredientLines
         })
     }
 
-    saveRecipe = () => {
-        // let source = this.props.recipeId.source.map(source => {
-        //     return (source.sourceSiteUrl)
-        // })
-        let currentUser = this.props.currentUserId
-        let body = {
-            "userId": currentUser,
-            "recipeName": this.props.recipeId.name,
-            "recipeId": this.props.recipeId.id,
-            "recipeUrl": this.props.recipeId.source.sourceRecipeUrl,
-            "recipeIngred": this.props.recipeId.ingredientLines,
-        }
-        APIController.saveRecipe("recipes", body)
-            .then(() => {
-                alert("Successfully added to My Recipes")
-            })
-    }
+    // saveRecipe = () => {
+    //     // let source = this.props.recipeId.source.map(source => {
+    //     //     return (source.sourceSiteUrl)
+    //     // })
+    //     let currentUser = this.props.currentUserId
+    //     let body = {
+    //         "userId": currentUser,
+    //         "recipeName": this.props.recipeId.name,
+    //         "recipeId": this.props.recipeId.id,
+    //         "recipeUrl": this.props.recipeId.source.sourceRecipeUrl,
+    //         "recipeIngred": this.props.recipeId.ingredientLines,
+    //     }
+    //     APIController.saveRecipe("recipes", body)
+    //         .then(() => {
+    //             alert("Successfully added to My Recipes")
+    //         })
+    // }
 
     addComment = (e) => {
         e.preventDefault()
-        console.log(this.props.modalRecipe)
         // this.props.MyRecipes.map(recipe => {
         //     if (recipe.recipeId === this.props.recipeId.id) {
         //         console.log("match", recipe.id)
@@ -91,18 +91,18 @@ export default class RecipeModal extends Component {
         return (
             <React.Fragment>
                 <Modal isActive>
-                    {console.log(this.props.recipeId)}
+                    {/* {console.log(this.props.modalRecipe)} */}
                     <ModalBackground />
                     <ModalCard>
                         <ModalCardHeader>
-                            <ModalCardTitle>{this.props.recipeId.name}</ModalCardTitle>
+                            <ModalCardTitle>{this.props.modalRecipe.recipeName}</ModalCardTitle>
                             <Delete
                                 onClick={this.props.removeModal}
                             />
                         </ModalCardHeader>
                         <ModalCardBody>
                             <ul>
-                                {this.props.recipeId.ingredientLines.map(ingredient => {
+                                {this.props.modalRecipe.recipeIngred.map(ingredient => {
                                     return (
                                         <li>{ingredient}</li>
                                     )
@@ -110,63 +110,42 @@ export default class RecipeModal extends Component {
                             </ul>
                             <div>
                                 <p>Fat:</p>
-                                {this.props.recipeId.nutritionEstimates.map(nutrition => {
-                                    if (nutrition.attribute === "FAT") {
-                                        return nutrition.value
-                                    }
-                                })}
+                                {this.props.modalRecipe.recipeFat}
                                 <p>g</p>
                             </div>
                             <div>
                                 <p>Carbs:</p>
-                                {this.props.recipeId.nutritionEstimates.map(nutrition => {
-                                    if (nutrition.attribute === "CHOCDF") {
-                                        return nutrition.value
-                                    }
-                                })}
+                                {this.props.modalRecipe.recipeCarbs}
                                 <p>g</p>
                             </div>
                             <div>
                                 <p>Protien:</p>
-                                {this.props.recipeId.nutritionEstimates.map(nutrition => {
-                                    if (nutrition.attribute === "PROCNT") {
-                                        return nutrition.value
-                                    }
-                                })}
+                                {this.props.modalRecipe.recipePro}
                                 <p>g</p>
                             </div>
                             <div>
-                                <a href={this.props.recipeId.source.sourceRecipeUrl}
+                                <a href={this.props.modalRecipe.recipeUrl}
                                     target="_blank">
                                     View full recipe here!
                             </a>
                             </div>
                             <div>
-                                {this.props.MyRecipes.map(recipe => {
-                                    if (recipe.recipeId === this.props.recipeId.id && recipe.recipeComment) {
-                                        return "Comment: " + recipe.recipeComment
-                                    }
-                                })}
+                                {this.props.modalRecipe.recipeComment ? ("Comment: " + this.props.modalRecipe.recipeComment)
+                                    : (<p></p>)}
                             </div>
                         </ModalCardBody>
                         <ModalCardFooter>
-                            {this.props.modalType === "search" ? (
-                                <Button
-                                    isColor='success'
-                                    onClick={this.saveRecipe}>Save for Later</Button>
-                            ) : (<Comment
+                            <Comment
                                 handleFieldChange={this.handleFieldChange}
                                 comment={this.state.comment}
                                 showCommentForm={this.showCommentForm}
                                 commentForm={this.state.commentForm}
-                                MyRecipes={this.props.MyRecipes}
-                                recipeId={this.props.recipeId}
+                                modalRecipe={this.props.modalRecipe}
                                 addComment={this.addComment}
-                            />)}
+                            />
                             <Rating
                                 recipe={this.props.recipe}
-                                MyRecipes={this.props.MyRecipes}
-                                recipeId={this.props.recipeId}
+                                modalRecipe={this.props.modalRecipe}
                             />
 
                         </ModalCardFooter>
