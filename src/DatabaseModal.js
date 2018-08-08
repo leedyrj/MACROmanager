@@ -9,7 +9,7 @@ export default class DatabaseModal extends Component {
         ingredientLines: [],
         commentForm: false,
         comment: "",
-        rating: 0
+        rating: this.props.modalRecipe.recipeRating
     }
 
     handleFieldChange = (e) => {
@@ -84,7 +84,8 @@ export default class DatabaseModal extends Component {
                 alert("Added Comment!")
             }).then(() => {
                 this.setState({
-                    commentForm: false
+                    commentForm: false,
+                    // comment: this.state.comment
                 })
             })
     }
@@ -150,7 +151,7 @@ export default class DatabaseModal extends Component {
                             </a>
                             </div>
                             <div>
-                                {this.props.modalRecipe.recipeComment ? ("Comment: " + this.props.modalRecipe.recipeComment)
+                                {this.props.modalRecipe.recipeComment ? ("Comment: " + this.state.comment)
                                     : (<p></p>)}
                             </div>
                         </ModalCardBody>

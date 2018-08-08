@@ -35,7 +35,6 @@ export default class Navigation extends Component {
                         <NavbarItem
                             href='#/'
                             onClick={this.props.showMyRecipes}>My Recipes</NavbarItem>
-                        <NavbarItem href='#/'>Dictionary</NavbarItem>
                     </NavbarStart>
                 </NavbarMenu>
             </Navbar>
