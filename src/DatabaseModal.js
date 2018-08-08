@@ -20,18 +20,19 @@ export default class DatabaseModal extends Component {
     }
 
     componentDidMount() {
-        this.setState({
-            comment: this.props.modalRecipe.recipeComment,
-            // rating: this.props.modalRecipe.recipeRating
-        })
-        return fetch(`http://localhost:5002/recipes/${4}`).then(a => a.json())
+        // this.setState({
+        //     comment: this.props.modalRecipe.recipeComment,
+        //     rating: this.props.modalRecipe.recipeRating
+        // })
+        return fetch(`http://localhost:5002/recipes/${this.props.modalRecipe.id}`).then(a => a.json())
             .then((recipe) => {
                 console.log("reciperating", recipe.recipeRating)
                 this.setState({
-                    rating: recipe.recipeRating
+                    rating: recipe.recipeRating,
+                    comment: recipe.recipeComment
                 })
             })
-        console.log(this.props.modalRecipe.recipeRating)
+        // console.log(this.props.modalRecipe.recipeRating)
     }
 
     // saveRecipe = () => {
@@ -86,15 +87,19 @@ export default class DatabaseModal extends Component {
         let body = {
             recipeComment: this.state.comment
         }
-        console.log("body", body)
         APIController.addComment(id, body)
             .then(() => {
                 alert("Added Comment!")
-            }).then(() => {
-                this.setState({
-                    commentForm: false,
-                    // comment: this.state.comment
-                })
+            })
+            .then(() => {
+                return fetch(`http://localhost:5002/recipes/${this.props.modalRecipe.id}`)
+                    .then(a => a.json())
+                    .then((recipe) => {
+                        this.setState({
+                            commentForm: false,
+                            comment: recipe.recipeComment
+                        })
+                    })
             })
     }
 
@@ -105,7 +110,7 @@ export default class DatabaseModal extends Component {
     }
 
     onStarClick = (nextValue, prevValue, name) => {
-        console.log("nextvalue", nextValue)
+        // console.log("nextvalue", nextValue)
         this.setState({ rating: nextValue });
         let id = this.props.modalRecipe.id
         let body = {
@@ -162,8 +167,7 @@ export default class DatabaseModal extends Component {
                             </a>
                             </div>
                             <div>
-                                {this.props.modalRecipe.recipeComment ? ("Comment: " + this.state.comment)
-                                    : (<p></p>)}
+                                {"My Notes: " + this.state.comment}
                             </div>
                         </ModalCardBody>
                         <ModalCardFooter>

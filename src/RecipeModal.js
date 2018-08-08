@@ -37,7 +37,8 @@ export default class RecipeModal extends Component {
             "recipeIngred": this.props.recipeId.ingredientLines,
             "recipePro": pro.value,
             "recipeCarbs": carbs.value,
-            "recipeFat": fat.value
+            "recipeFat": fat.value,
+            "recipeComment": ""
         }
         APIController.saveRecipe("recipes", body)
             .then(() => {

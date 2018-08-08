@@ -30,24 +30,25 @@
   "recipes": [
     {
       "userId": 1,
-      "recipeName": "Super Green Cleansing Smoothie",
-      "recipeId": "Super-Green-Cleansing-Smoothie-2391960",
-      "recipeUrl": "https://neuroticmommy.com/2016/12/29/super-green-cleansing-smoothie/",
+      "recipeName": "Winner, Winner…Chicken Dinner!",
+      "recipeId": "Winner_-WinnerChicken-Dinner_-2434827",
+      "recipeUrl": "https://insidenanabreadshead.com/2010/10/15/winner-winner%e2%80%a6chicken-dinner/",
       "recipeIngred": [
-        "3 cups Organic Girl Super Greens",
-        "2 bananas",
-        "3 tbsp chia seeds",
-        "1 cup chopped pineapples",
-        "1/2 cup almond milk",
-        "1/2 cup water",
-        "ice as desired"
+        "3 boneless, skinless chicken breasts",
+        "One 16 fluid oz. bottle of buttermilk (low fat is okay, if you prefer)",
+        "2 teaspoons of Morton Nature’s Season Salt (Lawry’s would also work)",
+        "½ teaspoon of ground cayenne pepper (optional, but very tasty)",
+        "3 cups of all-purpose flour",
+        "1 tablespoon of Morton Nature’s Season Salt (or Lawry’s)",
+        "½ teaspoon of ground black pepper",
+        "½ teaspoon of ground cayenne pepper (it’s optional again, but so tasty!)"
       ],
-      "recipePro": 3.6,
-      "recipeCarbs": 22.68,
-      "recipeFat": 3.85,
-      "id": 4,
-      "recipeComment": "comment",
-      "recipeRating": 5
+      "recipePro": 29,
+      "recipeCarbs": 74.83,
+      "recipeFat": 3.86,
+      "recipeComment": "A new comment",
+      "id": 1,
+      "recipeRating": 2
     },
     {
       "userId": 1,
@@ -66,7 +67,9 @@
       "recipePro": 49.16,
       "recipeCarbs": 12.8,
       "recipeFat": 45.79,
-      "id": 5
+      "recipeComment": "I love this!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "id": 2,
+      "recipeRating": 5
     }
   ]
 }
