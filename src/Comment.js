@@ -6,34 +6,16 @@ import MyRecipes from "./MyRecipes";
 export default class Comment extends Component {
 
     state = {
-        comment: ""
+        // comment: ""
     }
 
-    handleFieldChange = (e) => {
-        const stateToChange = {}
-        stateToChange[e.target.id] = e.target.value
-        this.setState(stateToChange)
-    }
 
-    addComment = (e) => {
-        e.preventDefault()
-        let id = this.props.modalRecipe.id
-        let body = {
-            recipeComment: this.props.comment
-        }
-        console.log("body", body)
-        APIController.addComment(id, body)
-            .then(() => {
-                alert("Added Comment!")
-            }).then(() => {
 
-            })
-    }
 
     render() {
         if (this.props.commentForm) {
             return (
-                <form onSubmit={this.addComment}>
+                <form onSubmit={this.props.addComment}>
                     <Input
                         type="text"
                         id="comment"

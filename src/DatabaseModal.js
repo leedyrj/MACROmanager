@@ -19,10 +19,11 @@ export default class DatabaseModal extends Component {
     }
 
     componentDidMount() {
-        console.log("modalRecipe", this.props.modalRecipe)
         this.setState({
-            // ingredientLines: this.props.recipeId.ingredientLines
+            rating: this.props.modalRecipe.recipeRating,
+            comment: this.props.modalRecipe.recipeComment
         })
+        console.log(this.props.modalRecipe.recipeRating)
     }
 
     // saveRecipe = () => {
@@ -43,27 +44,27 @@ export default class DatabaseModal extends Component {
     //         })
     // }
 
-    addComment = (e) => {
-        e.preventDefault()
-        // this.props.MyRecipes.map(recipe => {
-        //     if (recipe.recipeId === this.props.recipeId.id) {
-        //         console.log("match", recipe.id)
-        //         let id = recipe.id
-        //         let body = {
-        //             recipeComment: this.state.comment
-        //         }
-        //         console.log("body", body)
-        //         APIController.addComment(id, body)
-        //             .then(() => {
-        //                 alert("Added Comment!")
-        //             }).then(() => {
-        //                 this.setState({
-        //                     commentForm: false
-        //                 })
-        //             })
-        //     }
-        // });
-    }
+    // addComment = (e) => {
+    // e.preventDefault()
+    // this.props.MyRecipes.map(recipe => {
+    //     if (recipe.recipeId === this.props.recipeId.id) {
+    //         console.log("match", recipe.id)
+    //         let id = recipe.id
+    //         let body = {
+    //             recipeComment: this.state.comment
+    //         }
+    //         console.log("body", body)
+    //         APIController.addComment(id, body)
+    //             .then(() => {
+    //                 alert("Added Comment!")
+    //             }).then(() => {
+    //                 this.setState({
+    //                     commentForm: false
+    //                 })
+    //             })
+    //     }
+    // });
+    // }
 
     showCommentForm = () => {
         this.setState({
@@ -71,20 +72,39 @@ export default class DatabaseModal extends Component {
         })
     }
 
+    addComment = (e) => {
+        e.preventDefault()
+        let id = this.props.modalRecipe.id
+        let body = {
+            recipeComment: this.state.comment
+        }
+        console.log("body", body)
+        APIController.addComment(id, body)
+            .then(() => {
+                alert("Added Comment!")
+            }).then(() => {
+                this.setState({
+                    commentForm: false
+                })
+            })
+    }
+
+    handleFieldChange = (e) => {
+        const stateToChange = {}
+        stateToChange[e.target.id] = e.target.value
+        this.setState(stateToChange)
+    }
+
     onStarClick(nextValue, prevValue, name) {
         this.setState({ rating: nextValue });
-        this.props.MyRecipes.map(recipe => {
-            if (recipe.recipeId === this.props.recipeId.id) {
-                let id = recipe.id
-                let body = {
-                    recipeRating: nextValue
-                }
-                APIController.addRating(id, body)
-                    .then(() => {
-                        alert("Added Rating!")
-                    })
-            }
-        });
+        let id = this.props.modalRecipe.id
+        let body = {
+            recipeRating: nextValue
+        }
+        APIController.addRating(id, body)
+            .then(() => {
+                alert("Added Rating!")
+            })
     }
 
     render() {
@@ -146,6 +166,11 @@ export default class DatabaseModal extends Component {
                             <Rating
                                 recipe={this.props.recipe}
                                 modalRecipe={this.props.modalRecipe}
+                                onStarClick={this.onStarClick}
+                                rating={this.state.rating}
+                                comment={this.state.comment}
+                                addComment={this.addComment}
+                                handleFieldChange={this.handleFieldChange}
                             />
 
                         </ModalCardFooter>
