@@ -2,12 +2,14 @@ import React, { Component, Link } from "react"
 import { Modal, ModalBackground, ModalCard, ModalCardHeader, ModalCardTitle, Delete, ModalCardBody, ModalCardFooter, Button, Input, Box } from 'bloomer'
 import APIController from "./APIController"
 import Comment from "./Comment"
+import Rating from "./Rating"
 
 export default class RecipeModal extends Component {
     state = {
         ingredientLines: [],
         commentForm: false,
-        comment: ""
+        comment: "",
+        rating: 0
     }
 
     handleFieldChange = (e) => {
@@ -23,9 +25,9 @@ export default class RecipeModal extends Component {
     }
 
     saveRecipe = () => {
-        // let source = this.props.recipeId.source.map(source => {
-        //     return (source.sourceSiteUrl)
-        // })
+        let fat = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "FAT")
+        let carbs = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "CHOCDF")
+        let pro = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "PROCNT")
         let currentUser = this.props.currentUserId
         let body = {
             "userId": currentUser,
@@ -33,6 +35,9 @@ export default class RecipeModal extends Component {
             "recipeId": this.props.recipeId.id,
             "recipeUrl": this.props.recipeId.source.sourceRecipeUrl,
             "recipeIngred": this.props.recipeId.ingredientLines,
+            "recipePro": pro.value,
+            "recipeCarbs": carbs.value,
+            "recipeFat": fat.value
         }
         APIController.saveRecipe("recipes", body)
             .then(() => {
@@ -42,31 +47,47 @@ export default class RecipeModal extends Component {
 
     addComment = (e) => {
         e.preventDefault()
-        this.props.MyRecipes.map(recipe => {
-            if (recipe.recipeId === this.props.recipeId.id) {
-                console.log("match", recipe.id)
-                let id = recipe.id
-                let body = {
-                    recipeComment: this.state.comment
-                }
-                console.log("body", body)
-                APIController.addComment(id, body)
-                    .then(() => {
-                        alert("Added Comment!")
-                    }).then(() => {
-                        this.setState({
-                            commentForm: false
-                        })
-                    })
-            }
-
-        });
+        console.log(this.props.modalRecipe)
+        // this.props.MyRecipes.map(recipe => {
+        //     if (recipe.recipeId === this.props.recipeId.id) {
+        //         console.log("match", recipe.id)
+        //         let id = recipe.id
+        //         let body = {
+        //             recipeComment: this.state.comment
+        //         }
+        //         console.log("body", body)
+        //         APIController.addComment(id, body)
+        //             .then(() => {
+        //                 alert("Added Comment!")
+        //             }).then(() => {
+        //                 this.setState({
+        //                     commentForm: false
+        //                 })
+        //             })
+        //     }
+        // });
     }
 
     showCommentForm = () => {
         this.setState({
             commentForm: true
         })
+    }
+
+    onStarClick(nextValue, prevValue, name) {
+        this.setState({ rating: nextValue });
+        this.props.MyRecipes.map(recipe => {
+            if (recipe.recipeId === this.props.recipeId.id) {
+                let id = recipe.id
+                let body = {
+                    recipeRating: nextValue
+                }
+                APIController.addRating(id, body)
+                    .then(() => {
+                        alert("Added Rating!")
+                    })
+            }
+        });
     }
 
     render() {
@@ -136,16 +157,20 @@ export default class RecipeModal extends Component {
                                 <Button
                                     isColor='success'
                                     onClick={this.saveRecipe}>Save for Later</Button>
-                            ) : (
-                                    <Comment
-                                        handleFieldChange={this.handleFieldChange}
-                                        comment={this.state.comment}
-                                        showCommentForm={this.showCommentForm}
-                                        commentForm={this.state.commentForm}
-                                        MyRecipes={this.props.MyRecipes}
-                                        recipeId={this.props.recipeId}
-                                        addComment={this.addComment}
-                                    />)}
+                            ) : (<Comment
+                                handleFieldChange={this.handleFieldChange}
+                                comment={this.state.comment}
+                                showCommentForm={this.showCommentForm}
+                                commentForm={this.state.commentForm}
+                                MyRecipes={this.props.MyRecipes}
+                                recipeId={this.props.recipeId}
+                                addComment={this.addComment}
+                            />)}
+                            {/* <Rating
+                                recipe={this.props.recipe}
+                                MyRecipes={this.props.MyRecipes}
+                                recipeId={this.props.recipeId}
+                            /> */}
 
                         </ModalCardFooter>
                     </ModalCard>

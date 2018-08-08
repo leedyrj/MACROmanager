@@ -30,48 +30,24 @@
   "recipes": [
     {
       "userId": 1,
-      "recipeName": "Simple Meatloaf With Optional Topping",
-      "recipeId": "Simple-Meatloaf-With-Optional-Topping-2216793",
-      "recipeUrl": "",
-      "recipeIngred": "",
-      "recipePro": "",
-      "recipeCarb": "",
-      "recipeFat": "",
-      "id": 6,
-      "recipeComment": "add comment"
-    },
-    {
-      "recipeName": "Chicken Stew With Rhodes Dumplings",
-      "recipeId": "Chicken-Stew-With-Rhodes-Dumplings-2283291",
-      "recipeUrl": "",
-      "recipeIngred": "",
-      "recipePro": "",
-      "recipeCarb": "",
-      "recipeFat": "",
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "recipeName": "Bubble Pizza",
-      "recipeId": "Bubble-Pizza-2082798",
-      "recipeUrl": "",
-      "recipeIngred": "",
-      "recipePro": "",
-      "recipeCarb": "",
-      "recipeFat": "",
-      "id": 8,
-      "recipeComment": "a cool comment"
-    },
-    {
-      "userId": 1,
-      "recipeName": "Man-Pleasing Chicken",
-      "recipeId": "Man-Pleasing-Chicken-608913",
-      "recipeUrl": "http://www.wittyinthecity.com/2011/08/man-pleasing-chicken/",
-      "recipeIngred": "",
-      "recipePro": "",
-      "recipeCarb": "",
-      "recipeFat": "",
-      "id": 9
+      "recipeName": "Super Green Cleansing Smoothie",
+      "recipeId": "Super-Green-Cleansing-Smoothie-2391960",
+      "recipeUrl": "https://neuroticmommy.com/2016/12/29/super-green-cleansing-smoothie/",
+      "recipeIngred": [
+        "3 cups Organic Girl Super Greens",
+        "2 bananas",
+        "3 tbsp chia seeds",
+        "1 cup chopped pineapples",
+        "1/2 cup almond milk",
+        "1/2 cup water",
+        "ice as desired"
+      ],
+      "recipePro": 3.6,
+      "recipeCarbs": 22.68,
+      "recipeFat": 3.85,
+      "id": 4,
+      "recipeComment": "comment",
+      "recipeRating": 5
     },
     {
       "userId": 1,
@@ -87,11 +63,10 @@
         "1/2 cup parsley, chopped",
         "salt to taste"
       ],
-      "recipePro": "",
-      "recipeCarb": "",
-      "recipeFat": "",
-      "id": 10,
-      "recipeComment": "Does this add to the database???"
+      "recipePro": 49.16,
+      "recipeCarbs": 12.8,
+      "recipeFat": 45.79,
+      "id": 5
     }
   ]
 }

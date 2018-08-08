@@ -6,35 +6,11 @@ import MyRecipes from "./MyRecipes";
 export default class Comment extends Component {
 
     state = {
-        comment: ""
+        // comment: ""
     }
 
-    // handleFieldChange = (e) => {
-    //     const stateToChange = {}
-    //     stateToChange[e.target.id] = e.target.value
-    //     this.setState(stateToChange)
-    // }
 
-    // addComment = (e) => {
-    //     e.preventDefault()
-    //     this.props.MyRecipes.map(recipe => {
-    //         if (recipe.recipeId === this.props.recipeId.id) {
-    //             console.log("match", recipe.id)
-    //             let id = recipe.id
-    //             let body = {
-    //                 recipeComment: this.props.comment
-    //             }
-    //             console.log("body", body)
-    //             APIController.addComment(id, body)
-    //                 .then(() => {
-    //                     alert("Added Comment!")
-    //                 }).then(() => {
 
-    //                 })
-    //         }
-
-    //     });
-    // }
 
     render() {
         if (this.props.commentForm) {

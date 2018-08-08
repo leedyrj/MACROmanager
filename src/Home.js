@@ -175,13 +175,13 @@ export default class Home extends Component {
 
     showMyRecipes = (e) => {
         e.preventDefault()
-        APIController.getData("recipes")
-            .then((myRecipes) => {
-                this.setState({
-                    MyRecipes: myRecipes
-                })
-                console.log(this.state.MyRecipes)
-            })
+        // APIController.getData("recipes")
+        //     .then((myRecipes) => {
+        //         this.setState({
+        //             MyRecipes: myRecipes
+        //         })
+        //         console.log(this.state.MyRecipes)
+        //     })
         this.setState({
             HomeState: "MyReicpes"
         })
@@ -264,6 +264,7 @@ export default class Home extends Component {
                                 removeModal={this.removeModal}
                                 Modal={this.state.Modal}
                                 currentUserId={this.state.currentUserId}
+                                MyRecipes={this.state.MyRecipes}
                             />
                         </Box>
                     </Container>
