@@ -19,7 +19,7 @@ export default class Comment extends Component {
                     <Input
                         type="text"
                         id="comment"
-                        placeholder='Add Comment'
+                        value={this.props.comment}
                         required
                         onChange={this.props.handleFieldChange}
                     />
@@ -28,7 +28,7 @@ export default class Comment extends Component {
         } else {
             return (
                 <Button onClick={this.props.showCommentForm}>
-                    Add Comment
+                    Add Notes
                 </Button>
             )
         }
