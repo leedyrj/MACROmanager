@@ -1,5 +1,6 @@
 import React, { Component, Link } from "react"
 import { Modal, ModalBackground, ModalCard, ModalCardHeader, ModalCardTitle, Delete, ModalCardBody, ModalCardFooter, Button, Input, Box } from 'bloomer'
+import StarRatingComponent from 'react-star-rating-component';
 import APIController from "./APIController"
 import Comment from "./Comment"
 import Rating from "./Rating"
@@ -9,7 +10,7 @@ export default class DatabaseModal extends Component {
         ingredientLines: [],
         commentForm: false,
         comment: "",
-        rating: this.props.modalRecipe.recipeRating
+        rating: 0
     }
 
     handleFieldChange = (e) => {
@@ -20,9 +21,16 @@ export default class DatabaseModal extends Component {
 
     componentDidMount() {
         this.setState({
-            rating: this.props.modalRecipe.recipeRating,
-            comment: this.props.modalRecipe.recipeComment
+            comment: this.props.modalRecipe.recipeComment,
+            // rating: this.props.modalRecipe.recipeRating
         })
+        return fetch(`http://localhost:5002/recipes/${4}`).then(a => a.json())
+            .then((recipe) => {
+                console.log("reciperating", recipe.recipeRating)
+                this.setState({
+                    rating: recipe.recipeRating
+                })
+            })
         console.log(this.props.modalRecipe.recipeRating)
     }
 
@@ -96,7 +104,8 @@ export default class DatabaseModal extends Component {
         this.setState(stateToChange)
     }
 
-    onStarClick(nextValue, prevValue, name) {
+    onStarClick = (nextValue, prevValue, name) => {
+        console.log("nextvalue", nextValue)
         this.setState({ rating: nextValue });
         let id = this.props.modalRecipe.id
         let body = {
@@ -105,6 +114,8 @@ export default class DatabaseModal extends Component {
         APIController.addRating(id, body)
             .then(() => {
                 alert("Added Rating!")
+            }).then(() => {
+
             })
     }
 

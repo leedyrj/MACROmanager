@@ -13,15 +13,7 @@ export default class Rating extends React.Component {
     }
 
     // componentDidMount() {
-    //     this.props.MyRecipes.map(recipe => {
-    //         if (recipe.recipeId === this.props.recipeId.id && recipe.recipeRating) {
-    //             console.log(recipe.recipeId)
-    //             console.log(this.props.recipeId.id)
-    //             this.setState({
-    //                 rating: recipe.recipeRating
-    //             })
-    //         }
-    //     })
+    //     console.log("mount", this.props.modalRecipe)
     // }
 
     // onStarClick(nextValue, prevValue, name) {
@@ -45,7 +37,8 @@ export default class Rating extends React.Component {
     // }
 
     render() {
-        const { rating } = this.props.rating;
+        const { rating } = this.props;
+        { console.log("rating", this.props.rating) }
 
         return (
             <div>
@@ -53,7 +46,7 @@ export default class Rating extends React.Component {
                     name="rate1"
                     starCount={5}
                     value={rating}
-                    onStarClick={this.props.onStarClick.bind(this)}
+                    onStarClick={this.props.onStarClick}
                 />
             </div>
         );

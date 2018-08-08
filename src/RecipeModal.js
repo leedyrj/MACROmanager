@@ -166,11 +166,11 @@ export default class RecipeModal extends Component {
                                 recipeId={this.props.recipeId}
                                 addComment={this.addComment}
                             />)}
-                            <Rating
+                            {/* <Rating
                                 recipe={this.props.recipe}
                                 MyRecipes={this.props.MyRecipes}
                                 recipeId={this.props.recipeId}
-                            />
+                            /> */}
 
                         </ModalCardFooter>
                     </ModalCard>

@@ -46,8 +46,27 @@
       "recipeCarbs": 22.68,
       "recipeFat": 3.85,
       "id": 4,
-      "recipeComment": "a cool",
+      "recipeComment": "comment",
       "recipeRating": 5
+    },
+    {
+      "userId": 1,
+      "recipeName": "Thai Marinated Skirt Steak",
+      "recipeId": "Thai-Marinated-Skirt-Steak-2468563",
+      "recipeUrl": "https://blog.bulletproof.com/thai-skirt-steak-recipe-2g/",
+      "recipeIngred": [
+        "1 pound grass-fed skirt steak",
+        "2 tablespoons olive oil",
+        "1 Thai chili, thinly sliced (you can substitute serrano chile, or fresh or dried cayenne)",
+        "2 tablespoons avocado oil or grass-fed ghee",
+        "Zest of 2 lemons",
+        "1/2 cup parsley, chopped",
+        "salt to taste"
+      ],
+      "recipePro": 49.16,
+      "recipeCarbs": 12.8,
+      "recipeFat": 45.79,
+      "id": 5
     }
   ]
 }
