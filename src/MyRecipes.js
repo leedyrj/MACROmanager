@@ -13,12 +13,14 @@ export default class MyRecipes extends Component {
     }
 
     componentDidMount() {
-        APIController.getData("recipes")
+        let currentUserId = this.props.currentUserId
+        fetch(`http://localhost:5002/recipes?userId=${currentUserId}`)
+            .then(a => a.json())
             .then((myRecipes) => {
                 this.setState({
                     MyRecipes: myRecipes
                 })
-                console.log("state: MyRecipes", this.state.MyRecipes)
+                // console.log("state: MyRecipes", this.state.MyRecipes)
             })
     }
 
@@ -41,6 +43,19 @@ export default class MyRecipes extends Component {
     removeModal = () => {
         this.setState({
             modal: false
+        })
+    }
+
+    deleteRecipe = (recipeId) => {
+        console.log("recipeId", recipeId)
+        APIController.deleteRecipe(recipeId).then(() => {
+            APIController.getData("recipes")
+                .then((myRecipes) => {
+                    this.setState({
+                        MyRecipes: myRecipes
+                    })
+                    // console.log("state: MyRecipes", this.state.MyRecipes)
+                })
         })
     }
 
@@ -80,6 +95,9 @@ export default class MyRecipes extends Component {
                                             </ul>
                                         </MediaContent>
                                     </Media>
+                                    <Button
+                                        isColor="danger"
+                                        onClick={() => this.deleteRecipe(recipe.id)}>Delete</Button>
                                 </CardContent>
                             </Card>
                         )
