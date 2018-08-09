@@ -23,47 +23,31 @@
   "recipes": [
     {
       "userId": 1,
-      "recipeName": "PB and J Overnight Oats",
-      "externalRecipeId": "PB-and-J-Overnight-Oats-2476174",
-      "recipeUrl": "https://fitfoodiefinds.com/pb-j-overnight-oats/",
+      "recipeName": "Man-Pleasing Chicken",
+      "externalRecipeId": "Man-Pleasing-Chicken-608913",
+      "recipeUrl": "http://www.wittyinthecity.com/2011/08/man-pleasing-chicken/",
+      "recipeImage": "http://lh4.ggpht.com/gInMhsmcQ708LZAw4ryeheSm6cOuvDtlzpHpbrE1RW01kYudZlWoRBcEiS-gj_2mj_8Xdl-dzgNY2CJxbHbT=s360",
       "recipeIngred": [
-        "1 cup rolled oats",
-        "1 cup unsweetened almond milk, unsweetened",
-        "1 tablespoon chia seeds",
-        "1/2 tablespoon maple syrup",
-        "2 tablespoons creamy peanut butter",
-        "1 tablespoon jelly or preserves"
+        "Chicken thighs- 1 package",
+        "Dijon mustard- 1/2 cup",
+        "Maple syrup- 1/4 cup",
+        "Rice/rice wine vinegar- 1 tablespoon",
+        "Fresh rosemary",
+        "Salt and pepper",
+        "Salt and pepper"
       ],
-      "recipePro": 10.06,
-      "recipeCarbs": 42.21,
-      "recipeFat": 13.06,
+      "recipePro": 32.54,
+      "recipeCarbs": 19.16,
+      "recipeFat": 30.28,
       "recipeComment": "",
-      "id": 2
+      "id": 1
     },
     {
       "userId": 1,
-      "recipeName": "Small Batch Homemade Biscuits",
-      "externalRecipeId": "Small-Batch-Homemade-Biscuits-2473362",
-      "recipeUrl": "https://aflavorjournal.com/small-batch-homemade-biscuits/",
-      "recipeIngred": [
-        "1 cup all purpose flour",
-        "1 Tbsp. baking powder",
-        "1/2 tsp. salt",
-        "1 tsp. granulated sugar",
-        "2 1/2 Tbsp. cold, unsalted butter",
-        "1/2 cup whole milk"
-      ],
-      "recipePro": 2.2,
-      "recipeCarbs": 14.6,
-      "recipeFat": 4.49,
-      "recipeComment": "",
-      "id": 3
-    },
-    {
-      "userId": 2,
       "recipeName": "Strawberry Colada Smoothie",
       "externalRecipeId": "Strawberry-Colada-Smoothie-2229687",
       "recipeUrl": "https://www.cookingclassy.com/strawberry-colada-smoothie/",
+      "recipeImage": "https://lh3.googleusercontent.com/YSFwKyDHZXbKxxu1QeXo-qkUJAK5yQCyRRCwv2farBm3UivnKsZnk8zWyRz9izJ9731DUYP4n--KcHbe_fLjWg=s360",
       "recipeIngred": [
         "8 oz fresh strawberries , chilled, hulled",
         "1 ripe banana , peeled and frozen",
@@ -75,7 +59,27 @@
       "recipeCarbs": 53.29,
       "recipeFat": 45.45,
       "recipeComment": "",
-      "id": 4
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "recipeName": "Breakfast Sticks",
+      "externalRecipeId": "Breakfast-Sticks-1096708",
+      "recipeUrl": "https://buttoni.wordpress.com/2015/01/30/breakfast-sticks/",
+      "recipeImage": "http://lh3.googleusercontent.com/44wSgB65JiPftLMaMxt9r5A97pO6otyEZa0tyCwwDw5NoQLP2fh4lziF_j1KUH1Y7Bvr_O-gu4wKYZoYGYBd=s360",
+      "recipeIngred": [
+        "1 T. oil of choice",
+        "2 slices bacon, chopped",
+        "3 oz. breakfast sausage",
+        "2 large green onions, chopped",
+        "4 large eggs, beaten",
+        "1 oz. (¼ c.) shredded Monterrey Jack or Mozzarella cheese"
+      ],
+      "recipePro": 5.02,
+      "recipeCarbs": 0.62,
+      "recipeFat": 8.46,
+      "recipeComment": "",
+      "id": 3
     }
   ]
 }

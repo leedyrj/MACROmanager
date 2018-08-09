@@ -65,45 +65,45 @@ export default class MyRecipes extends Component {
     render() {
         return (
             <React.Fragment>
-                <Container>
+                <Box id="test">
                     {this.state.MyRecipes.map(recipe => {
                         return (
-                            <Card onClick={() => this.recipeView(recipe.id)}>
-                                <CardHeader>
-                                    <CardHeaderTitle>
-                                        {recipe.recipeName}
-                                    </CardHeaderTitle>
-                                    <CardHeaderIcon>
-                                        <Icon className="fa fa-angle-down" />
-                                    </CardHeaderIcon>
-                                </CardHeader>
-                                <CardImage>
-                                    {/* <Image isRatio='4:3' src='https://via.placeholder.com/1280x960' /> */}
-                                </CardImage>
-                                <CardContent>
-                                    <Media>
-                                        <MediaLeft>
-                                            <Image isSize='128x128' src='https://via.placeholder.com/96x96' />
-                                        </MediaLeft>
-                                        <MediaContent>
-                                            <ul>
-                                                {recipe.recipeIngred.map(ingredient => {
-                                                    return (
-                                                        <li>{ingredient}</li>
-                                                    )
-                                                })}
-                                            </ul>
-                                        </MediaContent>
-                                    </Media>
-                                    <Button
-                                        isColor="danger"
-                                        onClick={() => this.deleteRecipe(recipe.id)}>Delete</Button>
-                                </CardContent>
-                            </Card>
+                            <React.Fragment>
+                                <Card onClick={() => this.recipeView(recipe.id)}
+                                    id="my-recipes">
+                                    <CardHeader>
+                                        <CardHeaderTitle>
+                                            {recipe.recipeName}
+                                        </CardHeaderTitle>
+                                    </CardHeader>
+                                    <CardImage>
+                                        {/* <Image isRatio='4:3' src='https://via.placeholder.com/1280x960' /> */}
+                                    </CardImage>
+                                    <CardContent>
+                                        <Media>
+                                            <MediaLeft>
+                                                <Image isRatio='48x48' src={recipe.recipeImage} />
+                                            </MediaLeft>
+                                            <MediaContent>
+                                                <ul>
+                                                    {recipe.recipeIngred.map(ingredient => {
+                                                        return (
+                                                            <li className="child">{ingredient}</li>
+                                                        )
+                                                    })}
+                                                </ul>
+                                            </MediaContent>
+                                        </Media>
+                                    </CardContent>
+                                </Card>
+                                <Button
+                                    isColor="danger"
+                                    onClick={() => this.deleteRecipe(recipe.id)}>Delete</Button>
+                            </React.Fragment>
                         )
 
                     })}
-                </Container>
+                </Box>
                 {this.state.modal ? (
                     <DatabaseModal
                         removeModal={this.removeModal}

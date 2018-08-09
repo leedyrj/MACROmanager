@@ -28,16 +28,23 @@ export default class RecipeModal extends Component {
         let fat = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "FAT")
         let carbs = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "CHOCDF")
         let pro = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "PROCNT")
-        console.log(pro)
-        let image = this.props.recipeId.images.find(image => image)
-        console.log(image)
+        let image;
+        if (this.props.recipeId.images[0].hostedLargeUrl) {
+            image = this.props.recipeId.images[0].hostedLargeUrl
+        } else if (this.props.recipeId.images[0].hostedMediumUrl) {
+            image = this.props.recipeId.images[0].hostedMediumUrl
+        } else if (this.props.recipeId.images[0].hostedSmallUrl) {
+            image = this.props.recipeId.images[0].hostedSmallUrl
+        } else {
+            image = <img src="image.png" onerror="imgError(this);" />
+        }
         let currentUser = this.props.currentUserId
         let body = {
             "userId": currentUser,
             "recipeName": this.props.recipeId.name,
             "externalRecipeId": this.props.recipeId.id,
             "recipeUrl": this.props.recipeId.source.sourceRecipeUrl,
-            // "recipeImage": this.props.recipeId.
+            "recipeImage": image,
             "recipeIngred": this.props.recipeId.ingredientLines,
             "recipePro": pro.value,
             "recipeCarbs": carbs.value,

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Container, Box, Button, Image, Title } from 'bloomer'
+import { Container, Box, Button, Image, Card, CardContent, CardFooter, CardHeader, CardHeaderIcon, CardHeaderTitle, CardImage, Icon, Media, MediaLeft, MediaContent, Subtitle, Title, Content } from 'bloomer'
 import RecipeModal from "./RecipeModal"
 import APIController from "./APIController"
 
@@ -35,21 +35,32 @@ export default class SearchResults extends Component {
                 <Button onClick={this.props.showForm}>
                     New Search
                 </Button>
-                <Container id="results-container">
+                <Box id="results-container">
                     {this.props.recipes.matches.map(recipe => {
                         return (
-                            <Box
-                                className="box"
-                                onClick={() => this.recipeView(recipe)}>
-                                <Image isSize="128x128" src={recipe.smallImageUrls} />
-                                <Title isSize={3}>
-                                    {recipe.recipeName}
-                                </Title>
-                            </Box>
+                            <Card onClick={() => this.recipeView(recipe)}>
+                                <CardHeader>
+                                    <CardHeaderTitle>
+                                        {recipe.recipeName}
+                                    </CardHeaderTitle>
+                                </CardHeader>
+                                <CardImage>
+                                    {/* <Image isRatio='4:3' src='https://via.placeholder.com/1280x960' /> */}
+                                </CardImage>
+                                <CardContent>
+                                    <Media>
+                                        <MediaLeft>
+                                            <Image isRatio='48x48' src={recipe.smallImageUrls} />
+                                        </MediaLeft>
+                                        <MediaContent>
+                                        </MediaContent>
+                                    </Media>
+                                </CardContent>
+                            </Card>
                         )
                     }
                     )}
-                </Container>
+                </Box>
                 {this.state.modal ? (
                     <RecipeModal
                         removeModal={this.removeModal}

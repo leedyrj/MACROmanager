@@ -11,5 +11,5 @@
 
 .Collapsible__trigger:before {
     font-family: "FontAwesome";
-    content: "\f106"
+    content: "^ " !important
 }
