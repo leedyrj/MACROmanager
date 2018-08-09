@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Container, Box, Button, Image } from 'bloomer'
+import { Container, Box, Button, Image, Card, CardContent, CardFooter, CardHeader, CardHeaderIcon, CardHeaderTitle, CardImage, Icon, Media, MediaLeft, MediaContent, Subtitle, Title, Content } from 'bloomer'
 import DatabaseModal from "./DatabaseModal"
 import APIController from "./APIController"
 
@@ -13,14 +13,12 @@ export default class MyRecipes extends Component {
     }
 
     componentDidMount() {
-        let currentUserId = this.props.currentUserId
-        fetch(`http://localhost:5002/recipes?userId=${currentUserId}`)
-            .then(a => a.json())
+        APIController.getData("recipes")
             .then((myRecipes) => {
                 this.setState({
                     MyRecipes: myRecipes
                 })
-                // console.log("state: MyRecipes", this.state.MyRecipes)
+                console.log("state: MyRecipes", this.state.MyRecipes)
             })
     }
 
@@ -46,32 +44,44 @@ export default class MyRecipes extends Component {
         })
     }
 
-    deleteRecipe = (recipeId) => {
-        console.log("recipeId", recipeId)
-        APIController.deleteRecipe(recipeId).then(() => {
-            APIController.getData("recipes")
-                .then((myRecipes) => {
-                    this.setState({
-                        MyRecipes: myRecipes
-                    })
-                    // console.log("state: MyRecipes", this.state.MyRecipes)
-                })
-        })
-    }
-
-
+    //  <Card onClick={() => this.recipeView(recipe.id)}>
+    //                                 {recipe.recipeName}
+    //                             </Card>
     render() {
         return (
             <React.Fragment>
                 <Container>
                     {this.state.MyRecipes.map(recipe => {
                         return (
-                            <Box onClick={() => this.recipeView(recipe.id)}>
-                                {recipe.recipeName}
-                                <Button
-                                    isColor="danger"
-                                    onClick={() => this.deleteRecipe(recipe.id)}>Delete</Button>
-                            </Box>
+                            <Card onClick={() => this.recipeView(recipe.id)}>
+                                <CardHeader>
+                                    <CardHeaderTitle>
+                                        {recipe.recipeName}
+                                    </CardHeaderTitle>
+                                    <CardHeaderIcon>
+                                        <Icon className="fa fa-angle-down" />
+                                    </CardHeaderIcon>
+                                </CardHeader>
+                                <CardImage>
+                                    {/* <Image isRatio='4:3' src='https://via.placeholder.com/1280x960' /> */}
+                                </CardImage>
+                                <CardContent>
+                                    <Media>
+                                        <MediaLeft>
+                                            <Image isSize='128x128' src='https://via.placeholder.com/96x96' />
+                                        </MediaLeft>
+                                        <MediaContent>
+                                            <ul>
+                                                {recipe.recipeIngred.map(ingredient => {
+                                                    return (
+                                                        <li>{ingredient}</li>
+                                                    )
+                                                })}
+                                            </ul>
+                                        </MediaContent>
+                                    </Media>
+                                </CardContent>
+                            </Card>
                         )
 
                     })}
