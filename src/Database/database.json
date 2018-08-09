@@ -19,57 +19,63 @@
       "id": 3
     }
   ],
-  "userRecipes": [
-    {
-      "recipeId": 6,
-      "userId": 1,
-      "comment": "",
-      "id": 1
-    }
-  ],
+  "userRecipes": [],
   "recipes": [
     {
       "userId": 1,
-      "recipeName": "Winner, Winner…Chicken Dinner!",
-      "recipeId": "Winner_-WinnerChicken-Dinner_-2434827",
-      "recipeUrl": "https://insidenanabreadshead.com/2010/10/15/winner-winner%e2%80%a6chicken-dinner/",
+      "recipeName": "PB and J Overnight Oats",
+      "externalRecipeId": "PB-and-J-Overnight-Oats-2476174",
+      "recipeUrl": "https://fitfoodiefinds.com/pb-j-overnight-oats/",
       "recipeIngred": [
-        "3 boneless, skinless chicken breasts",
-        "One 16 fluid oz. bottle of buttermilk (low fat is okay, if you prefer)",
-        "2 teaspoons of Morton Nature’s Season Salt (Lawry’s would also work)",
-        "½ teaspoon of ground cayenne pepper (optional, but very tasty)",
-        "3 cups of all-purpose flour",
-        "1 tablespoon of Morton Nature’s Season Salt (or Lawry’s)",
-        "½ teaspoon of ground black pepper",
-        "½ teaspoon of ground cayenne pepper (it’s optional again, but so tasty!)"
+        "1 cup rolled oats",
+        "1 cup unsweetened almond milk, unsweetened",
+        "1 tablespoon chia seeds",
+        "1/2 tablespoon maple syrup",
+        "2 tablespoons creamy peanut butter",
+        "1 tablespoon jelly or preserves"
       ],
-      "recipePro": 29,
-      "recipeCarbs": 74.83,
-      "recipeFat": 3.86,
-      "recipeComment": "A new comment",
-      "id": 1,
-      "recipeRating": 2
+      "recipePro": 10.06,
+      "recipeCarbs": 42.21,
+      "recipeFat": 13.06,
+      "recipeComment": "",
+      "id": 2
     },
     {
       "userId": 1,
-      "recipeName": "Thai Marinated Skirt Steak",
-      "recipeId": "Thai-Marinated-Skirt-Steak-2468563",
-      "recipeUrl": "https://blog.bulletproof.com/thai-skirt-steak-recipe-2g/",
+      "recipeName": "Small Batch Homemade Biscuits",
+      "externalRecipeId": "Small-Batch-Homemade-Biscuits-2473362",
+      "recipeUrl": "https://aflavorjournal.com/small-batch-homemade-biscuits/",
       "recipeIngred": [
-        "1 pound grass-fed skirt steak",
-        "2 tablespoons olive oil",
-        "1 Thai chili, thinly sliced (you can substitute serrano chile, or fresh or dried cayenne)",
-        "2 tablespoons avocado oil or grass-fed ghee",
-        "Zest of 2 lemons",
-        "1/2 cup parsley, chopped",
-        "salt to taste"
+        "1 cup all purpose flour",
+        "1 Tbsp. baking powder",
+        "1/2 tsp. salt",
+        "1 tsp. granulated sugar",
+        "2 1/2 Tbsp. cold, unsalted butter",
+        "1/2 cup whole milk"
       ],
-      "recipePro": 49.16,
-      "recipeCarbs": 12.8,
-      "recipeFat": 45.79,
-      "recipeComment": "I love this!!!!!!!!!!!!!!!!!!!!!!!!!",
-      "id": 2,
-      "recipeRating": 5
+      "recipePro": 2.2,
+      "recipeCarbs": 14.6,
+      "recipeFat": 4.49,
+      "recipeComment": "",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "recipeName": "Strawberry Colada Smoothie",
+      "externalRecipeId": "Strawberry-Colada-Smoothie-2229687",
+      "recipeUrl": "https://www.cookingclassy.com/strawberry-colada-smoothie/",
+      "recipeIngred": [
+        "8 oz fresh strawberries , chilled, hulled",
+        "1 ripe banana , peeled and frozen",
+        "1 1/2 cups frozen pineapple",
+        "1 (5.3 oz) container coconut Greek yogurt",
+        "1 1/4 - 1 1/2 cups unsweetened coconut milk beverage (the kind found in the dairy isle)*"
+      ],
+      "recipePro": 8.82,
+      "recipeCarbs": 53.29,
+      "recipeFat": 45.45,
+      "recipeComment": "",
+      "id": 4
     }
   ]
 }

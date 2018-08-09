@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Container, Box, Button, Image } from 'bloomer'
+import { Container, Box, Button, Image, Title } from 'bloomer'
 import RecipeModal from "./RecipeModal"
 import APIController from "./APIController"
 
@@ -39,13 +39,12 @@ export default class SearchResults extends Component {
                     {this.props.recipes.matches.map(recipe => {
                         return (
                             <Box
-                                className="results-box"
+                                className="box"
                                 onClick={() => this.recipeView(recipe)}>
                                 <Image isSize="128x128" src={recipe.smallImageUrls} />
-                                {recipe.recipeName}
-                                <ul>
-                                    <li>{recipe.ingredients}</li>
-                                </ul>
+                                <Title isSize={3}>
+                                    {recipe.recipeName}
+                                </Title>
                             </Box>
                         )
                     }

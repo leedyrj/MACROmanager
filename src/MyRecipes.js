@@ -13,12 +13,14 @@ export default class MyRecipes extends Component {
     }
 
     componentDidMount() {
-        APIController.getData("recipes")
+        let currentUserId = this.props.currentUserId
+        fetch(`http://localhost:5002/recipes?userId=${currentUserId}`)
+            .then(a => a.json())
             .then((myRecipes) => {
                 this.setState({
                     MyRecipes: myRecipes
                 })
-                console.log("state: MyRecipes", this.state.MyRecipes)
+                // console.log("state: MyRecipes", this.state.MyRecipes)
             })
     }
 
@@ -44,6 +46,19 @@ export default class MyRecipes extends Component {
         })
     }
 
+    deleteRecipe = (recipeId) => {
+        console.log("recipeId", recipeId)
+        APIController.deleteRecipe(recipeId).then(() => {
+            APIController.getData("recipes")
+                .then((myRecipes) => {
+                    this.setState({
+                        MyRecipes: myRecipes
+                    })
+                    // console.log("state: MyRecipes", this.state.MyRecipes)
+                })
+        })
+    }
+
 
     render() {
         return (
@@ -53,6 +68,9 @@ export default class MyRecipes extends Component {
                         return (
                             <Box onClick={() => this.recipeView(recipe.id)}>
                                 {recipe.recipeName}
+                                <Button
+                                    isColor="danger"
+                                    onClick={() => this.deleteRecipe(recipe.id)}>Delete</Button>
                             </Box>
                         )
 

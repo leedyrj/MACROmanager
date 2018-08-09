@@ -46,4 +46,10 @@ export default class APIController {
             body: JSON.stringify(body)
         });
     }
+
+    static deleteRecipe = (id) => {
+        return fetch(`http://localhost:5002/recipes/${id}`, {
+            method: "DELETE"
+        });
+    };
 }
