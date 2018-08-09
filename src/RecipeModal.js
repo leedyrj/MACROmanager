@@ -28,12 +28,16 @@ export default class RecipeModal extends Component {
         let fat = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "FAT")
         let carbs = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "CHOCDF")
         let pro = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "PROCNT")
+        console.log(pro)
+        let image = this.props.recipeId.images.find(image => image)
+        console.log(image)
         let currentUser = this.props.currentUserId
         let body = {
             "userId": currentUser,
             "recipeName": this.props.recipeId.name,
-            "recipeId": this.props.recipeId.id,
+            "externalRecipeId": this.props.recipeId.id,
             "recipeUrl": this.props.recipeId.source.sourceRecipeUrl,
+            // "recipeImage": this.props.recipeId.
             "recipeIngred": this.props.recipeId.ingredientLines,
             "recipePro": pro.value,
             "recipeCarbs": carbs.value,
@@ -46,28 +50,28 @@ export default class RecipeModal extends Component {
             })
     }
 
-    addComment = (e) => {
-        e.preventDefault()
-        console.log(this.props.modalRecipe)
-        // this.props.MyRecipes.map(recipe => {
-        //     if (recipe.recipeId === this.props.recipeId.id) {
-        //         console.log("match", recipe.id)
-        //         let id = recipe.id
-        //         let body = {
-        //             recipeComment: this.state.comment
-        //         }
-        //         console.log("body", body)
-        //         APIController.addComment(id, body)
-        //             .then(() => {
-        //                 alert("Added Comment!")
-        //             }).then(() => {
-        //                 this.setState({
-        //                     commentForm: false
-        //                 })
-        //             })
-        //     }
-        // });
-    }
+    // addComment = (e) => {
+    //     e.preventDefault()
+    //     console.log(this.props.modalRecipe)
+    // this.props.MyRecipes.map(recipe => {
+    //     if (recipe.recipeId === this.props.recipeId.id) {
+    //         console.log("match", recipe.id)
+    //         let id = recipe.id
+    //         let body = {
+    //             recipeComment: this.state.comment
+    //         }
+    //         console.log("body", body)
+    //         APIController.addComment(id, body)
+    //             .then(() => {
+    //                 alert("Added Comment!")
+    //             }).then(() => {
+    //                 this.setState({
+    //                     commentForm: false
+    //                 })
+    //             })
+    //     }
+    // });
+    // }
 
     showCommentForm = () => {
         this.setState({

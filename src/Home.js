@@ -236,7 +236,7 @@ export default class Home extends Component {
                         showForm={this.showForm}
                     />
                     <Container>
-                        <Box id="main-box">
+                        <Box>
                             <HomeForm
                                 showResults={this.showResults}
                                 handleFieldChange={this.handleFieldChange}
@@ -256,7 +256,7 @@ export default class Home extends Component {
                         showForm={this.showForm}
                     />
                     <Container>
-                        <Box id="main-box">
+                        <Box>
                             <SearchResults
                                 // handleFieldChange={this.handleFieldChange}
                                 showForm={this.showForm}
@@ -277,14 +277,15 @@ export default class Home extends Component {
                         showMyRecipes={this.showMyRecipes}
                         showForm={this.showForm}
                     />
-                    <Container>
-                        <Box>
-                            <MyRecipes
-                                MyRecipes={this.state.MyRecipes}
-                                removeModal={this.removeModal}
-                                handleFieldChange={this.handleFieldChange} />
-                        </Box>
-                    </Container>
+                    {/* <Container> */}
+                    {/* <Box> */}
+                    <MyRecipes
+                        MyRecipes={this.state.MyRecipes}
+                        removeModal={this.removeModal}
+                        handleFieldChange={this.handleFieldChange}
+                        currentUserId={this.state.currentUserId} />
+                    {/* </Box> */}
+                    {/* </Container> */}
 
                 </React.Fragment>
             )
