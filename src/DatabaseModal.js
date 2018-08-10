@@ -1,5 +1,5 @@
 import React, { Component, Link } from "react"
-import { Modal, ModalBackground, ModalCard, ModalCardHeader, ModalCardTitle, Delete, ModalCardBody, ModalCardFooter, Button, Input, Box } from 'bloomer'
+import { Modal, ModalBackground, ModalCard, ModalCardHeader, ModalCardTitle, Delete, ModalCardBody, ModalCardFooter, Title, Notification, Box } from 'bloomer'
 import StarRatingComponent from 'react-star-rating-component';
 import APIController from "./APIController"
 import Comment from "./Comment"
@@ -145,21 +145,20 @@ export default class DatabaseModal extends Component {
                                     )
                                 })}
                             </ul>
-                            <div>
-                                <p>Fat:</p>
-                                {this.props.modalRecipe.recipeFat}
-                                <p>g</p>
-                            </div>
-                            <div>
-                                <p>Carbs:</p>
-                                {this.props.modalRecipe.recipeCarbs}
-                                <p>g</p>
-                            </div>
-                            <div>
-                                <p>Protien:</p>
-                                {this.props.modalRecipe.recipePro}
-                                <p>g</p>
-                            </div>
+                            <span className="nutrition-flex">
+                                <div className="nutrition-item">
+                                    <Title isSize={5}>Protien:</Title>
+                                    {`${this.props.modalRecipe.recipePro}g`}
+                                </div>
+                                <div className="nutrition-item">
+                                    <Title isSize={5}>Fat:</Title>
+                                    {`${this.props.modalRecipe.recipeFat}g`}
+                                </div>
+                                <div className="nutrition-item">
+                                    <Title isSize={5}>Carbs:</Title>
+                                    {`${this.props.modalRecipe.recipeCarbs}g`}
+                                </div>
+                            </span>
                             <div>
                                 <a href={this.props.modalRecipe.recipeUrl}
                                     target="_blank">

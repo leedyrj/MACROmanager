@@ -23,46 +23,6 @@
   "recipes": [
     {
       "userId": 1,
-      "recipeName": "Man-Pleasing Chicken",
-      "externalRecipeId": "Man-Pleasing-Chicken-608913",
-      "recipeUrl": "http://www.wittyinthecity.com/2011/08/man-pleasing-chicken/",
-      "recipeImage": "http://lh4.ggpht.com/gInMhsmcQ708LZAw4ryeheSm6cOuvDtlzpHpbrE1RW01kYudZlWoRBcEiS-gj_2mj_8Xdl-dzgNY2CJxbHbT=s360",
-      "recipeIngred": [
-        "Chicken thighs- 1 package",
-        "Dijon mustard- 1/2 cup",
-        "Maple syrup- 1/4 cup",
-        "Rice/rice wine vinegar- 1 tablespoon",
-        "Fresh rosemary",
-        "Salt and pepper",
-        "Salt and pepper"
-      ],
-      "recipePro": 32.54,
-      "recipeCarbs": 19.16,
-      "recipeFat": 30.28,
-      "recipeComment": "",
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "recipeName": "Strawberry Colada Smoothie",
-      "externalRecipeId": "Strawberry-Colada-Smoothie-2229687",
-      "recipeUrl": "https://www.cookingclassy.com/strawberry-colada-smoothie/",
-      "recipeImage": "https://lh3.googleusercontent.com/YSFwKyDHZXbKxxu1QeXo-qkUJAK5yQCyRRCwv2farBm3UivnKsZnk8zWyRz9izJ9731DUYP4n--KcHbe_fLjWg=s360",
-      "recipeIngred": [
-        "8 oz fresh strawberries , chilled, hulled",
-        "1 ripe banana , peeled and frozen",
-        "1 1/2 cups frozen pineapple",
-        "1 (5.3 oz) container coconut Greek yogurt",
-        "1 1/4 - 1 1/2 cups unsweetened coconut milk beverage (the kind found in the dairy isle)*"
-      ],
-      "recipePro": 8.82,
-      "recipeCarbs": 53.29,
-      "recipeFat": 45.45,
-      "recipeComment": "",
-      "id": 2
-    },
-    {
-      "userId": 1,
       "recipeName": "Breakfast Sticks",
       "externalRecipeId": "Breakfast-Sticks-1096708",
       "recipeUrl": "https://buttoni.wordpress.com/2015/01/30/breakfast-sticks/",
@@ -78,8 +38,72 @@
       "recipePro": 5.02,
       "recipeCarbs": 0.62,
       "recipeFat": 8.46,
+      "recipeComment": "Easy breakfast!",
+      "id": 3,
+      "recipeRating": 4
+    },
+    {
+      "userId": 1,
+      "recipeName": "Thai Basil Chicken",
+      "externalRecipeId": "Thai-Basil-Chicken-1927402",
+      "recipeUrl": "http://www.africanbites.com/thai-basil-chicken/",
+      "recipeImage": "https://lh3.googleusercontent.com/8cFDAT4zgJXte5KNRxTALpRpjXHMhHj35Kt5TCq2Go6XT6iV6tcNLji2VMH30uIBEIxbDSX03kEZ0E4HKX-i=s360",
+      "recipeIngred": [
+        "2-3 tablespoons vegetable oil",
+        "1 teaspoon sriracha sauce",
+        "1 teaspoons crushed red pepper",
+        "1 medium onion chopped",
+        "4 cloves garlic, sliced (about 3 tablespoons)",
+        "1 pounds skinless, boneless chicken breasts, cut into bite-size pieces",
+        "2 teaspoon brown sugar",
+        "1 tablespoons fish sauce or more adjust to taste",
+        "1 tablespoons soy sauce",
+        "¾ cup fresh basil leaves(about 10 or more leaves)"
+      ],
+      "recipePro": 28.64,
+      "recipeCarbs": 7.45,
+      "recipeFat": 15.8,
       "recipeComment": "",
-      "id": 3
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "recipeName": "No-Bake Energy Balls",
+      "externalRecipeId": "No-Bake-Energy-Balls-2471294",
+      "recipeUrl": "https://www.mealgarden.com/recipe/no-bake-energy-balls/",
+      "recipeImage": "https://lh3.googleusercontent.com/ooBL3wPxNvm8zLASb6hwxuUTllLi-KlPkxkFwpqQgi1Xyj7jASwWKR0Im5pSgNIwlp0rO6fJ2pGiKxuYMq5eIg=s360",
+      "recipeIngred": [
+        "1 cup Coconut, shredded, unsweetened",
+        "1/2 cup Dark chocolate chips, vegan",
+        "1/3 cup Flaxseed meal (ground)",
+        "1/3 cup Maple syrup",
+        "1/2 cup Peanut butter, natural (or other nut butter, tahini, pumpkin)",
+        "1 cup Rolled oats, dry"
+      ],
+      "recipePro": 3.27,
+      "recipeCarbs": 11.86,
+      "recipeFat": 7.39,
+      "recipeComment": "",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "recipeName": "Potato Latkes",
+      "externalRecipeId": "Potato-latkes-303488",
+      "recipeUrl": "http://www.yummly.co/recipe/Potato-latkes-303488",
+      "recipeImage": "http://lh4.ggpht.com/CvWzYjUvnSNTxReT18B3XYfJeDZVxnZyUrfJth6wVqAFu2fMIq3KrwZ8ZYZYwfbrhfuOthM9by6GAYFGkmV8RQ=s360",
+      "recipeIngred": [
+        "1 envelope Lipton® Recipe Secrets® Onion Soup Mix",
+        "6 medium potatoes, peeled and finely grated",
+        "1/4 cup all-purpose flour",
+        "2  eggs, slightly beaten",
+        "Oil for frying"
+      ],
+      "recipePro": 10.42,
+      "recipeCarbs": 57.31,
+      "recipeFat": 7.58,
+      "recipeComment": "",
+      "id": 7
     }
   ]
 }

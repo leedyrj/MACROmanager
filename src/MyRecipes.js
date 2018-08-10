@@ -69,17 +69,21 @@ export default class MyRecipes extends Component {
                     {this.state.MyRecipes.map(recipe => {
                         return (
                             <React.Fragment>
-                                <Card onClick={() => this.recipeView(recipe.id)}
+                                <Card
                                     id="my-recipes">
                                     <CardHeader>
                                         <CardHeaderTitle>
                                             {recipe.recipeName}
                                         </CardHeaderTitle>
+                                        <Button
+                                            isColor="danger"
+                                            onClick={() => this.deleteRecipe(recipe.id)}
+                                            id="delete">Delete</Button>
                                     </CardHeader>
                                     <CardImage>
                                         {/* <Image isRatio='4:3' src='https://via.placeholder.com/1280x960' /> */}
                                     </CardImage>
-                                    <CardContent>
+                                    <CardContent onClick={() => this.recipeView(recipe.id)}>
                                         <Media>
                                             <MediaLeft>
                                                 <Image isRatio='48x48' src={recipe.recipeImage} />
@@ -95,10 +99,9 @@ export default class MyRecipes extends Component {
                                             </MediaContent>
                                         </Media>
                                     </CardContent>
+
                                 </Card>
-                                <Button
-                                    isColor="danger"
-                                    onClick={() => this.deleteRecipe(recipe.id)}>Delete</Button>
+
                             </React.Fragment>
                         )
 

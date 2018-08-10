@@ -1,5 +1,5 @@
 import React, { Component, Link } from "react"
-import { Modal, ModalBackground, ModalCard, ModalCardHeader, ModalCardTitle, Delete, ModalCardBody, ModalCardFooter, Button, Input, Box } from 'bloomer'
+import { Modal, ModalBackground, ModalCard, ModalCardHeader, ModalCardTitle, Delete, ModalCardBody, ModalCardFooter, Button, Title, Box } from 'bloomer'
 import APIController from "./APIController"
 import Comment from "./Comment"
 import Rating from "./Rating"
@@ -36,7 +36,7 @@ export default class RecipeModal extends Component {
         } else if (this.props.recipeId.images[0].hostedSmallUrl) {
             image = this.props.recipeId.images[0].hostedSmallUrl
         } else {
-            image = <img src="image.png" onerror="imgError(this);" />
+            image = <p>Sorry, no image available!</p>
         }
         let currentUser = this.props.currentUserId
         let body = {
@@ -103,6 +103,9 @@ export default class RecipeModal extends Component {
     }
 
     render() {
+        let fat = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "FAT")
+        let carbs = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "CHOCDF")
+        let pro = this.props.recipeId.nutritionEstimates.find(nutrition => nutrition.attribute === "PROCNT")
         return (
             <React.Fragment>
                 <Modal isActive>
@@ -123,33 +126,24 @@ export default class RecipeModal extends Component {
                                     )
                                 })}
                             </ul>
-                            <div>
-                                <p>Fat:</p>
-                                {this.props.recipeId.nutritionEstimates.map(nutrition => {
-                                    if (nutrition.attribute === "FAT") {
-                                        return nutrition.value
-                                    }
-                                })}
-                                <p>g</p>
-                            </div>
-                            <div>
-                                <p>Carbs:</p>
-                                {this.props.recipeId.nutritionEstimates.map(nutrition => {
-                                    if (nutrition.attribute === "CHOCDF") {
-                                        return nutrition.value
-                                    }
-                                })}
-                                <p>g</p>
-                            </div>
-                            <div>
-                                <p>Protien:</p>
-                                {this.props.recipeId.nutritionEstimates.map(nutrition => {
-                                    if (nutrition.attribute === "PROCNT") {
-                                        return nutrition.value
-                                    }
-                                })}
-                                <p>g</p>
-                            </div>
+                            <span className="nutrition-flex">
+                                <div className="nutrition-item">
+                                    <Title isSize={5}>Protien:</Title>
+                                    {pro.value} g
+                                </div>
+                                <div>
+                                    <div className="nutrition-item">
+                                        <Title isSize={5}>Fat:</Title>
+                                        {fat.value} g
+                                </div>
+                                </div>
+                                <div>
+                                    <div className="nutrition-item">
+                                        <Title isSize={5}>Carbs:</Title>
+                                        {carbs.value} g
+                                </div>
+                                </div>
+                            </span>
                             <div>
                                 <a href={this.props.recipeId.source.sourceRecipeUrl}
                                     target="_blank">

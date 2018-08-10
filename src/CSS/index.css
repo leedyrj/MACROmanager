@@ -16,7 +16,6 @@ body, html {
 
 .box {
   margin: 2%;
-  background-color: #E58639;
   overflow-y: scroll;
   overflow-x: hidden;
   max-height: 80vh
@@ -54,4 +53,21 @@ body, html {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #b30000; 
+}
+
+/* .nutrition-item{
+  border-right: solid 1px lightgray;
+} */
+
+.nutrition-item:last-of-type {
+  border: none
+}
+
+.nutrition-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 1%;
 }
