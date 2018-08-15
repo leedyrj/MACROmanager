@@ -38,7 +38,9 @@ export default class SearchResults extends Component {
                 <Box id="results-container">
                     {this.props.recipes.matches.map(recipe => {
                         return (
-                            <Card onClick={() => this.recipeView(recipe)}>
+                            <Card
+                                onClick={() => this.recipeView(recipe)}
+                                className="card">
                                 <CardHeader>
                                     <CardHeaderTitle>
                                         {recipe.recipeName}

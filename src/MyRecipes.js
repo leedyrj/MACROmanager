@@ -1,7 +1,14 @@
 import React, { Component } from "react"
 import { Container, Box, Button, Image, Card, CardContent, CardFooter, CardHeader, CardHeaderIcon, CardHeaderTitle, CardImage, Icon, Media, MediaLeft, MediaContent, Subtitle, Title, Content } from 'bloomer'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
 import DatabaseModal from "./DatabaseModal"
 import APIController from "./APIController"
+import Sorter from "./Sorter"
+
+
+library.add(faWindowClose)
 
 export default class MyRecipes extends Component {
 
@@ -9,7 +16,8 @@ export default class MyRecipes extends Component {
         modal: false,
         modalType: "myrecipes",
         modalRecipe: {},
-        MyRecipes: []
+        MyRecipes: [],
+        Dropdown: false
     }
 
     componentDidMount() {
@@ -59,63 +67,87 @@ export default class MyRecipes extends Component {
         })
     }
 
-    //  <Card onClick={() => this.recipeView(recipe.id)}>
-    //                                 {recipe.recipeName}
-    //                             </Card>
+    // this.setState
+
+    sortByKey = (array, key) => {
+        console.log(this.state.MyRecipes)
+        return array.sort(function (a, b) {
+            var x = a[key]; var y = b[key];
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        });
+    }
+
     render() {
         return (
             <React.Fragment>
-                <Box id="test">
-                    {this.state.MyRecipes.map(recipe => {
-                        return (
-                            <React.Fragment>
-                                <Card
-                                    id="my-recipes">
-                                    <CardHeader>
-                                        <CardHeaderTitle>
-                                            {recipe.recipeName}
-                                        </CardHeaderTitle>
-                                        <Button
-                                            isColor="danger"
-                                            onClick={() => this.deleteRecipe(recipe.id)}
-                                            id="delete">Delete</Button>
-                                    </CardHeader>
-                                    <CardImage>
-                                        {/* <Image isRatio='4:3' src='https://via.placeholder.com/1280x960' /> */}
-                                    </CardImage>
-                                    <CardContent onClick={() => this.recipeView(recipe.id)}>
-                                        <Media>
-                                            <MediaLeft>
-                                                <Image isRatio='48x48' src={recipe.recipeImage} />
-                                            </MediaLeft>
-                                            <MediaContent>
-                                                <ul>
-                                                    {recipe.recipeIngred.map(ingredient => {
-                                                        return (
-                                                            <li className="child">{ingredient}</li>
-                                                        )
-                                                    })}
-                                                </ul>
-                                            </MediaContent>
-                                        </Media>
-                                    </CardContent>
 
-                                </Card>
+                <React.Fragment>
+                    <Box id="test">
+                        <Sorter
+                            sortByKey={this.sortByKey}
+                        />
+                        {this.state.MyRecipes.map(recipe => {
+                            return (
+                                <React.Fragment>
+                                    <Card
+                                        id="my-recipes"
+                                        className="card">
+                                        <CardHeader className="cardheader">
+                                            <CardHeaderTitle className="headerTitle">
+                                                {recipe.recipeName}
+                                            </CardHeaderTitle>
+                                            <Button
+                                                isColor="danger"
+                                                onClick={() => this.deleteRecipe(recipe.id)}
+                                                id="delete">
+                                                <FontAwesomeIcon icon={faWindowClose} />
+                                            </Button>
+                                        </CardHeader>
+                                        <CardImage>
+                                            {/* <Image isRatio='4:3' src='https://via.placeholder.com/1280x960' /> */}
+                                        </CardImage>
+                                        <CardContent onClick={() => this.recipeView(recipe.id)}
+                                            className="cardcontent">
+                                            <Media>
+                                                <MediaLeft>
+                                                    <Image isRatio='48x48' src={recipe.recipeImage} />
+                                                </MediaLeft>
+                                                <MediaContent>
+                                                    <span className="nutrition-flex">
+                                                        <div className="nutrition-item">
+                                                            <Title isSize={5}>Protien:</Title>
+                                                            {`${recipe.recipePro}g`}
+                                                        </div>
+                                                        <div className="nutrition-item">
+                                                            <Title isSize={5}>Fat:</Title>
+                                                            {`${recipe.recipeFat}g`}
+                                                        </div>
+                                                        <div className="nutrition-item">
+                                                            <Title isSize={5}>Carbs:</Title>
+                                                            {`${recipe.recipeCarbs}g`}
+                                                        </div>
+                                                    </span>
+                                                </MediaContent>
+                                            </Media>
+                                        </CardContent>
 
-                            </React.Fragment>
-                        )
+                                    </Card>
 
-                    })}
-                </Box>
-                {this.state.modal ? (
-                    <DatabaseModal
-                        removeModal={this.removeModal}
-                        modalRecipe={this.state.modalRecipe}
-                        isActive={this.isActive}
-                    // handleFieldChange={this.props.handleFieldChange}
-                    // ingredientLines={this.state.ingredientLines}
-                    />
-                ) : (<p></p>)}
+                                </React.Fragment>
+                            )
+
+                        })}
+                    </Box>
+                    {this.state.modal ? (
+                        <DatabaseModal
+                            removeModal={this.removeModal}
+                            modalRecipe={this.state.modalRecipe}
+                            isActive={this.isActive}
+                        // handleFieldChange={this.props.handleFieldChange}
+                        // ingredientLines={this.state.ingredientLines}
+                        />
+                    ) : (<p></p>)}
+                </React.Fragment>
             </React.Fragment>
         )
     }

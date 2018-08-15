@@ -235,7 +235,7 @@ export default class Home extends Component {
                         showMyRecipes={this.showMyRecipes}
                         showForm={this.showForm}
                     />
-                    <Box>
+                    <Box id="formbox">
                         <HomeForm
                             showResults={this.showResults}
                             handleFieldChange={this.handleFieldChange}
