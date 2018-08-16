@@ -140,11 +140,11 @@ export default class Home extends Component {
         if (this.state.FormInfo.Meal === "") {
             apiString
         } else {
-            apiString + "&allowedCourse[]=course^course-" + this.state.FormInfo.Meal
+            apiString += "&allowedCourse[]=course^course-" + this.state.FormInfo.Meal
         }
         console.log("apistring", apiString)
+        console.log("meal", this.state.FormInfo.Meal)
         apiCall = apiString
-        console.log("end of call", apiCall)
         APIController.getRecipes(apiCall).then((recipes) => {
             this.setState({
                 HomeState: "RecipeList",
@@ -235,17 +235,15 @@ export default class Home extends Component {
                         showMyRecipes={this.showMyRecipes}
                         showForm={this.showForm}
                     />
-                    <Container>
-                        <Box>
-                            <HomeForm
-                                showResults={this.showResults}
-                                handleFieldChange={this.handleFieldChange}
-                                handleCheckboxChange={this.handleCheckboxChange}
-                                handleSelect={this.handleSelect}
-                                testForm={this.submitForm}
-                            />
-                        </Box>
-                    </Container>
+                    <Box id="formbox">
+                        <HomeForm
+                            showResults={this.showResults}
+                            handleFieldChange={this.handleFieldChange}
+                            handleCheckboxChange={this.handleCheckboxChange}
+                            handleSelect={this.handleSelect}
+                            testForm={this.submitForm}
+                        />
+                    </Box>
                 </React.Fragment>
             )
         } else if (this.state.HomeState === "RecipeList") {
@@ -255,19 +253,15 @@ export default class Home extends Component {
                         showMyRecipes={this.showMyRecipes}
                         showForm={this.showForm}
                     />
-                    <Container>
-                        <Box>
-                            <SearchResults
-                                // handleFieldChange={this.handleFieldChange}
-                                showForm={this.showForm}
-                                recipes={this.state.recipes}
-                                removeModal={this.removeModal}
-                                Modal={this.state.Modal}
-                                currentUserId={this.state.currentUserId}
-                                MyRecipes={this.state.MyRecipes}
-                            />
-                        </Box>
-                    </Container>
+                    <SearchResults
+                        // handleFieldChange={this.handleFieldChange}
+                        showForm={this.showForm}
+                        recipes={this.state.recipes}
+                        removeModal={this.removeModal}
+                        Modal={this.state.Modal}
+                        currentUserId={this.state.currentUserId}
+                        MyRecipes={this.state.MyRecipes}
+                    />
                 </React.Fragment>
             )
         } else if (this.state.HomeState === "MyReicpes") {

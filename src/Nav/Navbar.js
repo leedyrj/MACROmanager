@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Navbar, NavbarBrand, NavbarItem, Icon, NavbarBurger, NavbarMenu, NavbarStart } from 'bloomer';
+import { Navbar, NavbarBrand, NavbarItem, Icon, NavbarBurger, NavbarMenu, NavbarStart, NavbarEnd, Image } from 'bloomer';
 import 'bulma/css/bulma.css'
 import "../CSS/Navbar.css";
 //import APIManager from "./../APIHandler";
@@ -17,7 +17,7 @@ export default class Navigation extends Component {
             //     <Link to="/">My Recipes</Link>
             //     <Link to="/">Dictionary</Link>
             // </nav>
-            <Navbar style={{ border: 'solid 1px #00D1B2', margin: '0' }}>
+            <Navbar className="navbar">
                 <NavbarBrand>
                     <NavbarItem isHidden='desktop'>
                         <Icon className='fa fa-github' />
@@ -31,12 +31,18 @@ export default class Navigation extends Component {
                     <NavbarStart>
                         <NavbarItem
                             href='#/'
-                            onClick={this.props.showForm}>Home</NavbarItem>
+                            onClick={this.props.showForm}
+                            className="navbar-item">Home</NavbarItem>
                         <NavbarItem
                             href='#/'
-                            onClick={this.props.showMyRecipes}>My Recipes</NavbarItem>
+                            onClick={this.props.showMyRecipes}
+                            className="navbar-item">My Recipes</NavbarItem>
                     </NavbarStart>
                 </NavbarMenu>
+                <NavbarEnd>
+                    <Image src="./MACROmanager text.png" />
+                    {/* <div class="canva-embed" data-height-ratio="1" data-design-id="DADAddguZjg" style="padding:100% 5px 5px 5px;background:rgba(0,0,0,0.03);border-radius:8px;"></div><script async src="https://sdk.canva.com/v1/embed.js"></script><a href="https://www.canva.com/design/DADAddguZjg/view?utm_content=DADAddguZjg&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">MACROmanager</a> by <a href="https://www.canva.com/RobertLeedy?utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">Robert Leedy</a> */}
+                </NavbarEnd>
             </Navbar>
         )
     }

@@ -6,30 +6,115 @@ body, html {
 }
 
 #root {
-  background-image: url(https://www.greencell.com/wp-content/uploads/2017/01/home-fruit-veg.jpg);
-  /* background-image: url(https://images.unsplash.com/photo-1424593463432-4104fa2c015a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4dda3f3b3eeac20e125652112072c20c&auto=format&fit=crop&w=500&q=60); */
+  /* background-image: url(https://images.unsplash.com/photo-1526046881250-dbec3e06414c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d983e3a51ac708ca2ab8c75bd495b594&auto=format&fit=crop&w=634&q=80); */
+  /* url(https://www.greencell.com/wp-content/uploads/2017/01/home-fruit-veg.jpg); */
+  background-image: url(https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&s=fd9737c65140923d4697ea511498b402&auto=format&fit=crop&w=1050&q=80);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  /* background-position: center; */
   height: 100%
 }
 
-.container {
-  margin-top: 2%;
-  margin-bottom: 2%;
-  background-color: #E58639
-}
-
 .box {
-  margin-top: 2%;
-  margin-bottom: 2%;
-  background-color: #E58639;
+  margin: 2%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 80vh
 }
-
+/* 
 .logregcont {
   width: 40%;
+} */
+
+.box > .card:hover {
+  transform: scale(1.05)
 }
 
-#results-container :hover {
-  transform: scale(1.1)
+.card {
+  margin: 2%
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #19b8d8; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  /* background: #b30000;  */
+}
+
+/* .nutrition-item{
+    border-right: solid 1px lightgray;
+} */
+
+.nutrition-item:last-of-type {
+  border: none
+}
+
+.nutrition-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 1%;
+}
+
+.cardcontent {
+  background-color: #E8f1f2 !important;
+  border: 1px #35b729 solid
+}
+
+/* #test {
+  background-color: rgba(19, 154, 67, 0.5)
+} */
+
+#test {
+  background-color: rgba(255,255,255,.8)
+}
+
+.cardheader {
+  background-color: #35b729;
+  border: 1px #35b729 solid;
+}
+
+.headerTitle {
+  color: #E8f1f2 !important
+}
+
+.navbar {
+  background-color: #D9D9D9 !important;
+}
+
+.navbar-item {
+  color: darkgray !important
+}
+
+.navbar-item:hover {
+  background-color: #19b8d8 !important
+}
+
+.navbar-item:active {
+  background-color: #19b8d8
+}
+
+#formbox {
+  background-color: rgba(255,255,255,.8)
+}
+
+button {
+  background-color: #FACB0B
 }

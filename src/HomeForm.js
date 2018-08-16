@@ -199,7 +199,7 @@ export default class HomeForm extends Component {
                         onClick={this.props.testForm}
                     >Submit</Button>
                 </form>
-            </React.Fragment>
+            </React.Fragment >
         )
     }
 }

@@ -23,28 +23,180 @@
   "recipes": [
     {
       "userId": 1,
-      "recipeName": "PB and J Overnight Oats",
-      "externalRecipeId": "PB-and-J-Overnight-Oats-2476174",
-      "recipeUrl": "https://fitfoodiefinds.com/pb-j-overnight-oats/",
+      "recipeName": "Thai Basil Chicken",
+      "externalRecipeId": "Thai-Basil-Chicken-1927402",
+      "recipeUrl": "http://www.africanbites.com/thai-basil-chicken/",
+      "recipeImage": "https://lh3.googleusercontent.com/8cFDAT4zgJXte5KNRxTALpRpjXHMhHj35Kt5TCq2Go6XT6iV6tcNLji2VMH30uIBEIxbDSX03kEZ0E4HKX-i=s360",
       "recipeIngred": [
-        "1 cup rolled oats",
-        "1 cup unsweetened almond milk, unsweetened",
-        "1 tablespoon chia seeds",
-        "1/2 tablespoon maple syrup",
-        "2 tablespoons creamy peanut butter",
-        "1 tablespoon jelly or preserves"
+        "2-3 tablespoons vegetable oil",
+        "1 teaspoon sriracha sauce",
+        "1 teaspoons crushed red pepper",
+        "1 medium onion chopped",
+        "4 cloves garlic, sliced (about 3 tablespoons)",
+        "1 pounds skinless, boneless chicken breasts, cut into bite-size pieces",
+        "2 teaspoon brown sugar",
+        "1 tablespoons fish sauce or more adjust to taste",
+        "1 tablespoons soy sauce",
+        "¾ cup fresh basil leaves(about 10 or more leaves)"
       ],
-      "recipePro": 10.06,
-      "recipeCarbs": 42.21,
-      "recipeFat": 13.06,
-      "recipeComment": "",
-      "id": 2
+      "recipePro": 28.64,
+      "recipeCarbs": 7.45,
+      "recipeFat": 15.8,
+      "recipeComment": "Doesn't need the brown sugar",
+      "id": 5,
+      "recipeRating": 4
     },
     {
       "userId": 1,
+      "recipeName": "Irish Pan Haggerty",
+      "externalRecipeId": "Irish-Pan-Haggerty-2350442",
+      "recipeUrl": "https://pudgefactor.com/irish-pan-haggerty/",
+      "recipeImage": "https://lh3.googleusercontent.com/3fOvqOQopdbED5uswB8jRJnofeNzKGyDRPUei29nVadNKiZfh47QWP0tTR-i04Anw7pEc-Wtq-zkFDgvEhd4Vg=s360",
+      "recipeIngred": [
+        "3 tbsp unsalted butter divided",
+        "3 cups onion thinly sliced (about 10 ounces)",
+        "4 cups Russet Potatoes peeled and thinly sliced, about 1-1/4 pounds",
+        "1 cup Dubliner cheese, shredded (4 ounces)",
+        "1/2 teaspoon Kosher salt",
+        "1/8 teaspoon freshly ground black pepper"
+      ],
+      "recipePro": 4.31,
+      "recipeCarbs": 37.8,
+      "recipeFat": 8.62,
+      "recipeComment": "I'll try red potatoes next.",
+      "id": 9,
+      "recipeRating": 2
+    },
+    {
+      "userId": 1,
+      "recipeName": "Baked Orange Chicken",
+      "externalRecipeId": "Baked-Orange-Chicken-1015660",
+      "recipeUrl": "http://www.adashofsanity.com/2015/02/baked-orange-chicken/",
+      "recipeImage": "http://lh4.ggpht.com/V8nJYEwwRr5hJOy4tKWlHy_mxo8vRq5UcwKIpc-Up68r987Ls2m2sA91DwRPPzLZk5zIyFaauwsdzhV_Id2eTCk=s360",
+      "recipeIngred": [
+        "Baked Chicken",
+        "3-4 boneless skinless chicken breast, cut into 1-inch pieces",
+        "¾ cup cornstarch",
+        "1 cup panko bread crumbs",
+        "8 egg whites, whisked",
+        "Orange Sauce",
+        "1 cup orange juice",
+        "1 cup brown sugar",
+        "¼ cup white vinegar",
+        "¼ cup apple cider vinegar",
+        "½ cup soy sauce",
+        "1 clove garlic, minced",
+        "1 tablespoon Sriracha",
+        "1 tablespoon cornstarch",
+        "½ teaspoon fresh ginger, minced (optional)"
+      ],
+      "recipePro": 67.41,
+      "recipeCarbs": 54.11,
+      "recipeFat": 9.66,
+      "recipeComment": "Too much orange!!!!!",
+      "id": 10,
+      "recipeRating": 2
+    },
+    {
+      "userId": 1,
+      "recipeName": "Thai Marinated Skirt Steak",
+      "externalRecipeId": "Thai-Marinated-Skirt-Steak-2468563",
+      "recipeUrl": "https://blog.bulletproof.com/thai-skirt-steak-recipe-2g/",
+      "recipeImage": "https://lh3.googleusercontent.com/sPO55MeuiNfhctBwMITR-Y1kP6XN2HBJNzzT_OFEMlVVLRKO_iL0hpwwfCR3oHmvmmqVX2OG-flX5C3HqvVHEA=s360",
+      "recipeIngred": [
+        "1 pound grass-fed skirt steak",
+        "2 tablespoons olive oil",
+        "1 Thai chili, thinly sliced (you can substitute serrano chile, or fresh or dried cayenne)",
+        "2 tablespoons avocado oil or grass-fed ghee",
+        "Zest of 2 lemons",
+        "1/2 cup parsley, chopped",
+        "salt to taste"
+      ],
+      "recipePro": 49.16,
+      "recipeCarbs": 12.8,
+      "recipeFat": 45.79,
+      "recipeComment": "",
+      "id": 11
+    },
+    {
+      "userId": 2,
+      "recipeName": "Thai Coconut Chicken Skewers",
+      "externalRecipeId": "Thai-Coconut-Chicken-Skewers-2161050",
+      "recipeUrl": "https://www.yummyhealthyeasy.com/thai-coconut-chicken-skewers/",
+      "recipeImage": "https://lh3.googleusercontent.com/W7HkqbE0-IN5k0XgmZXr79mf3I--BsyAIlSv1dY5IEz6L9StUyhtWjJ1YggkOKxbpGFBSYMUrEKx8ocGyzZT3lM=s360",
+      "recipeIngred": [
+        "1¼ cup light coconut milk",
+        "2 tsp. ground cumin",
+        "1 tsp. ground coriander",
+        "1 tsp. salt",
+        "¼ tsp. pepper",
+        "2 Tbsp. light brown sugar",
+        "½ tsp. garlic powder",
+        "pinch cayenne pepper (or more if desired)",
+        "1 Tbsp. curry powder",
+        "2 Tbsp. light soy sauce",
+        "¼ tsp. minced fresh ginger",
+        "zest of 1 small lime",
+        "juice from ½ small lime",
+        "8 chicken thighs, cut into long strips",
+        "bamboo skewers",
+        "basmati rice",
+        "light coconut milk",
+        "cilantro, chopped for serving"
+      ],
+      "recipePro": 46.45,
+      "recipeCarbs": 19.91,
+      "recipeFat": 51.11,
+      "recipeComment": "",
+      "id": 12
+    },
+    {
+      "userId": 2,
+      "recipeName": "Thai Marinated Skirt Steak",
+      "externalRecipeId": "Thai-Marinated-Skirt-Steak-2468563",
+      "recipeUrl": "https://blog.bulletproof.com/thai-skirt-steak-recipe-2g/",
+      "recipeImage": "https://lh3.googleusercontent.com/sPO55MeuiNfhctBwMITR-Y1kP6XN2HBJNzzT_OFEMlVVLRKO_iL0hpwwfCR3oHmvmmqVX2OG-flX5C3HqvVHEA=s360",
+      "recipeIngred": [
+        "1 pound grass-fed skirt steak",
+        "2 tablespoons olive oil",
+        "1 Thai chili, thinly sliced (you can substitute serrano chile, or fresh or dried cayenne)",
+        "2 tablespoons avocado oil or grass-fed ghee",
+        "Zest of 2 lemons",
+        "1/2 cup parsley, chopped",
+        "salt to taste"
+      ],
+      "recipePro": 49.16,
+      "recipeCarbs": 12.8,
+      "recipeFat": 45.79,
+      "recipeComment": "Yummy",
+      "id": 13,
+      "recipeRating": 5
+    },
+    {
+      "userId": 2,
+      "recipeName": "Fast Food Pickles",
+      "externalRecipeId": "Fast-Food-Pickles-2479474",
+      "recipeUrl": "https://jenniferbanz.com/fast-food-pickles",
+      "recipeImage": "https://lh3.googleusercontent.com/0jgXCGOYwAQl5h2PtYFWLhyVsfknyjpdFvOhnd6reS_RSqktcLlqQivi7t9VWET0wAJRtVgVxCFu6Rd_W36Q=s360",
+      "recipeIngred": [
+        "4-6 small Cucumbers, Sliced Thin",
+        "1/2 cup Vinegar",
+        "1 Tablespoon Salt",
+        "Water",
+        "1 teaspoon Dried dill"
+      ],
+      "recipePro": 4.52,
+      "recipeCarbs": 18.06,
+      "recipeFat": 0,
+      "recipeComment": "",
+      "id": 14
+    },
+    {
+      "userId": 2,
       "recipeName": "Small Batch Homemade Biscuits",
       "externalRecipeId": "Small-Batch-Homemade-Biscuits-2473362",
       "recipeUrl": "https://aflavorjournal.com/small-batch-homemade-biscuits/",
+      "recipeImage": "https://lh3.googleusercontent.com/lzxGEpZBFBofxLpwjmCvbCdkbEm-yo86ND_V6s0XSrx8XrVykeW7CNtf_nODNeYTl1hnzFORNsw--E5CCWeZaQ=s360",
       "recipeIngred": [
         "1 cup all purpose flour",
         "1 Tbsp. baking powder",
@@ -57,25 +209,25 @@
       "recipeCarbs": 14.6,
       "recipeFat": 4.49,
       "recipeComment": "",
-      "id": 3
+      "id": 15
     },
     {
       "userId": 2,
-      "recipeName": "Strawberry Colada Smoothie",
-      "externalRecipeId": "Strawberry-Colada-Smoothie-2229687",
-      "recipeUrl": "https://www.cookingclassy.com/strawberry-colada-smoothie/",
+      "recipeName": "Grilled Chicken Taco Salad",
+      "externalRecipeId": "Grilled-Chicken-Taco-Salad-2485166",
+      "recipeUrl": "https://garnishedplate.com/grilled-chicken-taco-salad/",
+      "recipeImage": "https://lh3.googleusercontent.com/kJzpwjsMJc8pHTTu8H2TcuApHi9pmOHFCcbrXoFogVIXkPIgOVUYxAJD9wh7aI_oPUMWwK1eX3ncmkwpgX4T=s360",
       "recipeIngred": [
-        "8 oz fresh strawberries , chilled, hulled",
-        "1 ripe banana , peeled and frozen",
-        "1 1/2 cups frozen pineapple",
-        "1 (5.3 oz) container coconut Greek yogurt",
-        "1 1/4 - 1 1/2 cups unsweetened coconut milk beverage (the kind found in the dairy isle)*"
+        "12 oz chopped romaine lettuce",
+        "4 oz leftover grilled chicken",
+        "1 cup leftover corn salsa",
+        "1/2 cup ranch dressing"
       ],
-      "recipePro": 8.82,
-      "recipeCarbs": 53.29,
-      "recipeFat": 45.45,
+      "recipePro": 10.08,
+      "recipeCarbs": 8.49,
+      "recipeFat": 19.27,
       "recipeComment": "",
-      "id": 4
+      "id": 16
     }
   ]
 }
