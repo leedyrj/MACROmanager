@@ -17,7 +17,9 @@ export default class MyRecipes extends Component {
         modalType: "myrecipes",
         modalRecipe: {},
         MyRecipes: [],
-        Dropdown: false
+        Dropdown: false,
+        SortMacro: "",
+        SortDirection: ""
     }
 
     componentDidMount() {
@@ -69,12 +71,15 @@ export default class MyRecipes extends Component {
 
     // this.setState
 
-    sortByKey = (array, key) => {
-        console.log(this.state.MyRecipes)
-        return array.sort(function (a, b) {
-            var x = a[key]; var y = b[key];
-            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-        });
+    sortByMacro = (macro, dir) => {
+        let currentUserId = this.props.currentUserId
+        fetch(`http://localhost:5002/recipes?userId=${currentUserId}&_sort=${macro}&_order=${dir}`)
+            .then(a => a.json())
+            .then((myRecipes) => {
+                this.setState({
+                    MyRecipes: myRecipes
+                })
+            }).then(console.log(this.state.MyRecipes))
     }
 
     render() {
@@ -84,7 +89,8 @@ export default class MyRecipes extends Component {
                 <React.Fragment>
                     <Box id="test">
                         <Sorter
-                            sortByKey={this.sortByKey}
+                            handleSelect={this.props.handleSelect}
+                            sortByKey={this.sortByMacro}
                         />
                         {this.state.MyRecipes.map(recipe => {
                             return (

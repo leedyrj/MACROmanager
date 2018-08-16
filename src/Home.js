@@ -140,11 +140,11 @@ export default class Home extends Component {
         if (this.state.FormInfo.Meal === "") {
             apiString
         } else {
-            apiString + "&allowedCourse[]=course^course-" + this.state.FormInfo.Meal
+            apiString += "&allowedCourse[]=course^course-" + this.state.FormInfo.Meal
         }
         console.log("apistring", apiString)
+        console.log("meal", this.state.FormInfo.Meal)
         apiCall = apiString
-        console.log("end of call", apiCall)
         APIController.getRecipes(apiCall).then((recipes) => {
             this.setState({
                 HomeState: "RecipeList",

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Tabs, TabList, TabLink, Icon, Tab, DropdownMenu, DropdownTrigger, Dropdown, Button, DropdownContent, DropdownDivider, DropdownItem } from 'bloomer'
+import { Tabs, TabList, TabLink, Icon, Tab, DropdownMenu, DropdownTrigger, Dropdown, Button, DropdownContent, DropdownDivider, DropdownItem, Select, Label } from 'bloomer'
 import { Radio } from "../node_modules/bloomer/lib/elements/Form/Radio";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -16,43 +16,33 @@ export default class Sorter extends Component {
     render() {
         return (
             <React.Fragment>
-                <Dropdown isHoverable>
-                    <DropdownTrigger>
-                        <Button isOutlined aria-haspopup="true" aria-controls="dropdown-menu">
-                            <span>Sort by Macro</span>
-                            <Icon icon="angle-down" isSize="small" />
-                        </Button>
-                    </DropdownTrigger>
-                    <DropdownMenu>
-                        <DropdownContent>
-                            <DropdownItem href="#" isHoverable>Protien</DropdownItem>
-                            <DropdownDivider />
-                            <DropdownItem href="#" isHoverable>Carbs</DropdownItem>
-                            <DropdownDivider />
-                            <DropdownItem href="#" isHoverable>Fat</DropdownItem>
-                        </DropdownContent>
-                    </DropdownMenu>
-                </Dropdown>
+                <Label>Select:</Label>
+                <Select
+                    id="sort-macro"
+                    name="sort-macro"
+                    onChange={this.props.handleSelect}
+                    value={this.id}>
+                    <option selected value> -- Select a Macro -- </option>
+                    <option value="Protein"> Protein </option>
+                    <option value="Carbs"> Carbs </option>
+                    <option value="Fat"> Fat </option>
+                </Select>
 
-                <Dropdown isHoverable>
-                    <DropdownTrigger>
-                        <Button isOutlined aria-haspopup="true" aria-controls="dropdown-menu">
-                            <span>Sort by Amount</span>
-                            <Icon icon="angle-down" isSize="small" />
-                        </Button>
-                    </DropdownTrigger>
-                    <DropdownMenu>
-                        <DropdownContent>
-                            <DropdownItem href="#" isHoverable>
-                                <FontAwesomeIcon icon={faArrowUp} /> High to Low</DropdownItem>
-                            <DropdownDivider />
-                            <DropdownItem href="#" isHoverable>
-                                <FontAwesomeIcon icon={faArrowDown} /> Low to High</DropdownItem>
-                        </DropdownContent>
-                    </DropdownMenu>
-                </Dropdown>
+                <Label>Select:</Label>
+                <Select
+                    id="sort-direction"
+                    name="sort-direction"
+                    onChange={this.props.handleSelect}
+                    value={this.id}>
+                    <option selected value> -- Sort by -- </option>
+                    <option value="hightolow">
+                        <FontAwesomeIcon icon={faArrowDown} /> High to Low </option>
+                    <option value="lowtohigh">
+                        <FontAwesomeIcon icon={faArrowUp} /> Low to High </option>
 
-                <Button onClick={this.props.sortByKey}>Sort</Button>
+                </Select>
+
+                <Button onClick={this.props.sortByMacro}>Sort</Button>
             </React.Fragment>
 
         )
