@@ -18,26 +18,26 @@ export default class Sorter extends Component {
             <React.Fragment>
                 <Label>Select:</Label>
                 <Select
-                    id="sort-macro"
-                    name="sort-macro"
-                    onChange={this.props.handleSelect}
+                    id="SortMacro"
+                    name="SortMacro"
+                    onChange={this.props.handleSort}
                     value={this.id}>
                     <option selected value> -- Select a Macro -- </option>
-                    <option value="Protein"> Protein </option>
-                    <option value="Carbs"> Carbs </option>
-                    <option value="Fat"> Fat </option>
+                    <option value="recipePro"> Protein </option>
+                    <option value="recipeCarbs"> Carbs </option>
+                    <option value="recipeFat"> Fat </option>
                 </Select>
 
                 <Label>Select:</Label>
                 <Select
-                    id="sort-direction"
-                    name="sort-direction"
-                    onChange={this.props.handleSelect}
+                    id="SortDirection"
+                    name="SortDirection"
+                    onChange={this.props.handleSort}
                     value={this.id}>
                     <option selected value> -- Sort by -- </option>
-                    <option value="hightolow">
+                    <option value="desc">
                         <FontAwesomeIcon icon={faArrowDown} /> High to Low </option>
-                    <option value="lowtohigh">
+                    <option value="asc">
                         <FontAwesomeIcon icon={faArrowUp} /> Low to High </option>
 
                 </Select>

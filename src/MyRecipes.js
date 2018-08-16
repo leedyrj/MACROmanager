@@ -12,14 +12,20 @@ library.add(faWindowClose)
 
 export default class MyRecipes extends Component {
 
-    state = {
-        modal: false,
-        modalType: "myrecipes",
-        modalRecipe: {},
-        MyRecipes: [],
-        Dropdown: false,
-        SortMacro: "",
-        SortDirection: ""
+    constructor(props) {
+        super(props)
+        this.state = {
+            modal: false,
+            modalType: "myrecipes",
+            modalRecipe: {},
+            MyRecipes: [],
+            Dropdown: false,
+            SortInfo: {
+                SortMacro: "",
+                SortDirection: ""
+            }
+        }
+        this.handleSort = this.handleSort.bind(this)
     }
 
     componentDidMount() {
@@ -32,6 +38,24 @@ export default class MyRecipes extends Component {
                 })
                 // console.log("state: MyRecipes", this.state.MyRecipes)
             })
+    }
+
+    handleSort = (event) => {
+        const stateToChange = this.state.SortInfo
+        const target = event.target
+        const value = target.value
+        const name = target.name
+        if (event.target.id === "SortMacro") {
+            stateToChange[name] = value
+            this.setState({
+                SortInfo: stateToChange,
+            })
+        } else if (event.target.id === "SortDirection") {
+            stateToChange[name] = value
+            this.setState({
+                SortInfo: stateToChange
+            })
+        }
     }
 
     recipeView = (recipeId) => {
@@ -71,15 +95,19 @@ export default class MyRecipes extends Component {
 
     // this.setState
 
-    sortByMacro = (macro, dir) => {
+    sortByMacro = () => {
+        console.log("click")
         let currentUserId = this.props.currentUserId
-        fetch(`http://localhost:5002/recipes?userId=${currentUserId}&_sort=${macro}&_order=${dir}`)
+        let macro = this.state.SortInfo.SortMacro
+        let direc = this.state.SortInfo.SortDirection
+        fetch(`http://localhost:5002/recipes?userId=${currentUserId}&_sort=${macro}&_order=${direc}`)
             .then(a => a.json())
             .then((myRecipes) => {
+                console.log(myRecipes)
                 this.setState({
                     MyRecipes: myRecipes
                 })
-            }).then(console.log(this.state.MyRecipes))
+            })
     }
 
     render() {
@@ -89,8 +117,9 @@ export default class MyRecipes extends Component {
                 <React.Fragment>
                     <Box id="test">
                         <Sorter
-                            handleSelect={this.props.handleSelect}
-                            sortByKey={this.sortByMacro}
+                            handleSort={this.handleSort}
+                            sortByMacro={this.sortByMacro}
+                            SortInfo={this.state.SortInfo}
                         />
                         {this.state.MyRecipes.map(recipe => {
                             return (

@@ -210,6 +210,24 @@
       "recipeFat": 4.49,
       "recipeComment": "",
       "id": 15
+    },
+    {
+      "userId": 2,
+      "recipeName": "Grilled Chicken Taco Salad",
+      "externalRecipeId": "Grilled-Chicken-Taco-Salad-2485166",
+      "recipeUrl": "https://garnishedplate.com/grilled-chicken-taco-salad/",
+      "recipeImage": "https://lh3.googleusercontent.com/kJzpwjsMJc8pHTTu8H2TcuApHi9pmOHFCcbrXoFogVIXkPIgOVUYxAJD9wh7aI_oPUMWwK1eX3ncmkwpgX4T=s360",
+      "recipeIngred": [
+        "12 oz chopped romaine lettuce",
+        "4 oz leftover grilled chicken",
+        "1 cup leftover corn salsa",
+        "1/2 cup ranch dressing"
+      ],
+      "recipePro": 10.08,
+      "recipeCarbs": 8.49,
+      "recipeFat": 19.27,
+      "recipeComment": "",
+      "id": 16
     }
   ]
 }
