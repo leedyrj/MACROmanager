@@ -7,6 +7,9 @@ import SearchResults from "./SearchResults"
 import APIController from ".//APIController"
 import "./CSS/index.css"
 import "./CSS/Collapsible.css"
+import LogoTilted from "./Images/MACROmanager_tilted_trans.png"
+import LogoStraight from "./Images/MACROmanager_trans.png"
+import { Content } from "bloomer/lib/elements/Content";
 
 export default class Home extends Component {
 
@@ -142,10 +145,9 @@ export default class Home extends Component {
         } else {
             apiString += "&allowedCourse[]=course^course-" + this.state.FormInfo.Meal
         }
-        console.log("apistring", apiString)
-        console.log("meal", this.state.FormInfo.Meal)
         apiCall = apiString
         APIController.getRecipes(apiCall).then((recipes) => {
+            console.log(recipes)
             this.setState({
                 HomeState: "RecipeList",
                 recipes: recipes
@@ -235,7 +237,29 @@ export default class Home extends Component {
                         showMyRecipes={this.showMyRecipes}
                         showForm={this.showForm}
                     />
-                    <Box id="formbox">
+                    {/* <Box id="blah">
+                        <img
+                            src={LogoStraight}
+                            id="form-logo"></img>
+
+                        <Content>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac lacus at nibh elementum tempor vitae rutrum massa. Phasellus sit amet nisl eget ligula mattis dignissim. Sed commodo ullamcorper ligula, nec viverra nulla elementum et. Sed sapien justo, finibus egestas risus blandit, volutpat aliquam neque. Sed pretium purus urna, sed tristique massa gravida ac.
+                        </p>
+                        </Content>
+                    </Box> */}
+                    <Box
+                        className="box"
+                        id="formbox">
+                        <img
+                            src={LogoStraight}
+                            id="form-logo"></img>
+
+                        <Content>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac lacus at nibh elementum tempor vitae rutrum massa. Phasellus sit amet nisl eget ligula mattis dignissim. Sed commodo ullamcorper ligula, nec viverra nulla elementum et. Sed sapien justo, finibus egestas risus blandit, volutpat aliquam neque. Sed pretium purus urna, sed tristique massa gravida ac.
+                        </p>
+                        </Content>
                         <HomeForm
                             showResults={this.showResults}
                             handleFieldChange={this.handleFieldChange}

@@ -42,7 +42,9 @@ export default class Sorter extends Component {
 
                 </Select>
 
-                <Button onClick={this.props.sortByMacro}>Sort</Button>
+                <Button
+                    onClick={this.props.sortByMacro}
+                    className="yellow-button">Sort</Button>
             </React.Fragment>
 
         )

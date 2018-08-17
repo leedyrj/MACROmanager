@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Navbar, NavbarBrand, NavbarItem, Icon, NavbarBurger, NavbarMenu, NavbarStart, NavbarEnd, Image } from 'bloomer';
 import 'bulma/css/bulma.css'
 import "../CSS/Navbar.css";
-import MACROmanagerText from "../Images/MACROmanager_text.png"
+import MACROmanagerText from "../Images/MACROmanager_text_trans.png"
 //import APIManager from "./../APIHandler";
 
 export default class Navigation extends Component {
@@ -41,7 +41,9 @@ export default class Navigation extends Component {
                     </NavbarStart>
                 </NavbarMenu>
                 <NavbarEnd>
-                    <img src={MACROmanagerText}></img>
+                    <img
+                        src={MACROmanagerText}
+                        id="nav-logo"></img>
                     {/* <div class="canva-embed" data-height-ratio="1" data-design-id="DADAddguZjg" style="padding:100% 5px 5px 5px;background:rgba(0,0,0,0.03);border-radius:8px;"></div><script async src="https://sdk.canva.com/v1/embed.js"></script><a href="https://www.canva.com/design/DADAddguZjg/view?utm_content=DADAddguZjg&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">MACROmanager</a> by <a href="https://www.canva.com/RobertLeedy?utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">Robert Leedy</a> */}
                 </NavbarEnd>
             </Navbar>

@@ -6,6 +6,7 @@ import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
 import DatabaseModal from "./DatabaseModal"
 import APIController from "./APIController"
 import Sorter from "./Sorter"
+import Search from "./Search"
 
 
 library.add(faWindowClose)
@@ -23,7 +24,9 @@ export default class MyRecipes extends Component {
             SortInfo: {
                 SortMacro: "",
                 SortDirection: ""
-            }
+            },
+            SearchItem: "",
+            SearchRecipes: []
         }
         this.handleSort = this.handleSort.bind(this)
     }
@@ -38,6 +41,15 @@ export default class MyRecipes extends Component {
                 })
                 // console.log("state: MyRecipes", this.state.MyRecipes)
             })
+    }
+
+    handleSearchField = (e) => {
+        const stateToChange = this.state
+        stateToChange[e.target.id] = e.target.value
+        console.log(e.target.id, e.target.value, stateToChange)
+        this.setState({
+            stateToChange
+        })
     }
 
     handleSort = (event) => {
@@ -110,16 +122,34 @@ export default class MyRecipes extends Component {
             })
     }
 
+    searchRecipes = () => {
+        let currentUserId = this.props.currentUserId
+        let SearchItem = this.state.SearchItem
+        fetch(`http://localhost:5002/recipes?userId=${currentUserId}&q=${SearchItem}`).then(a => a.json())
+            .then((myRecipes) => {
+                console.log(myRecipes)
+                this.setState({
+                    MyRecipes: myRecipes
+                })
+            })
+    }
+
     render() {
         return (
             <React.Fragment>
 
                 <React.Fragment>
-                    <Box id="test">
+                    <Box
+                        className="box"
+                        id="my-recipes-box">
                         <Sorter
                             handleSort={this.handleSort}
                             sortByMacro={this.sortByMacro}
                             SortInfo={this.state.SortInfo}
+                        />
+                        <Search
+                            handleSearchField={this.handleSearchField}
+                            searchRecipes={this.searchRecipes}
                         />
                         {this.state.MyRecipes.map(recipe => {
                             return (
