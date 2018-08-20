@@ -39,13 +39,13 @@ export default class SearchResults extends Component {
                     New Search
                 </Button>
                 <Box
-                    className="box"
+                    className="results-box"
                     id="results-container">
                     {this.props.recipes.matches.map(recipe => {
                         return (
                             <Card
                                 onClick={() => this.recipeView(recipe)}
-                                className="card">
+                                className="results-card">
                                 <CardHeader className="cardheader">
                                     <CardHeaderTitle className="headerTitle">
                                         {recipe.recipeName}
@@ -53,11 +53,15 @@ export default class SearchResults extends Component {
                                 </CardHeader>
                                 <CardImage>
                                     {/* <Image isRatio='4:3' src='https://via.placeholder.com/1280x960' /> */}
+                                    <Image
+                                        className="results-img"
+                                        isSize='128x128'
+                                        src={recipe.smallImageUrls} />
                                 </CardImage>
                                 <CardContent>
                                     <Media>
                                         <MediaLeft>
-                                            <Image isRatio='128x128' src={recipe.smallImageUrls} />
+
                                         </MediaLeft>
                                         <MediaContent>
                                         </MediaContent>

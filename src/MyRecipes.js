@@ -169,15 +169,17 @@ export default class MyRecipes extends Component {
                     <Box
                         className="box"
                         id="my-recipes-box">
-                        <Sorter
-                            handleSort={this.handleSort}
-                            sortByMacro={this.sortByMacro}
-                            SortInfo={this.state.SortInfo}
-                        />
-                        <Search
-                            handleSearchField={this.handleSearchField}
-                            searchRecipes={this.searchRecipes}
-                        />
+                        <div id="sorter">
+                            <Sorter
+                                handleSort={this.handleSort}
+                                sortByMacro={this.sortByMacro}
+                                SortInfo={this.state.SortInfo}
+                            />
+                            <Search
+                                handleSearchField={this.handleSearchField}
+                                searchRecipes={this.searchRecipes}
+                            />
+                        </div>
                         {this.state.MyRecipes.map(recipe => {
                             return (
                                 <React.Fragment>

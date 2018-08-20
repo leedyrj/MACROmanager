@@ -16,35 +16,41 @@ export default class Sorter extends Component {
     render() {
         return (
             <React.Fragment>
-                <Label>Select:</Label>
-                <Select
-                    id="SortMacro"
-                    name="SortMacro"
-                    onChange={this.props.handleSort}
-                    value={this.id}>
-                    <option selected value> -- Select a Macro -- </option>
-                    <option value="recipePro"> Protein </option>
-                    <option value="recipeCarbs"> Carbs </option>
-                    <option value="recipeFat"> Fat </option>
-                </Select>
+                <div id="sort">
+                    <div id="macro-sort">
+                        <Label>Select:</Label>
+                        <Select
+                            id="SortMacro"
+                            name="SortMacro"
+                            onChange={this.props.handleSort}
+                            value={this.id}>
+                            <option selected value> -- Select a Macro -- </option>
+                            <option value="recipePro"> Protein </option>
+                            <option value="recipeCarbs"> Carbs </option>
+                            <option value="recipeFat"> Fat </option>
+                        </Select>
+                    </div>
+                    <div id="dir-sort">
+                        <Label>Select:</Label>
+                        <Select
+                            id="SortDirection"
+                            name="SortDirection"
+                            onChange={this.props.handleSort}
+                            value={this.id}>
+                            <option selected value> -- Sort by -- </option>
+                            <option value="desc">
+                                <FontAwesomeIcon icon={faArrowDown} /> High to Low </option>
+                            <option value="asc">
+                                <FontAwesomeIcon icon={faArrowUp} /> Low to High </option>
 
-                <Label>Select:</Label>
-                <Select
-                    id="SortDirection"
-                    name="SortDirection"
-                    onChange={this.props.handleSort}
-                    value={this.id}>
-                    <option selected value> -- Sort by -- </option>
-                    <option value="desc">
-                        <FontAwesomeIcon icon={faArrowDown} /> High to Low </option>
-                    <option value="asc">
-                        <FontAwesomeIcon icon={faArrowUp} /> Low to High </option>
-
-                </Select>
-
+                        </Select>
+                    </div>
+                </div>
                 <Button
                     onClick={this.props.sortByMacro}
-                    className="yellow-button">Sort</Button>
+                    className="yellow-button"
+                    id="sort-button">Sort</Button>
+
             </React.Fragment>
 
         )
