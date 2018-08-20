@@ -27,7 +27,9 @@ export default class Comment extends Component {
             )
         } else {
             return (
-                <Button onClick={this.props.showCommentForm}>
+                <Button
+                    onClick={this.props.showCommentForm}
+                    className="yellow-button">
                     Add Notes
                 </Button>
             )

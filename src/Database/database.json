@@ -147,8 +147,9 @@
       "recipePro": 46.45,
       "recipeCarbs": 19.91,
       "recipeFat": 51.11,
-      "recipeComment": "",
-      "id": 12
+      "recipeComment": "This is good",
+      "id": 12,
+      "recipeRating": 4
     },
     {
       "userId": 2,
@@ -171,25 +172,6 @@
       "recipeComment": "Yummy",
       "id": 13,
       "recipeRating": 5
-    },
-    {
-      "userId": 2,
-      "recipeName": "Fast Food Pickles",
-      "externalRecipeId": "Fast-Food-Pickles-2479474",
-      "recipeUrl": "https://jenniferbanz.com/fast-food-pickles",
-      "recipeImage": "https://lh3.googleusercontent.com/0jgXCGOYwAQl5h2PtYFWLhyVsfknyjpdFvOhnd6reS_RSqktcLlqQivi7t9VWET0wAJRtVgVxCFu6Rd_W36Q=s360",
-      "recipeIngred": [
-        "4-6 small Cucumbers, Sliced Thin",
-        "1/2 cup Vinegar",
-        "1 Tablespoon Salt",
-        "Water",
-        "1 teaspoon Dried dill"
-      ],
-      "recipePro": 4.52,
-      "recipeCarbs": 18.06,
-      "recipeFat": 0,
-      "recipeComment": "",
-      "id": 14
     },
     {
       "userId": 2,
@@ -228,6 +210,82 @@
       "recipeFat": 19.27,
       "recipeComment": "",
       "id": 16
+    },
+    {
+      "userId": 2,
+      "recipeName": "Low Carb Pepper Jack Stuffed Turkey Zucchini Meat Loaf",
+      "externalRecipeId": "Low-Carb-Pepper-Jack-Stuffed-Turkey-Zucchini-Meat-Loaf-1269386",
+      "recipeUrl": "http://www.ambitiouskitchen.com/2015/08/pepper-jack-stuffed-turkey-zucchini-meat-loaf-with-awesome-sauce/",
+      "recipeImage": "http://lh3.googleusercontent.com/2-JhNQL1tzXN-1bDnDN2OyJVPDHurOrS7ea84tDOqogGVmi5DNPwaevQ2YC5o0xKon2DlaRJZKK3B3qFYwTW=s360",
+      "recipeIngred": [
+        "1 1/2 pounds extra lean turkey breast (about 96% or higher)",
+        "1 cup diced white onion",
+        "1 cup shredded zucchini, squeezed of excess moisture with a paper towel",
+        "2 cloves garlic, minced",
+        "1 egg, slightly beaten",
+        "1/2 cup panko breadcrumbs* (may use GF breadcrumbs)",
+        "1 teaspoon cumin",
+        "1 teaspoon dried oregano",
+        "1/2 teaspoon garlic powder",
+        "1/2 teaspoon cayenne pepper (if you like heat)",
+        "1 teaspoon dijon mustard",
+        "1/2 teaspoon fresh cracked black pepper",
+        "1/2 teaspoon sea salt",
+        "4 oz sliced pepper jack cheese",
+        "1/2 cup tomato sauce",
+        "1 1/2 teaspoons apple cider vinegar",
+        "1/2 tablespoon honey",
+        "1 tablespoon mustard",
+        "dash of soy sauce (gluten free, if desired)",
+        "dash of hot sauce"
+      ],
+      "recipePro": 35.54,
+      "recipeCarbs": 10.9,
+      "recipeFat": 8.69,
+      "recipeComment": "Needs extra honey.",
+      "id": 17,
+      "recipeRating": 4
+    },
+    {
+      "userId": 2,
+      "recipeName": "Cannoli Cones",
+      "externalRecipeId": "Cannoli-Cones-2072433",
+      "recipeUrl": "https://eat-drink-love.com/cannoli-cones/",
+      "recipeImage": "https://lh3.googleusercontent.com/ICNeklTqpBBNxD8lOB9qoQFYdtrFXwz9Xm34C4NuhVi9U8UG4VGlRywFWsEjA-gZN6ci8c-IR26qmLNrtT57=s360",
+      "recipeIngred": [
+        "1 lb. (16 oz) whole milk ricotta cheese (drained overnight)",
+        "10 sugar cones",
+        "3/4 cup semisweet chocolate chips (for dipping cones; optional)",
+        "1/2-2/3 cup powdered sugar",
+        "1/2 teaspoon vanilla extract",
+        "2/3 cup mini chocolate chips"
+      ],
+      "recipePro": 7.44,
+      "recipeCarbs": 42.37,
+      "recipeFat": 18.04,
+      "recipeComment": "",
+      "id": 18
+    },
+    {
+      "userId": 2,
+      "recipeName": "Honey Sriracha Salmon",
+      "externalRecipeId": "Honey-Sriracha-Salmon-2342996",
+      "recipeUrl": "https://chefsavvy.com/honey-sriracha-salmon/",
+      "recipeImage": "https://lh3.googleusercontent.com/6Lo0-tp3nspjKexmmQUC_j2iRC7NQSvbR1bq1SM5hEVQFbUOrDmxp0MnNpsEw7VM8bC_lYqSI8-upnZDXbjZ=s360",
+      "recipeIngred": [
+        "4 salmon filets, skin on",
+        "1 garlic clove, minced",
+        "3 tablespoons low sodium soy sauce",
+        "2 tablespoons honey",
+        "2 tablespoons sriracha",
+        "3 tablespoons water",
+        "½ tablespoon olive oil, for pan fry method"
+      ],
+      "recipePro": 23.49,
+      "recipeCarbs": 13.53,
+      "recipeFat": 16.63,
+      "recipeComment": "",
+      "id": 19
     }
   ]
 }

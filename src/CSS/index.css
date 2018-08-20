@@ -8,7 +8,7 @@ body, html {
 #root {
   /* background-image: url(https://images.unsplash.com/photo-1526046881250-dbec3e06414c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d983e3a51ac708ca2ab8c75bd495b594&auto=format&fit=crop&w=634&q=80); */
   /* url(https://www.greencell.com/wp-content/uploads/2017/01/home-fruit-veg.jpg); */
-  background-image: url(https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&s=fd9737c65140923d4697ea511498b402&auto=format&fit=crop&w=1050&q=80);
+  background-image: url(https://images.unsplash.com/photo-1495214783159-3503fd1b572d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=91d35d2b5386e7dd13bd3b2538eab428&auto=format&fit=crop&w=1050&q=80);
   background-repeat: no-repeat;
   background-size: cover;
   /* background-position: center; */
@@ -19,12 +19,8 @@ body, html {
   margin: 2%;
   overflow-y: scroll;
   overflow-x: hidden;
-  max-height: 80vh
+  max-height: 80vh;
 }
-/* 
-.logregcont {
-  width: 40%;
-} */
 
 .box > .card:hover {
   transform: scale(1.05)
@@ -82,8 +78,8 @@ body, html {
   background-color: rgba(19, 154, 67, 0.5)
 } */
 
-#test {
-  background-color: rgba(255,255,255,.8)
+.box {
+  background-color: rgba(255,255,255,.8) !important
 }
 
 .cardheader {
@@ -95,12 +91,12 @@ body, html {
   color: #E8f1f2 !important
 }
 
-.navbar {
+/* .navbar {
   background-color: #D9D9D9 !important;
-}
+} */
 
 .navbar-item {
-  color: darkgray !important
+  color: #ababab !important
 }
 
 .navbar-item:hover {
@@ -115,6 +111,18 @@ body, html {
   background-color: rgba(255,255,255,.8)
 }
 
-button {
-  background-color: #FACB0B
+.yellow-button {
+  background-color: #FACB0B !important
 }
+
+#form-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+#nav-logo {
+  margin-right: 5%
+}
+

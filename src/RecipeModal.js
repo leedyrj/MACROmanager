@@ -161,7 +161,8 @@ export default class RecipeModal extends Component {
                         <ModalCardFooter>
                             {this.props.modalType === "search" ? (
                                 <Button
-                                    isColor='success'
+                                    // isColor='success'
+                                    className="yellow-button"
                                     onClick={this.saveRecipe}>Save for Later</Button>
                             ) : (<Comment
                                 handleFieldChange={this.handleFieldChange}

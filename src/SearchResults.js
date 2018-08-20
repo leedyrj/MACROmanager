@@ -32,17 +32,22 @@ export default class SearchResults extends Component {
     render() {
         return (
             <React.Fragment>
-                <Button onClick={this.props.showForm}>
+                <Button
+                    onClick={this.props.showForm}
+                    className="yellow-button"
+                    id="new-search">
                     New Search
                 </Button>
-                <Box id="results-container">
+                <Box
+                    className="box"
+                    id="results-container">
                     {this.props.recipes.matches.map(recipe => {
                         return (
                             <Card
                                 onClick={() => this.recipeView(recipe)}
                                 className="card">
-                                <CardHeader>
-                                    <CardHeaderTitle>
+                                <CardHeader className="cardheader">
+                                    <CardHeaderTitle className="headerTitle">
                                         {recipe.recipeName}
                                     </CardHeaderTitle>
                                 </CardHeader>
@@ -52,7 +57,7 @@ export default class SearchResults extends Component {
                                 <CardContent>
                                     <Media>
                                         <MediaLeft>
-                                            <Image isRatio='48x48' src={recipe.smallImageUrls} />
+                                            <Image isRatio='128x128' src={recipe.smallImageUrls} />
                                         </MediaLeft>
                                         <MediaContent>
                                         </MediaContent>

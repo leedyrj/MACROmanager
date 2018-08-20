@@ -195,6 +195,7 @@ export default class HomeForm extends Component {
 
                     <Button
                         id="homeformsubmit"
+                        className="yellow-button"
                         type="submit"
                         onClick={this.props.testForm}
                     >Submit</Button>
