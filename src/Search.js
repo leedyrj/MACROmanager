@@ -18,7 +18,7 @@ export default class Search extends Component {
                     <Input
                         type="text"
                         id="SearchItem"
-                        placeholder="Search"
+                        placeholder="Search..."
                         // required
                         onChange={this.props.handleSearchField}
                     />

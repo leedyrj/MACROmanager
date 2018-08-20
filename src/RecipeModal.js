@@ -128,7 +128,7 @@ export default class RecipeModal extends Component {
                             </ul>
                             <span className="nutrition-flex">
                                 <div className="nutrition-item">
-                                    <Title isSize={5}>Protien:</Title>
+                                    <Title isSize={5}>Protein:</Title>
                                     {pro.value} g
                                 </div>
                                 <div>

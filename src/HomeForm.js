@@ -10,7 +10,7 @@ export default class HomeForm extends Component {
             <React.Fragment>
                 <form>
                     <Collapsible trigger="Macronutrients">
-                        <Label>Protien</Label>
+                        <Label>Protein</Label>
                         <Input
                             className="input"
                             type="number"
@@ -151,8 +151,9 @@ export default class HomeForm extends Component {
                     </Collapsible> */}
 
                     <Collapsible trigger="I'm in the mood for...">
-                        <Label>Select:</Label>
+                        <Label>Select a Cuisine:</Label>
                         <Select
+                            class="formselect"
                             id="Cuisine"
                             name="Cuisine"
                             onChange={this.props.handleSelect}
@@ -187,8 +188,9 @@ export default class HomeForm extends Component {
                     </Collapsible>
 
                     <Collapsible trigger="It's time for...">
-                        <Label>Select:</Label>
+                        <Label>Select a Meal:</Label>
                         <Select
+                            addClass="formselect"
                             id="Meal"
                             name="Meal"
                             onChange={this.props.handleSelect}

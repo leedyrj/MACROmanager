@@ -262,7 +262,7 @@ export default class Home extends Component {
                                 Welcome to MACROmanager!
                             </Title>
                             <p id="welcome-p">
-                                MACROmanager is a new recipe finder that helps you find and save recipes based on your macronutrient needs.
+                                Whether you were trying it as part of a diet, a workout plan, or just to be healthier, if you’ve ever counted macros or calories, you know the struggle.  Your breakfasts and lunches are prepacked and perfectly balanced every day, but then you get home from work and still need a specific amount of protein, carbs and fat with no idea of how to turn that into a meal.  Or maybe you can’t eat one more egg white scramble for breakfast. But what is another healthy option? MACROmanager solves this problem by allowing you to search through over 2 million recipes and find the ones that fit your macro budget perfectly, no matter what food, meal or cuisine you’re in the mood for.  Find your new favorite recipes by completing the form below.  All search fields are optional!
                             </p>
                         </Content>
                         <HomeForm

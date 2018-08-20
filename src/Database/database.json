@@ -42,7 +42,7 @@
       "recipePro": 28.64,
       "recipeCarbs": 7.45,
       "recipeFat": 15.8,
-      "recipeComment": "Doesn't need the brown sugar",
+      "recipeComment": "Needs more brown sugar",
       "id": 5,
       "recipeRating": 4
     },
@@ -149,7 +149,7 @@
       "recipeFat": 51.11,
       "recipeComment": "This is good",
       "id": 12,
-      "recipeRating": 4
+      "recipeRating": 2
     },
     {
       "userId": 2,
@@ -286,6 +286,44 @@
       "recipeFat": 16.63,
       "recipeComment": "",
       "id": 19
+    },
+    {
+      "userId": 2,
+      "recipeName": "Hungry Girl's Kale & Sriracha Fluffy Egg Mug",
+      "externalRecipeId": "Hungry-Girl_s-Kale-_-Sriracha-Fluffy-Egg-Mug-1253387",
+      "recipeUrl": "http://www.yummly.co/recipe/Hungry-Girl_s-Kale-_-Sriracha-Fluffy-Egg-Mug-1253387",
+      "recipeImage": "http://lh3.googleusercontent.com/IwbitopbrP4seCECIwMjXvVNhzsU7PrO2Vv6FVGrYXECldb0Z0PgmjOIzPsmcYGJHtN1DbVk9AfvgKyTVp27c3I=s360",
+      "recipeIngred": [
+        "1/2 cup chopped kale leaves",
+        "1/4 cup chopped onion",
+        "3/4 cup egg whites or fat-free liquid egg substitute",
+        "1 tbsp. I Can't Believe It's Not Butter!® Light Spread",
+        "1 tsp. sriracha hot chili sauce"
+      ],
+      "recipePro": 21.61,
+      "recipeCarbs": 11.12,
+      "recipeFat": 5.49,
+      "recipeComment": "",
+      "id": 20
+    },
+    {
+      "userId": 2,
+      "recipeName": "The Biggest Loser's Baked Eggs in Turkey Cups",
+      "externalRecipeId": "The-Biggest-Loser_s-Baked-Eggs-in-Turkey-Cups-2118434",
+      "recipeUrl": "http://fabulousfoods.com/recipes/the-biggest-loser-s-baked-eggs-in-turkey-cups",
+      "recipeImage": "https://lh3.googleusercontent.com/550iJKFYrxKHYEERfceRLZlBlSyiCyhvXU1298gHM9nZs7xFh_Z32k-1vRhPFeByBUJfgGPS7ROxJxh1TPXgxHk=s360",
+      "recipeIngred": [
+        "6 ounces very thinly sliced deli turkey",
+        "3/4 cup salsa  (click here for recipe) or grilled vegetables",
+        "18 large egg whites or 2 1/4 cups liquid egg white or egg substitute (see note below)",
+        "2 tablespoons chopped fresh cilantro",
+        "2 tablespoons grated low-fat Cheddar cheese"
+      ],
+      "recipePro": 25.36,
+      "recipeCarbs": 6.15,
+      "recipeFat": 1.1,
+      "recipeComment": "",
+      "id": 21
     }
   ]
 }
