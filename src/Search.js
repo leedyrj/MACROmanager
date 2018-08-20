@@ -14,18 +14,22 @@ export default class Search extends Component {
     render() {
         return (
             <React.Fragment>
-                <Input
-                    type="text"
-                    id="SearchItem"
-                    placeholder="Search"
-                    // required
-                    onChange={this.props.handleSearchField}
-                />
+                <div id="search">
+                    <Input
+                        type="text"
+                        id="SearchItem"
+                        placeholder="Search"
+                        // required
+                        onChange={this.props.handleSearchField}
+                    />
+                </div>
                 <Button
                     className="yellow-button"
+                    id="search-button"
                     onClick={this.props.searchRecipes}>
                     Search
             </Button>
+
             </React.Fragment>
         )
     }

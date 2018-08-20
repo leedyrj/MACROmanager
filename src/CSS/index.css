@@ -126,3 +126,74 @@ body, html {
   margin-right: 5%
 }
 
+.results-box{
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: space-around !important;
+  align-items: stretch !important;
+  padding: 1% !important;
+}
+
+.results-card {
+  flex-shrink: 1;
+  flex-basis: 25%;
+}
+
+.results-img {
+  height: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  margin: auto;
+  padding-top: 18%
+}
+
+#sorter {
+  display: flex;
+  flex-direction: column;
+  /* margin: auto; */
+}
+
+#sort {
+  display: flex;
+  margin: auto;
+  align-items: stretch;
+  justify-content: space-around;
+  text-align: center;
+  padding: 1%;
+}
+
+#macro-sort {
+  padding-right: 3%
+}
+
+#sort-button, #search-button {
+  /* width: 5%; */
+  margin: auto
+}
+
+#search {
+  display: flex;
+  padding: 1%
+}
+
+#SearchItem {
+  width: 60%;
+  margin: auto;
+}
+
+#welcome-title, #welcome-p {
+  text-align: center;
+  padding-top: 1%
+}
+
+#new-search {
+  display: flex;
+  margin: auto;
+  margin-top: 1%
+}
+
+.input {
+  margin: .5%
+}
+

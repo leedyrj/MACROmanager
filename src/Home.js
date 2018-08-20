@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Container, Box } from 'bloomer'
+import { Container, Box, Title } from 'bloomer'
 import Navigation from "./Nav/Navbar";
 import HomeForm from "./HomeForm"
 import MyRecipes from "./MyRecipes"
@@ -256,9 +256,14 @@ export default class Home extends Component {
                             id="form-logo"></img>
 
                         <Content>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac lacus at nibh elementum tempor vitae rutrum massa. Phasellus sit amet nisl eget ligula mattis dignissim. Sed commodo ullamcorper ligula, nec viverra nulla elementum et. Sed sapien justo, finibus egestas risus blandit, volutpat aliquam neque. Sed pretium purus urna, sed tristique massa gravida ac.
-                        </p>
+                            <Title
+                                isSize={3}
+                                id="welcome-title">
+                                Welcome to MACROmanager!
+                            </Title>
+                            <p id="welcome-p">
+                                MACROmanager is a new recipe finder that helps you find and save recipes based on your macronutrient needs.
+                            </p>
                         </Content>
                         <HomeForm
                             showResults={this.showResults}

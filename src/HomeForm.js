@@ -12,6 +12,7 @@ export default class HomeForm extends Component {
                     <Collapsible trigger="Macronutrients">
                         <Label>Protien</Label>
                         <Input
+                            className="input"
                             type="number"
                             id="ProMin"
                             placeholder='Min'
@@ -19,6 +20,7 @@ export default class HomeForm extends Component {
                             onChange={this.props.handleFieldChange}
                         />
                         <Input
+                            className="input"
                             type="number"
                             id="ProMax"
                             placeholder='Max'
@@ -28,6 +30,7 @@ export default class HomeForm extends Component {
 
                         <Label>Carbohydrates</Label>
                         <Input
+                            className="input"
                             type="number"
                             id="CarbMin"
                             placeholder='Min'
@@ -35,6 +38,7 @@ export default class HomeForm extends Component {
                             onChange={this.props.handleFieldChange}
                         />
                         <Input
+                            className="input"
                             type="number"
                             id="CarbMax"
                             placeholder='Max'
@@ -44,6 +48,7 @@ export default class HomeForm extends Component {
 
                         <Label>Fats</Label>
                         <Input
+                            className="input"
                             type="number"
                             id="FatMin"
                             placeholder='Min'
@@ -51,6 +56,7 @@ export default class HomeForm extends Component {
                             onChange={this.props.handleFieldChange}
                         />
                         <Input
+                            className="input"
                             type="number"
                             id="FatMax"
                             placeholder='Max'
@@ -61,6 +67,7 @@ export default class HomeForm extends Component {
 
                     <Collapsible trigger="Food">
                         <Input
+                            className="input"
                             type="text"
                             id="FoodType"
                             placeholder='What do you want to eat?'
@@ -71,6 +78,7 @@ export default class HomeForm extends Component {
 
                     <Collapsible trigger="Ingredients">
                         <Input
+                            className="input"
                             type="text"
                             id="IngredType"
                             placeholder='What do you want in it?'
