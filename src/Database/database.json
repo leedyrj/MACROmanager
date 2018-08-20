@@ -265,6 +265,27 @@
       "recipeFat": 18.04,
       "recipeComment": "",
       "id": 18
+    },
+    {
+      "userId": 2,
+      "recipeName": "Honey Sriracha Salmon",
+      "externalRecipeId": "Honey-Sriracha-Salmon-2342996",
+      "recipeUrl": "https://chefsavvy.com/honey-sriracha-salmon/",
+      "recipeImage": "https://lh3.googleusercontent.com/6Lo0-tp3nspjKexmmQUC_j2iRC7NQSvbR1bq1SM5hEVQFbUOrDmxp0MnNpsEw7VM8bC_lYqSI8-upnZDXbjZ=s360",
+      "recipeIngred": [
+        "4 salmon filets, skin on",
+        "1 garlic clove, minced",
+        "3 tablespoons low sodium soy sauce",
+        "2 tablespoons honey",
+        "2 tablespoons sriracha",
+        "3 tablespoons water",
+        "½ tablespoon olive oil, for pan fry method"
+      ],
+      "recipePro": 23.49,
+      "recipeCarbs": 13.53,
+      "recipeFat": 16.63,
+      "recipeComment": "",
+      "id": 19
     }
   ]
 }

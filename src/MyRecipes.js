@@ -108,30 +108,57 @@ export default class MyRecipes extends Component {
     // this.setState
 
     sortByMacro = () => {
-        console.log("click")
         let currentUserId = this.props.currentUserId
         let macro = this.state.SortInfo.SortMacro
         let direc = this.state.SortInfo.SortDirection
-        fetch(`http://localhost:5002/recipes?userId=${currentUserId}&_sort=${macro}&_order=${direc}`)
-            .then(a => a.json())
-            .then((myRecipes) => {
-                console.log(myRecipes)
-                this.setState({
-                    MyRecipes: myRecipes
+        let SearchItem = this.state.SearchItem
+        if (this.state.SearchItem === "") {
+            fetch(`http://localhost:5002/recipes?userId=${currentUserId}&_sort=${macro}&_order=${direc}`)
+                .then(a => a.json())
+                .then((myRecipes) => {
+                    console.log("searchitem empty")
+                    this.setState({
+                        MyRecipes: myRecipes
+                    })
                 })
-            })
+        } else {
+            fetch(`http://localhost:5002/recipes?userId=${currentUserId}&q=${SearchItem}&_sort=${macro}&_order=${direc}`)
+                .then(a => a.json())
+                .then((myRecipes) => {
+                    console.log("searchitem full")
+                    console.log(myRecipes)
+                    this.setState({
+                        MyRecipes: myRecipes
+                    })
+                    console.log("state", this.state.MyRecipes)
+                })
+        }
     }
 
     searchRecipes = () => {
         let currentUserId = this.props.currentUserId
         let SearchItem = this.state.SearchItem
-        fetch(`http://localhost:5002/recipes?userId=${currentUserId}&q=${SearchItem}`).then(a => a.json())
-            .then((myRecipes) => {
-                console.log(myRecipes)
-                this.setState({
-                    MyRecipes: myRecipes
+        let macro = this.state.SortInfo.SortMacro
+        let direc = this.state.SortInfo.SortDirection
+        if (this.state.SortInfo.SortDirection === "" || this.state.SortInfo.SortMacro === "") {
+            fetch(`http://localhost:5002/recipes?userId=${currentUserId}&q=${SearchItem}`)
+                .then(a => a.json())
+                .then((myRecipes) => {
+                    console.log("sortinfo full")
+                    this.setState({
+                        MyRecipes: myRecipes
+                    })
                 })
-            })
+        } else {
+            fetch(`http://localhost:5002/recipes?userId=${currentUserId}&q=${SearchItem}&_sort=${macro}&_order=${direc}`)
+                .then(a => a.json())
+                .then((myRecipes) => {
+                    console.log("sortinfo empty")
+                    this.setState({
+                        MyRecipes: myRecipes
+                    })
+                })
+        }
     }
 
     render() {
