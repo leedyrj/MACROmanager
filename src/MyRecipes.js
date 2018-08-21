@@ -209,7 +209,7 @@ export default class MyRecipes extends Component {
                                                 <MediaContent>
                                                     <span className="nutrition-flex">
                                                         <div className="nutrition-item">
-                                                            <Title isSize={5}>Protien:</Title>
+                                                            <Title isSize={5}>Protein:</Title>
                                                             {`${recipe.recipePro}g`}
                                                         </div>
                                                         <div className="nutrition-item">

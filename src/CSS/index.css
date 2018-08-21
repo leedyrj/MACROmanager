@@ -184,7 +184,7 @@ body, html {
 
 #welcome-title, #welcome-p {
   text-align: center;
-  padding-top: 1%
+  padding-top: 1%;
 }
 
 #new-search {
@@ -197,3 +197,10 @@ body, html {
   margin: .5%
 }
 
+#homeformsubmit {
+  margin-top: 1%
+}
+
+.formselect {
+  margin-bottom: 1%
+}

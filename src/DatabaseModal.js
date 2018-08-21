@@ -147,7 +147,7 @@ export default class DatabaseModal extends Component {
                             </ul>
                             <span className="nutrition-flex">
                                 <div className="nutrition-item">
-                                    <Title isSize={5}>Protien:</Title>
+                                    <Title isSize={5}>Protein:</Title>
                                     {`${this.props.modalRecipe.recipePro}g`}
                                 </div>
                                 <div className="nutrition-item">

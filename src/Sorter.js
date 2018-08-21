@@ -18,7 +18,7 @@ export default class Sorter extends Component {
             <React.Fragment>
                 <div id="sort">
                     <div id="macro-sort">
-                        <Label>Select:</Label>
+                        {/* <Label>Select:</Label> */}
                         <Select
                             id="SortMacro"
                             name="SortMacro"
@@ -31,7 +31,7 @@ export default class Sorter extends Component {
                         </Select>
                     </div>
                     <div id="dir-sort">
-                        <Label>Select:</Label>
+                        {/* <Label>Select:</Label> */}
                         <Select
                             id="SortDirection"
                             name="SortDirection"
