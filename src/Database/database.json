@@ -149,7 +149,7 @@
       "recipeFat": 51.11,
       "recipeComment": "This is good",
       "id": 12,
-      "recipeRating": 2
+      "recipeRating": 4
     },
     {
       "userId": 2,
@@ -192,24 +192,6 @@
       "recipeFat": 4.49,
       "recipeComment": "",
       "id": 15
-    },
-    {
-      "userId": 2,
-      "recipeName": "Grilled Chicken Taco Salad",
-      "externalRecipeId": "Grilled-Chicken-Taco-Salad-2485166",
-      "recipeUrl": "https://garnishedplate.com/grilled-chicken-taco-salad/",
-      "recipeImage": "https://lh3.googleusercontent.com/kJzpwjsMJc8pHTTu8H2TcuApHi9pmOHFCcbrXoFogVIXkPIgOVUYxAJD9wh7aI_oPUMWwK1eX3ncmkwpgX4T=s360",
-      "recipeIngred": [
-        "12 oz chopped romaine lettuce",
-        "4 oz leftover grilled chicken",
-        "1 cup leftover corn salsa",
-        "1/2 cup ranch dressing"
-      ],
-      "recipePro": 10.08,
-      "recipeCarbs": 8.49,
-      "recipeFat": 19.27,
-      "recipeComment": "",
-      "id": 16
     },
     {
       "userId": 2,
@@ -324,6 +306,54 @@
       "recipeFat": 1.1,
       "recipeComment": "",
       "id": 21
+    },
+    {
+      "userId": 2,
+      "recipeName": "Sticky Asian Chicken Spaghetti",
+      "externalRecipeId": "Sticky-Asian-Chicken-Spaghetti-542319",
+      "recipeUrl": "http://noblepig.com/2014/04/sticky-chicken-spaghetti/",
+      "recipeImage": "http://lh4.ggpht.com/_SGL9UIWpA72XSVOtFx17MLayESEJ4AzOCAwn3iqmZX2VGAy8k3uUq31R1rg1zC4OU4zwQ6sfwh1m-S-mvVjrA=s360",
+      "recipeIngred": [
+        "1 lb chicken tenderloins, cut into bite-sized pieces",
+        "1/2 cup hoisin sauce",
+        "2 Tablespoons soy sauce",
+        "1 Tablespoon vodka*",
+        "1 Tablespoon Mirin (Aji-Mirin, Sweet Cooking Rice Seasoning, available everywhere)",
+        "1 Tablespoon toasted sesame oil",
+        "1 Tablespoon freshly grated ginger (not chopped)",
+        "1 clove garlic (not minced)",
+        "2 cups broccoli, blanched or steamed (small florets)",
+        "12 oz spaghetti (uncooked)",
+        "green onion for garnish, sliced"
+      ],
+      "recipePro": 43.28,
+      "recipeCarbs": 94.6,
+      "recipeFat": 10.84,
+      "recipeComment": "Needs more  ginger.",
+      "id": 22,
+      "recipeRating": 5
+    },
+    {
+      "userId": 2,
+      "recipeName": "Chipotle Ranch BLT Pinwheels",
+      "externalRecipeId": "Chipotle-Ranch-BLT-Pinwheels-2483474",
+      "recipeUrl": "https://www.macheesmo.com/chipotle-ranch-blt-pinwheels/",
+      "recipeImage": "https://lh3.googleusercontent.com/rpGZeUxbFy56jpJICHkooCM5Zfg_9Cxsy6Ydpc44wongTirWagwFuqAEBnNutLtriRpHHmrOByHp2SFS4ynv6g=s360",
+      "recipeIngred": [
+        "4 large flour tortillas",
+        "1/2 cup ranch dressing",
+        "2 chipotle peppers (in adobo)",
+        "1 tablespoon Adobo sauce, from pepper can",
+        "12 strips bacon, baked until crispy",
+        "2 ripe tomatoes, sliced thin",
+        "Fresh lettuce"
+      ],
+      "recipePro": 2.55,
+      "recipeCarbs": 5.41,
+      "recipeFat": 9.65,
+      "recipeComment": "test",
+      "id": 23,
+      "recipeRating": 4
     }
   ]
 }
